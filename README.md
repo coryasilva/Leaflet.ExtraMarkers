@@ -7,7 +7,7 @@ Version 1.0 of Leaflet.awesome-markers is designed for:
 - Leaflet 0.5-Latest
 
 ## Screenshots
-![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.awesome-markers/master/gh-pages/screenshot.png "Screenshot of ExtraMarkers")
+![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/gh-pages/screenshot.png "Screenshot of ExtraMarkers")
 
 <a href="http://plnkr.co/edit/l1Ar1Tsa3pHd35jbB2mW?p=preview" target="_blank">Plunkr demo</a>
 
