@@ -4,6 +4,7 @@
 Version 1.0 of Leaflet.awesome-markers is designed for:
 - Bootstrap 3
 - Font Awesome 4.0
+- Semantic UI 0.9.8
 - Leaflet 0.5-Latest
 
 ## Screenshots
@@ -11,7 +12,7 @@ Version 1.0 of Leaflet.awesome-markers is designed for:
 
 <a href="http://plnkr.co/edit/l1Ar1Tsa3pHd35jbB2mW?p=preview" target="_blank">Plunkr demo</a>
 
-### Twitter Bootstrap/Font-Awesome icons
+### Twitter Bootstrap/Font-Awesome icons/Semantic UI
 This plugin depends on either Bootstrap or Font-Awesome for the rendering of the icons. See these urls for more information:
 
 For Font-Awesome
@@ -20,6 +21,9 @@ For Font-Awesome
 
 For Twitter bootstrap:
 - http://twitter.github.com/bootstrap/
+
+For Semantic UI
+- http://semantic-ui.com/
 
 ## Using the plugin
 - 1) First, follow the steps for including Font-Awesome or Twitter bootstrap into your application.
@@ -38,10 +42,10 @@ http://getbootstrap.com/getting-started/
 <link rel="stylesheet" href="css/leaflet.extra-markers.css">
 ````
 or
-
 ````less
 @import 'bower_components/src/Leaflet.extra-markers.less
 ````
+and
 ````xml
 <script src="js/leaflet.extra-markers.js"></script>
 ````
