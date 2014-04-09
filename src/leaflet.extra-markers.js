@@ -10,7 +10,7 @@
 
     L.ExtraMarkers = {};
 
-    L.ExtraMarkers.version = '1.0.0';
+    L.ExtraMarkers.version = '1.0.1';
 
     L.ExtraMarkers.Icon = L.Icon.extend({
         options: {
