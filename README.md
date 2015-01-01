@@ -13,7 +13,7 @@ Version 1.0 of Leaflet.awesome-markers is designed for:
 <a href="http://plnkr.co/edit/l1Ar1Tsa3pHd35jbB2mW?p=preview" target="_blank">Plunkr demo</a>
 
 ### Twitter Bootstrap/Font-Awesome icons/Semantic UI
-This plugin depends on either Bootstrap or Font-Awesome for the rendering of the icons. See these urls for more information:
+This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the rendering of the icons. See these urls for more information:
 
 For Font-Awesome
 - http://fortawesome.github.com/Font-Awesome/
@@ -73,7 +73,7 @@ and
 | markerColor     | Color of the marker          | 'blue'        | 'red', 'orange-red', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', 'white' |
 | shape           | Shape of the marker          | 'circle'      | 'circle', 'square', 'star', 'penta' |
 | iconColor       | Color of the icon            | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
-| spin            | DEPRECATED                   | false         | true or false. Font-awesome required |
+| spin            | REMOVED                      | false         | true or false. Font-awesome required |
 | extraClasses    | Additional classes in the created <i> tag | '' | 'fa-rotate90 myclass' eller other custom configuration |
 
 ## License
