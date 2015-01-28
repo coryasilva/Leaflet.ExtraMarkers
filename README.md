@@ -54,7 +54,7 @@ and
 - 3) Now use the plugin to create a marker like this:
 ````js
   // Creates a red marker with the coffee icon
-  var redMarker = L.AwesomeMarkers.icon({
+  var redMarker = L.ExtraMarkers.icon({
     icon: 'fa-coffee',
     markerColor: 'red',
     shape: 'square'
