@@ -1,7 +1,7 @@
 # Leaflet.extra-markers plugin v1.0.0
 <a href="https://github.com/lvoogdt/Leaflet.awesome-markers">Big Thanks to lvoogdt of Leaflet.awesome-markers</a>
 
-Version 1.0 of Leaflet.awesome-markers is designed for:
+Version 1.0 of Leaflet.extra-markers is designed for:
 - Bootstrap 3
 - Font Awesome 4.0
 - Semantic UI 0.9.8
@@ -77,6 +77,6 @@ and
 | extraClasses    | Additional classes in the created <i> tag | '' | 'fa-rotate90 myclass' eller other custom configuration |
 
 ## License
-- Leaflet.AwesomeMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.
+- Leaflet.ExtraMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.
 - Font Awesome: http://fortawesome.github.io/Font-Awesome/license/
 - Twitter Bootstrap: http://getbootstrap.com/
