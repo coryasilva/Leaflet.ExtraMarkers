@@ -57,7 +57,7 @@ and
   var redMarker = L.ExtraMarkers.icon({
     icon: 'fa-coffee',
     markerColor: 'red',
-    shape: 'square'
+    shape: 'square',
     prefix: 'fa'
   });
       
