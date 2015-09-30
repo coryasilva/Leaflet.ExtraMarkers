@@ -70,7 +70,7 @@ and
 | --------------- | ---------------------------- | ------------- | ---------------------------------------------------- |
 | icon            | Name of the icon WITH prefix | 'fa-home'     | See glyphicons or font-awesome (must include prefix)  |
 | prefix          | Select de icon library       | 'glyphicon'   | 'fa' for font-awesome or 'glyphicon' for bootstrap 3 |
-| markerColor     | Color of the marker          | 'blue'        | 'red', 'orange-red', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', 'white' |
+| markerColor     | Color of the marker          | 'blue'        | 'red', 'orange-dark', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', 'white' |
 | shape           | Shape of the marker          | 'circle'      | 'circle', 'square', 'star', 'penta' |
 | iconColor       | Color of the icon            | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
 | spin            | REMOVED                      | false         | true or false. Font-awesome required |
