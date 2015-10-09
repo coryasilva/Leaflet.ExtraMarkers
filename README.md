@@ -2,9 +2,10 @@
 <a href="https://github.com/lvoogdt/Leaflet.awesome-markers">Big Thanks to lvoogdt of Leaflet.awesome-markers</a>
 
 Version 1.0 of Leaflet.extra-markers is designed for:
-- Bootstrap 3
+- Bootstrap 3 icons
 - Font Awesome 4.0
-- Semantic UI 0.9.8
+- Semantic UI 0.9.8 icons
+- Ion Icons 2.0.1
 - Leaflet 0.5-Latest
 
 ## Screenshots
@@ -24,6 +25,9 @@ For Twitter bootstrap:
 
 For Semantic UI
 - http://semantic-ui.com/
+
+For Ion Icons
+- http://ionicons.com/
 
 ## Using the plugin
 - 1) First, follow the steps for including Font-Awesome or Twitter bootstrap into your application.
