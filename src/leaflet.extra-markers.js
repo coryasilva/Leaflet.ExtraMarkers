@@ -62,19 +62,21 @@
         _setIconStyles: function (img, name) {
             var options = this.options,
                 size = L.point(options[name === 'shadow' ? 'shadowSize' : 'iconSize']),
-                anchor;
+                anchor, leafletName;
 
             if (name === 'shadow') {
                 anchor = L.point(options.shadowAnchor || options.iconAnchor);
+                leafletName = 'shadow';
             } else {
                 anchor = L.point(options.iconAnchor);
+                leafletName = 'icon';
             }
 
             if (!anchor && size) {
                 anchor = size.divideBy(2, true);
             }
 
-            img.className = 'extra-marker-' + name + ' ' + options.className;
+            img.className = 'leaflet-marker-' + leafletName + ' extra-marker-' + name + ' ' + options.className;
 
             if (anchor) {
                 img.style.marginLeft = (-anchor.x) + 'px';
