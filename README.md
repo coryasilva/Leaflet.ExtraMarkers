@@ -11,7 +11,7 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 ## Screenshots
 ![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/gh-pages/screenshot.png "Screenshot of ExtraMarkers")
 
-<a href="http://plnkr.co/edit/l1Ar1Tsa3pHd35jbB2mW?p=preview" target="_blank">Plunkr demo</a>
+<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>
 
 ### Twitter Bootstrap/Font-Awesome icons/Semantic UI
 This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the rendering of the icons. See these urls for more information:
