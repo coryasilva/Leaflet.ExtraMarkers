@@ -7,9 +7,9 @@
     ],
     "description": "Custom Markers for Leaflet JS based on Awesome Markers",
     "main": [
-        "src/leaflet.extra-markers.css",
-        "src/leaflet.extra-markers.less",
-        "src/leaflet.extra-markers.js"
+        "src/assets/css/leaflet.extra-markers.css",
+        "src/assets/less/leaflet.extra-markers.less",
+        "src/assets/js/leaflet.extra-markers.js"
     ],
     "license": "MIT",
     "ignore": [

@@ -9,7 +9,7 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 - Leaflet 0.5-Latest
 
 ## Screenshots
-![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/gh-pages/screenshot.png "Screenshot of ExtraMarkers")
+![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")
 
 <a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>
 
