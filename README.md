@@ -24,29 +24,31 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 
 1. First, follow the [getting started guide](#icons) for the desired font library and make sure its included in your project.
 2. Next, copy the `dist/img` directory, `/dist/css/leaflet.extra-markers.min.css`, and `/dist/js/leaflet.extra-markers.min.js` to your project and include them:
-    ````xml
-    <link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
-    ````
-    or
-    ````less
-    @import 'bower_components/src/assets/less/Leaflet.extra-markers.less
-    ````
-    and
-    ````xml
-    <script src="js/leaflet.extra-markers.min.js"></script>
-    ````
+
+````xml
+<link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
+````
+or
+````less
+@import 'bower_components/src/assets/less/Leaflet.extra-markers.less
+````
+and
+````xml
+<script src="js/leaflet.extra-markers.min.js"></script>
+````
+
 3. Now use the plugin to create a marker like this:
-    ````js
-      // Creates a red marker with the coffee icon
-      var redMarker = L.ExtraMarkers.icon({
-        icon: 'fa-coffee',
-        markerColor: 'red',
-        shape: 'square',
-        prefix: 'fa'
-      });
-          
-      L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
-    ````
+````js
+  // Creates a red marker with the coffee icon
+  var redMarker = L.ExtraMarkers.icon({
+    icon: 'fa-coffee',
+    markerColor: 'red',
+    shape: 'square',
+    prefix: 'fa'
+  });
+      
+  L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
+````
 ---
 
 
