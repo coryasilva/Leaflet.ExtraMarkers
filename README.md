@@ -22,7 +22,7 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 
 ##Using the plugin
 
-1. First, follow the [getting started guide](##Icons) for the desired font library and make sure its included in your project.
+1. First, follow the [getting started guide](#icons) for the desired font library and make sure its included in your project.
 2. Next, copy the `dist/img` directory, `/dist/css/leaflet.extra-markers.min.css`, and `/dist/js/leaflet.extra-markers.min.js` to your project and include them:
 ````xml
 <link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
