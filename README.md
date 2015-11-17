@@ -1,11 +1,17 @@
 # Leaflet.extra-markers plugin v1.0.0
 <a href="https://github.com/lvoogdt/Leaflet.awesome-markers">Big Thanks to lvoogdt of Leaflet.awesome-markers</a>
 
+This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the rendering of the icons. See these urls above for more information.
+
+
+##Icons
 Version 1.0 of Leaflet.extra-markers is designed for:
-- Bootstrap 3 icons
-- Font Awesome 4.0
-- Semantic UI 0.9.8 icons
-- Ion Icons 2.0.1
+- [Bootstrap 3 icons](http://twitter.github.com/bootstrap/)
+  -  [Integration](http://getbootstrap.com/getting-started/) 
+- [Font Awesome 4.0](http://fortawesome.github.com/Font-Awesome/)
+  - [Integration](http://fortawesome.github.io/Font-Awesome/get-started/)
+- [Semantic UI 0.9.8 icons](http://semantic-ui.com/)
+- [Ion Icons 2.0.1](http://ionicons.com/)
 - Leaflet 0.5-Latest
 
 ## Screenshots
@@ -13,49 +19,25 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 
 <a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>
 
-### Twitter Bootstrap/Font-Awesome icons/Semantic UI
-This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the rendering of the icons. See these urls for more information:
 
-For Font-Awesome
-- http://fortawesome.github.com/Font-Awesome/
-- http://fortawesome.github.com/Font-Awesome/#integration
+##Using the plugin
 
-For Twitter bootstrap:
-- http://twitter.github.com/bootstrap/
-
-For Semantic UI
-- http://semantic-ui.com/
-
-For Ion Icons
-- http://ionicons.com/
-
-## Using the plugin
-- 1) First, follow the steps for including Font-Awesome or Twitter bootstrap into your application.
-
-For Font-Awesome, steps are located here:
-
-http://fortawesome.github.io/Font-Awesome/get-started/
-
-For Twitter bootstrap, steps are here:
-
-http://getbootstrap.com/getting-started/
-    
-
-- 2) Next, copy the dist/images directory, awesome-markers.css, and awesome-markers.js to your project and include them:
+1. First, follow the steps for including on of the icon fonts mentioned above
+  - **Font-Awesome:** follow the [getting started guide](##Icons)
+  - **Twitter bootstrap:** steps [here]
+2. Next, copy the dist/images directory, awesome-markers.css, and awesome-markers.js to your project and include them:
 ````xml
 <link rel="stylesheet" href="css/leaflet.extra-markers.css">
 ````
 or
 ````less
-@import 'bower_components/src/Leaflet.extra-markers.less
+@import 'bower_components/src/less/Leaflet.extra-markers.less
 ````
 and
 ````xml
 <script src="js/leaflet.extra-markers.js"></script>
 ````
-
-
-- 3) Now use the plugin to create a marker like this:
+3. Now use the plugin to create a marker like this:
 ````js
   // Creates a red marker with the coffee icon
   var redMarker = L.ExtraMarkers.icon({
@@ -67,6 +49,8 @@ and
       
   L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
 ````
+---
+
 
 ### Properties
 
