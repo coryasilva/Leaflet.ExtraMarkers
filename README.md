@@ -7,9 +7,9 @@ This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the re
 ##Icons
 Version 1.0 of Leaflet.extra-markers is designed for:
 - [Bootstrap 3 icons](http://twitter.github.com/bootstrap/)
-  -  [Integratipn / Getting Started Guide](http://getbootstrap.com/getting-started/) 
+  -  [Getting Started Guide](http://getbootstrap.com/getting-started/) 
 - [Font Awesome 4.0](http://fortawesome.github.com/Font-Awesome/)
-  - [Integratipn / Getting Started Guide](http://fortawesome.github.io/Font-Awesome/get-started/)
+  - [Getting Started Guide](http://fortawesome.github.io/Font-Awesome/get-started/)
 - [Semantic UI 0.9.8 icons](http://semantic-ui.com/)
 - [Ion Icons 2.0.1](http://ionicons.com/)
 - Leaflet 0.5-Latest
