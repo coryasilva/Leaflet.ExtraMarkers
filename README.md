@@ -22,20 +22,18 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 
 ##Using the plugin
 
-1. First, follow the steps for including on of the icon fonts mentioned above
-  - **Font-Awesome:** follow the [getting started guide](##Icons)
-  - **Twitter bootstrap:** steps [here]
-2. Next, copy the dist/images directory, awesome-markers.css, and awesome-markers.js to your project and include them:
+1. First, follow the [getting started guide](##Icons) for the desired font library and make sure its included in your project.
+2. Next, copy the `dist/img` directory, `/dist/css/leaflet.extra-markers.min.css`, and `/dist/js/leaflet.extra-markers.min.js` to your project and include them:
 ````xml
-<link rel="stylesheet" href="css/leaflet.extra-markers.css">
+<link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
 ````
 or
 ````less
-@import 'bower_components/src/less/Leaflet.extra-markers.less
+@import 'bower_components/src/assets/less/Leaflet.extra-markers.less
 ````
 and
 ````xml
-<script src="js/leaflet.extra-markers.js"></script>
+<script src="js/leaflet.extra-markers.min.js"></script>
 ````
 3. Now use the plugin to create a marker like this:
 ````js
