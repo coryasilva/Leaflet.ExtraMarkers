@@ -1,3 +1,11 @@
+/*!
+ * Leaflet.extra-markers
+ * Custom Markers for Leaflet JS based on Awesome Markers
+ * Leaflet ExtraMarkers
+ * https://github.com/coryasilva/Leaflet.ExtraMarkers/
+ * @author coryasilva <https://github.com/coryasilva>
+ * @version 1.1.0
+ */
 /* Version 1.1.0 */
 /* Marker setup */
 .extra-marker {
@@ -218,4 +226,7 @@
 }
 .extra-marker-penta-white {
   background-position: -504px -138px;
+}
+.extra-marker .fa-number:before {
+  content: attr(number);
 }

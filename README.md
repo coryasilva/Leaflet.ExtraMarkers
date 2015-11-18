@@ -7,7 +7,7 @@ This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the re
 ##Icons
 Version 1.0 of Leaflet.extra-markers is designed for:
 - [Bootstrap 3 icons](http://twitter.github.com/bootstrap/)
-  -  [Getting Started Guide](http://getbootstrap.com/getting-started/) 
+  -  [Getting Started Guide](http://getbootstrap.com/getting-started/)
 - [Font Awesome 4.0](http://fortawesome.github.com/Font-Awesome/)
   - [Getting Started Guide](http://fortawesome.github.io/Font-Awesome/get-started/)
 - [Semantic UI 0.9.8 icons](http://semantic-ui.com/)
@@ -54,7 +54,7 @@ Now use the plugin to create a marker like this:
     shape: 'square',
     prefix: 'fa'
   });
-      
+
   L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
 ````
 ---
@@ -71,6 +71,7 @@ Now use the plugin to create a marker like this:
 | iconColor       | Color of the icon            | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
 | spin            | REMOVED                      | false         | true or false. Font-awesome required |
 | extraClasses    | Additional classes in the created <i> tag | '' | 'fa-rotate90 myclass' eller other custom configuration |
+| number          | Add a text number to the icon| ''             | any number, must use icon fa-number |
 
 ## License
 - Leaflet.ExtraMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.
