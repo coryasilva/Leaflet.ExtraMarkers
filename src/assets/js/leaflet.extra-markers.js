@@ -1,3 +1,11 @@
+/*!
+ * Leaflet.extra-markers
+ * Custom Markers for Leaflet JS based on Awesome Markers
+ * Leaflet ExtraMarkers
+ * https://github.com/coryasilva/Leaflet.ExtraMarkers/
+ * @author coryasilva <https://github.com/coryasilva>
+ * @version 1.1.0
+ */
 (function(window, document, undefined) {
     "use strict";
     L.ExtraMarkers = {};
@@ -15,7 +23,8 @@
             shape: "circle",
             icon: "",
             markerColor: "red",
-            iconColor: "#fff"
+            iconColor: "#fff",
+            number: ""
         },
         initialize: function(options) {
             options = L.Util.setOptions(this, options);
@@ -32,11 +41,14 @@
             return div;
         },
         _createInner: function() {
-            var iconClass, iconSpinClass = "", iconColorClass = "", iconColorStyle = "", options = this.options;
+            var iconClass, iconSpinClass = "", iconColorClass = "", iconColorStyle = "", iconNumber = "", options = this.options;
             if (options.iconColor) {
                 iconColorStyle = "style='color: " + options.iconColor + "' ";
             }
-            return "<i " + iconColorStyle + "class='" + options.extraClasses + " " + options.prefix + " " + options.icon + "'></i>";
+            if (options.number) {
+                iconNumber = "number='" + options.number + "' ";
+            }
+            return "<i " + iconNumber + iconColorStyle + "class='" + options.extraClasses + " " + options.prefix + " " + options.icon + "'></i>";
         },
         _setIconStyles: function(img, name) {
             var options = this.options, size = L.point(options[name === "shadow" ? "shadowSize" : "iconSize"]), anchor, leafletName;
