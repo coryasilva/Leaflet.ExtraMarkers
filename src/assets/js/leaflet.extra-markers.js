@@ -81,4 +81,4 @@
     L.ExtraMarkers.icon = function(options) {
         return new L.ExtraMarkers.Icon(options);
     };
-})(this, document);
+})(window, document);
