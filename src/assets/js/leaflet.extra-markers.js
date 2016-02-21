@@ -22,6 +22,7 @@
             extraClasses: "",
             shape: "circle",
             icon: "",
+            innerHTML: "",
             markerColor: "red",
             iconColor: "#fff",
             number: ""
@@ -33,6 +34,9 @@
             var div = document.createElement("div"), options = this.options;
             if (options.icon) {
                 div.innerHTML = this._createInner();
+            }
+            if (options.innerHTML) {
+                div.innerHTML = options.innerHTML;
             }
             if (options.bgPos) {
                 div.style.backgroundPosition = -options.bgPos.x + "px " + -options.bgPos.y + "px";

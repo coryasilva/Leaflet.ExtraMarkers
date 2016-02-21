@@ -65,6 +65,7 @@ Now use the plugin to create a marker like this:
 | Property        | Description                  | Default Value | Possible  values                                     |
 | --------------- | ---------------------------- | ------------- | ---------------------------------------------------- |
 | icon            | Name of the icon WITH prefix | 'fa-home'     | See glyphicons or font-awesome (must include prefix)  |
+| innerHTML       | own HTML code                | ''            | can be used to use SVG or PNG files |
 | prefix          | Select de icon library       | 'glyphicon'   | 'fa' for font-awesome or 'glyphicon' for bootstrap 3 |
 | markerColor     | Color of the marker          | 'blue'        | 'red', 'orange-dark', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', 'white' |
 | shape           | Shape of the marker          | 'circle'      | 'circle', 'square', 'star', 'penta' |
