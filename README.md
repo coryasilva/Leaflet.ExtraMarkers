@@ -1,10 +1,10 @@
-# Leaflet.extra-markers plugin v1.0.0
+# Leaflet.extra-markers plugin v1.0.4
 <a href="https://github.com/lvoogdt/Leaflet.awesome-markers">Big Thanks to lvoogdt of Leaflet.awesome-markers</a>
 
-This plugin depends on either Bootstrap, Font-Awesome, or Semantic-UI for the rendering of the icons. See these urls above for more information.
+![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")
+### <a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a> 
 
-
-##Icons
+## Icons
 Version 1.0 of Leaflet.extra-markers is designed for:
 - [Bootstrap 3 icons](http://twitter.github.com/bootstrap/)
   -  [Getting Started Guide](http://getbootstrap.com/getting-started/)
@@ -14,13 +14,8 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 - [Ion Icons 2.0.1](http://ionicons.com/)
 - Leaflet 0.5-Latest
 
-## Screenshots
-![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")
 
-<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>
-
-
-##Using the plugin
+## Using the plugin
 
 
 ##### 1. Requirements #####
@@ -62,19 +57,20 @@ Now use the plugin to create a marker like this:
 
 ### Properties
 
-| Property        | Description                  | Default Value | Possible  values                                     |
-| --------------- | ---------------------------- | ------------- | ---------------------------------------------------- |
-| icon            | Name of the icon WITH prefix | 'fa-home'     | See glyphicons or font-awesome (must include prefix)  |
-| innerHTML       | own HTML code                | ''            | can be used to use SVG or PNG files |
-| prefix          | Select de icon library       | 'glyphicon'   | 'fa' for font-awesome or 'glyphicon' for bootstrap 3 |
-| markerColor     | Color of the marker          | 'blue'        | 'red', 'orange-dark', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', 'white' |
-| shape           | Shape of the marker          | 'circle'      | 'circle', 'square', 'star', 'penta' |
-| iconColor       | Color of the icon            | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
-| spin            | REMOVED                      | false         | true or false. Font-awesome required |
-| extraClasses    | Additional classes in the created <i> tag | '' | 'fa-rotate90 myclass' eller other custom configuration |
-| number          | Add a text number to the icon| ''             | any number, must use icon fa-number |
+| Property        | Description                               | Default Value | Possible  values                                     |
+| --------------- | ----------------------------------------- | ------------- | ---------------------------------------------------- |
+| extraClasses    | Additional classes in the created <i> tag | ''            | 'fa-rotate90 myclass'; space delimited classes to add |
+| bgPos           | Background Position adjustment            | ''            | {x: 2px, y: -2px}
+| icon            | Name of the icon WITH prefix              | 'fa-home'     | see glyphicons or font-awesome (without prefix)  |
+| iconColor       | Color of the icon                         | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
+| innerHTML       | own HTML code                             | ''            | '<svg>', images, or other HTML; a truthy assignment will override the default html icon creation behavior |
+| markerColor     | Color of the marker                       | 'blue'        | 'red', 'orange-dark', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', or 'white' |
+| number          | Add a text number to the icon             | ''            | '1' or 'A', must use icon fa-number |
+| prefix          | Select de icon library                    | 'glyphicon'   | 'fa' for font-awesome or 'glyphicon' for bootstrap 3 |
+| shape           | Shape of the marker                       | 'circle'      | 'circle', 'square', 'star', or 'penta' |
+| spin            | REMOVED                                   | false         | true or false. Font-awesome required |
+
+
 
 ## License
 - Leaflet.ExtraMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.
-- Font Awesome: http://fortawesome.github.io/Font-Awesome/license/
-- Twitter Bootstrap: http://getbootstrap.com/
