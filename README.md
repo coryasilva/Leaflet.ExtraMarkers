@@ -60,7 +60,6 @@ Now use the plugin to create a marker like this:
 | Property        | Description                               | Default Value | Possible  values                                     |
 | --------------- | ----------------------------------------- | ------------- | ---------------------------------------------------- |
 | extraClasses    | Additional classes in the created <i> tag | ''            | 'fa-rotate90 myclass'; space delimited classes to add |
-| bgPos           | Background Position adjustment            | ''            | {x: 2px, y: -2px}
 | icon            | Name of the icon WITH prefix              | 'fa-home'     | see glyphicons or font-awesome (without prefix)  |
 | iconColor       | Color of the icon                         | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
 | innerHTML       | own HTML code                             | ''            | '<svg>', images, or other HTML; a truthy assignment will override the default html icon creation behavior |
