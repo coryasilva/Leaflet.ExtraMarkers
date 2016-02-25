@@ -54,16 +54,16 @@ Now use the plugin to create a marker like this:
 
 ### Properties
 
-| Property        | Description                               | Default Value | Possible  values                                     |
-| --------------- | ----------------------------------------- | ------------- | ---------------------------------------------------- |
-| extraClasses    | Additional classes in the created <i> tag | ''            | 'fa-rotate90 myclass'; space delimited classes to add |
-| icon            | Name of the icon WITH prefix              | 'fa-home'     | see glyphicons or font-awesome (without prefix)  |
-| iconColor       | Color of the icon                         | 'white'       | 'white', 'black' or css code (hex, rgba etc) |
-| innerHTML       | own HTML code                             | ''            | '<svg>', images, or other HTML; a truthy assignment will override the default html icon creation behavior |
-| markerColor     | Color of the marker                       | 'blue'        | 'red', 'orange-dark', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'green-light', 'black', or 'white' |
-| number          | Add a text number to the icon             | ''            | '1' or 'A', must use icon fa-number |
-| prefix          | Select de icon library                    | 'glyphicon'   | 'fa' for font-awesome or 'glyphicon' for bootstrap 3 |
-| shape           | Shape of the marker                       | 'circle'      | 'circle', 'square', 'star', or 'penta' |
+| Property        | Description                                 | Default Value | Possible  values                                     |
+| --------------- | ------------------------------------------- | ------------- | ---------------------------------------------------- |
+| extraClasses    | Additional classes in the created `<i>` tag | `''`          | `fa-rotate90 myclass`; space delimited classes to add |
+| icon            | Name of the icon **with** prefix            | `''`          | `fa-coffee` see glyphicons or font-awesome  |
+| iconColor       | Color of the icon                           | `'white'`     | `'white'`, `'black'` or css code (hex, rgba etc) |
+| innerHTML       | Custom HTML code                            | `''`          | `<svg>`, images, or other HTML; a truthy assignment will override the default html icon creation behavior |
+| markerColor     | Color of the marker (css class)             | `'blue'`      | `'red'`, `'orange-dark'`, `'orange'`, `'yellow'`, `'blue-dark'`, `'cyan'`, `'purple'`, `'violet'`, `'pink'`, `'green-dark'`, `'green'`, `'green-light'`, `'black'`, or `'white'` |
+| number          | Instead of an icon, add plain text          | `''`          | `'1'` or `'A'`, must use icon fa-number |
+| prefix          | Select the icon library                     | `'glyphicon'` | `fa` for font-awesome or 'glyphicon' for bootstrap 3 |
+| shape           | Shape of the marker (css class)             | `'circle'`    | `'circle'`, `'square'`, `'star'`, or `'penta'` |
 
 ## License
 - Leaflet.ExtraMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.
