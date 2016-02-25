@@ -57,12 +57,12 @@ Now use the plugin to create a marker like this:
 | Property        | Description                                 | Default Value | Possible  values                                     |
 | --------------- | ------------------------------------------- | ------------- | ---------------------------------------------------- |
 | extraClasses    | Additional classes in the created `<i>` tag | `''`          | `fa-rotate90 myclass`; space delimited classes to add |
-| icon            | Name of the icon **with** prefix            | `''`          | `fa-coffee` see glyphicons or font-awesome  |
+| icon            | Name of the icon **with** prefix            | `''`          | `fa-coffee` (see icon library's documentation)  |
 | iconColor       | Color of the icon                           | `'white'`     | `'white'`, `'black'` or css code (hex, rgba etc) |
 | innerHTML       | Custom HTML code                            | `''`          | `<svg>`, images, or other HTML; a truthy assignment will override the default html icon creation behavior |
 | markerColor     | Color of the marker (css class)             | `'blue'`      | `'red'`, `'orange-dark'`, `'orange'`, `'yellow'`, `'blue-dark'`, `'cyan'`, `'purple'`, `'violet'`, `'pink'`, `'green-dark'`, `'green'`, `'green-light'`, `'black'`, or `'white'` |
-| number          | Instead of an icon, add plain text          | `''`          | `'1'` or `'A'`, must use icon fa-number |
-| prefix          | Select the icon library                     | `'glyphicon'` | `fa` for font-awesome or 'glyphicon' for bootstrap 3 |
+| number          | Instead of an icon, define a plain text     | `''`          | `'1'` or `'A'`, must set `icon: 'fa-number'` |
+| prefix          | The icon library's base class               | `'glyphicon'` | `fa` (see icon library's documentation) |
 | shape           | Shape of the marker (css class)             | `'circle'`    | `'circle'`, `'square'`, `'star'`, or `'penta'` |
 
 ## License
