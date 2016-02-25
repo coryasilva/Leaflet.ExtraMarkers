@@ -14,9 +14,7 @@ Version 1.0 of Leaflet.extra-markers is designed for:
 - [Ion Icons 2.0.1](http://ionicons.com/)
 - Leaflet 0.5-Latest
 
-
 ## Using the plugin
-
 
 ##### 1. Requirements #####
 
@@ -54,7 +52,6 @@ Now use the plugin to create a marker like this:
 ````
 ---
 
-
 ### Properties
 
 | Property        | Description                               | Default Value | Possible  values                                     |
@@ -67,9 +64,6 @@ Now use the plugin to create a marker like this:
 | number          | Add a text number to the icon             | ''            | '1' or 'A', must use icon fa-number |
 | prefix          | Select de icon library                    | 'glyphicon'   | 'fa' for font-awesome or 'glyphicon' for bootstrap 3 |
 | shape           | Shape of the marker                       | 'circle'      | 'circle', 'square', 'star', or 'penta' |
-| spin            | REMOVED                                   | false         | true or false. Font-awesome required |
-
-
 
 ## License
 - Leaflet.ExtraMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.

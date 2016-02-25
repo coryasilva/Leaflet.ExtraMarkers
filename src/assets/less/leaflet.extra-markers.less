@@ -1,6 +1,15 @@
+// Path should include a trailing slash
+@extra-markers-image-path: "img/";
+
+@extra-markers-sprite-url: "@{extra-markers-image-path}markers_default.png";
+@extra-markers-sprite-retina-url: "@{extra-markers-image-path}markers_default@2x.png";
+@extra-markers-shadow-url: "@{extra-markers-image-path}markers_shadow.png";
+@extra-markers-shadow-retina-url: "@{extra-markers-image-path}markers_shadow@2x.png";
+
+
 /* Marker setup */
 .extra-marker {
-  background: url('images/markers_default.png') no-repeat 0 0;
+  background: url(@extra-markers-sprite-url) no-repeat 0 0;
   width: 35px;
   height: 46px;
   position:absolute;
@@ -11,7 +20,7 @@
 }
 
 .extra-marker-shadow {
-  background: url('images/markers_shadow.png') no-repeat 0 0;
+  background: url(@extra-markers-shadow-url) no-repeat 0 0;
   width: 36px;
   height: 16px;
 }
@@ -20,11 +29,11 @@
 @media (min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),
 (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx) {
   .extra-marker {
-    background-image: url('images/markers_default@2x.png');
+    background-image: url(@extra-markers-sprite-retina-url);
     background-size: 540px 184px;
   }
   .extra-marker-shadow {
-    background-image: url('images/markers_shadow@2x.png');
+    background-image: url(@extra-markers-shadow-retina-url);
     background-size: 35px 16px;
   }
 }

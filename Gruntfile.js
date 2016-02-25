@@ -1,27 +1,13 @@
 module.exports = function(grunt) {
 
-  /*****************************************************
-     ____                           __
-    /\  _`\                        /\ \__
-    \ \ \L\_\  _ __   __  __    ___\ \ ,_\
-     \ \ \L_L /\`'__\/\ \/\ \ /' _ `\ \ \/
-      \ \ \/, \ \ \/ \ \ \_\ \/\ \/\ \ \ \_
-       \ \____/\ \_\  \ \____/\ \_\ \_\ \__\
-        \/___/  \/_/   \/___/  \/_/\/_/\/__/
-
-  *****************************************************/
-
   'use strict';
 
   // require it at the top and pass in the grunt instance
   require('time-grunt')(grunt);
 
   /*****************************************************
-
-    Grunt Init Config
-
+    Grunt Init Config:
     load each task config into grunt via require
-
   *****************************************************/
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -34,11 +20,8 @@ module.exports = function(grunt) {
 
   });
 
-
   /*****************************************************
-
     Dev Tasks - Compile and check files withing the /src/assets/ directory
-
   *****************************************************/
 
   // Default grunt task compiles & checks dev files
@@ -54,11 +37,8 @@ module.exports = function(grunt) {
     grunt.task.run('jshint:all', 'uglify:dev');
   });
 
-
   /*****************************************************
-
     Dist Tasks
-
   *****************************************************/
 
   // 'grunt build' global build command for both less and js files
@@ -81,7 +61,4 @@ module.exports = function(grunt) {
     grunt.task.run('less:build');
   });
 
-
-
 };
-
