@@ -1,11 +1,3 @@
-/*!
- * Leaflet.extra-markers
- * Custom Markers for Leaflet JS based on Awesome Markers
- * Leaflet ExtraMarkers
- * https://github.com/coryasilva/Leaflet.ExtraMarkers/
- * @author coryasilva <https://github.com/coryasilva>
- * @version 1.0.5
- */
 (function(window, document, undefined) {
     "use strict";
     L.ExtraMarkers = {};
