@@ -100,10 +100,11 @@ L.marker([32.995, -117.260], {
 }).addTo(map);
 L.marker([32.995, -117.255], {
     icon: L.ExtraMarkers.icon({
-        icon: 'glyphicon-certificate',
+        icon: 'fa-number',
         shape: 'penta',
-        prefix: 'glyphicon',
-        markerColor: 'green'
+        prefix: 'fa',
+        markerColor: 'green',
+        number: '1'
     })
 }).addTo(map);
 L.marker([32.995, -117.250], {
