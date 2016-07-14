@@ -9,7 +9,7 @@
             popupAnchor: [ 1, -32 ],
             shadowAnchor: [ 10, 12 ],
             shadowSize: [ 36, 16 ],
-            className: "extra-marker",
+            className: "",
             prefix: "",
             extraClasses: "",
             shape: "circle",
@@ -84,7 +84,7 @@
             if (!anchor && size) {
                 anchor = size.divideBy(2, true);
             }
-            img.className = "leaflet-marker-" + leafletName + " extra-marker-" + name + " " + options.className;
+            img.className = "leaflet-marker-" + leafletName + " extra-marker extra-marker-" + name + " " + options.className;
             if (anchor) {
                 img.style.marginLeft = -anchor.x + "px";
                 img.style.marginTop = -anchor.y + "px";
