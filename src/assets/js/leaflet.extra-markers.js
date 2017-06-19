@@ -1,7 +1,7 @@
 (function(window, document, undefined) {
     "use strict";
     L.ExtraMarkers = {};
-    L.ExtraMarkers.version = "1.0.1";
+    L.ExtraMarkers.version = "1.0.6";
     L.ExtraMarkers.Icon = L.Icon.extend({
         options: {
             iconSize: [ 35, 45 ],
