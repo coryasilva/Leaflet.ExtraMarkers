@@ -130,3 +130,16 @@ L.marker([32.995, -117.240], {
         markerColor: 'white'
     })
 }).addTo(map);
+
+//adds pop up to each marker 
+map.eachLayer(function (layer) {
+    if(layer._icon && layer._icon.className.includes('leaflet-marker-icon')) {
+        var popUpTextArray = [];
+        console.log(layer)
+        popUpTextArray.push('icon: ' + layer.options.icon.options.icon);
+        popUpTextArray.push('shape: ' + layer.options.icon.options.shape);
+        popUpTextArray.push('markerColor: ' + layer.options.icon.options.markerColor);
+        var popUpText = popUpTextArray.join('<br />');
+        layer.bindPopup(popUpText);
+    }
+});
