@@ -48,7 +48,7 @@ Now use the plugin to create a marker like this:
     prefix: 'fa'
   });
 
-  L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
+  L.marker([51.941196,4.512291], {icon: redMarker}).addTo(map);
 ````
 ---
 
