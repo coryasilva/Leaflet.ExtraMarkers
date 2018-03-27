@@ -15,7 +15,7 @@ declare module "leaflet" {
             markerColor?: "red" | "orange-dark" | "orange" | "yellow" | "blue" | "blue-dark" | "cyan" | "purple"
             | "violet" | "pink" | "green-dark" | "green" | "green-light" | "black" | "white";
             /** Instead of an icon, define a plain text. */
-            number: string;
+            number?: string;
             /** The icon library's base class. Default value 'glyphicon'. */
             prefix?: string;
             /** Shape of the marker (css class). Default value 'circle'. */
