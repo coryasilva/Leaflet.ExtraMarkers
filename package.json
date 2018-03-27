@@ -10,6 +10,7 @@
     "url": "https://github.com/coryasilva/Leaflet.ExtraMarkers"
   },
   "main": "dist/js/leaflet.extra-markers.js",
+  "types": "dist/leaflet.extra-markers.d.ts",
   "peerDependencies": {
     "leaflet": ">= 0.5 < 2"
   },
