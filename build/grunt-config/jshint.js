@@ -4,6 +4,7 @@ module.exports = {
     eqeqeq: true,
     eqnull: true,
     browser: true,
+    esversion: 6,
     globals: {
       jQuery: true
     },
