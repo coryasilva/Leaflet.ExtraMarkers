@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     less: require('./build/grunt-config/less'), // Config to compile and autoprefix less files
     uglify: require('./build/grunt-config/uglify'),
     jshint: require('./build/grunt-config/jshint'), // Lint Javascript
-
+    rollup: require('./build/grunt-config/rollup-config')
   });
 
   /*****************************************************
@@ -33,8 +33,9 @@ module.exports = function(grunt) {
   // Javascript Dev Build - Checks for Errors in Javascript
   grunt.registerTask('js-dev', [], function(){
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-rollup');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.task.run('jshint:all', 'uglify:dev');
+    grunt.task.run('jshint:all', 'rollup', 'uglify:build');
   });
 
   /*****************************************************
@@ -50,8 +51,9 @@ module.exports = function(grunt) {
   // 'grunt js-build' compiles only javascript
   grunt.registerTask('js-build', [], function(){
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-rollup');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.task.run('jshint:all', 'uglify:build');
+    grunt.task.run('jshint:all', 'rollup', 'uglify:build');
   });
 
 

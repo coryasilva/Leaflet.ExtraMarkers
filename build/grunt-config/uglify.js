@@ -9,12 +9,12 @@ module.exports = {
         beautify: true,
       },
       files: {
-        '<%= project.paths.js %>/<%= pkg.name %>.js': ['<%= project.paths.js %>/<%= pkg.name %>.js']
+        '<%= project.paths.js_dist %>/<%= pkg.name %>.js.min.js': ['<%= project.paths.js_dist %>/<%= pkg.name %>.js']
       }
     },
     build: {
       files: {
-        '<%= project.paths.js_dist %>/<%= pkg.name %>.min.js': ['<%= project.paths.js %>/<%= pkg.name %>.js']
+        '<%= project.paths.js_dist %>/<%= pkg.name %>.min.js': ['<%= project.paths.js_dist %>/<%= pkg.name %>.js']
       }
     },
 };
