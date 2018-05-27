@@ -4,7 +4,7 @@
  * Leaflet ExtraMarkers
  * https://github.com/coryasilva/Leaflet.ExtraMarkers/
  * @author coryasilva <https://github.com/coryasilva>
- * @version 1.0.6
+ * @version 1.0.7
  */
 
 (function (global, factory) {
@@ -14,7 +14,7 @@
 }(this, (function (exports) { 'use strict';
 
     var ExtraMarkers = L.ExtraMarkers = {};
-    ExtraMarkers.version = L.ExtraMarkers.version = "1.0.6";
+    ExtraMarkers.version = L.ExtraMarkers.version = "1.0.7";
     ExtraMarkers.Icon = L.ExtraMarkers.Icon = L.Icon.extend({
         options: {
             iconSize: [ 35, 45 ],

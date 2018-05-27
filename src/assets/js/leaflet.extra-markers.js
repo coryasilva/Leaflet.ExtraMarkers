@@ -1,5 +1,5 @@
 export var ExtraMarkers = L.ExtraMarkers = {};
-ExtraMarkers.version = L.ExtraMarkers.version = "1.0.6";
+ExtraMarkers.version = L.ExtraMarkers.version = "1.0.7";
 ExtraMarkers.Icon = L.ExtraMarkers.Icon = L.Icon.extend({
     options: {
         iconSize: [ 35, 45 ],
