@@ -6,7 +6,6 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     detectRetina: true
 }).addTo(map);
 
-
 // Add markers to map
 // Font-Awesome markers
 L.marker([33.005, -117.270], {
@@ -64,7 +63,7 @@ L.marker([33.005, -117.245], {
 }).addTo(map);
 L.marker([33.005, -117.240], {
     icon: L.ExtraMarkers.icon({
-        icon: 'loading',
+        icon: 'sync',
         shape: 'penta',
         markerColor: 'purple',
         prefix: 'icon'
@@ -102,7 +101,6 @@ L.marker([32.995, -117.255], {
     icon: L.ExtraMarkers.icon({
         icon: 'fa-number',
         shape: 'penta',
-        prefix: 'fa',
         markerColor: 'green',
         number: '1'
     })
@@ -119,13 +117,17 @@ L.marker([32.995, -117.250], {
 // No Icons
 L.marker([32.995, -117.245], {
     icon: L.ExtraMarkers.icon({
-        icon: '',
+        icon: 'fa-number',
+        number: '42',
         shape: 'square',
         markerColor: 'black'
     })
 }).addTo(map);
 L.marker([32.995, -117.240], {
     icon: L.ExtraMarkers.icon({
+        icon: 'fa-number',
+        number: '42',
+        iconColor: 'black',
         shape: 'star',
         markerColor: 'white'
     })
