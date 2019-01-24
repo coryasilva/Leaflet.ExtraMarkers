@@ -6,6 +6,7 @@ module.exports = {
 		js: 'src/assets/js',
 		js_dist: 'dist/js',
 	},
+	name: 'leaflet.extra-markers',
 	banner:
 		'/*!\n' +
 		' * <%= pkg.name %>\n' +

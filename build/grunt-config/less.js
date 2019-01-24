@@ -7,7 +7,7 @@ module.exports = {
 			paths: ["src/assets/css"]
 		},
 		files: {
-			'<%= project.paths.css %>/<%= pkg.name %>.css': '<%= project.paths.less %>/<%= pkg.name %>.less'
+			'<%= project.paths.less %>/<%= project.name %>.css': '<%= project.paths.less %>/<%= project.name %>.less'
 		}
 	},
 	build: {
@@ -20,7 +20,7 @@ module.exports = {
 			],
 		},
 		files: {
-			'<%= project.paths.css_dist %>/<%= pkg.name %>.min.css': '<%= project.paths.less %>/<%= pkg.name %>.less'
+			'<%= project.paths.css_dist %>/<%= project.name %>.min.css': '<%= project.paths.less %>/<%= project.name %>.less'
 		}
 	}
 };

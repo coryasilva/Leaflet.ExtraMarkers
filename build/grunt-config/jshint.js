@@ -11,6 +11,6 @@ module.exports = {
   },
   all: [
     'Gruntfile.js',
-    '<%= project.paths.js %>/<%= pkg.name %>.js',
+    '<%= project.paths.js %>/<%= project.name %>.js',
   ],
 };
