@@ -39,46 +39,64 @@
 }
 
 /* Icons */
-.extra-marker i {
-  color: #fff;
-  margin-top: 7px;
-  display: inline-block;
-  font-size: 14px;
-}
+.extra-marker {
+  svg, i {
+    color: #fff;
+    margin-top: 7px;
+    display: inline-block;
+    font-size: 14px;
+  }
 
-/* Font Awesome */
-.extra-marker i.fa {
-  &.fa {
+  i {
+    margin-top: 7px;
+  }
+
+  svg {
     margin-top: 10px;
+    background: none;
   }
-  &.fa-2x {
-    font-size: 16px;
-    margin-top: 9px;
+
+  /* Font Awesome */
+  i.fa, svg.fa,
+  i.fab, svg.fab,
+  i.fas, svg.fas,
+  i.far, svg.far,
+  i.fal, svg.fal {
+    margin-top: 10px;
+    &.fa-2x {
+      font-size: 16px;
+      margin-top: 9px;
+    }
+    &.fa-3x {
+      font-size: 18px;
+      margin-top: 9px;
+    }
+    &.fa-4x {
+      font-size: 20px;
+      margin-top: 8px;
+    }
+    &.fa-5x {
+      font-size: 24px;
+      margin-top: 6px;
+    }
   }
-  &.fa-3x {
-    font-size: 18px;
-    margin-top: 9px;
+
+  .fa-number:before {
+    content: attr(number)
   }
-  &.fa-4x {
-    font-size: 20px;
-    margin-top: 8px;
-  }
-  &.fa-5x {
-    font-size: 24px;
-    margin-top: 5px;
-  }
-}
 
 /* Bootstrap 3 */
-.extra-marker i.glyphicon {
-  margin-top: 10px;
-}
+  i.glyphicon {
+    margin-top: 10px;
+  }
 
 /* Semantic UI Fix */
-.extra-marker i.icon {
-  margin-right: 0;
-  opacity: 1;
-}
+  i.icon {
+    margin-right: 0;
+    opacity: 1;
+  }
+
+} //end extra-marker
 
 /* Sprites setup */
 .extra-marker-circle-red          { background-position: 0          0 }
@@ -144,7 +162,3 @@
 .extra-marker-penta-green-light   { background-position: -432px     -138px }
 .extra-marker-penta-black         { background-position: -468px     -138px }
 .extra-marker-penta-white         { background-position: -504px     -138px }
-
-.extra-marker .fa-number:before {
-	content: attr(number)
-}

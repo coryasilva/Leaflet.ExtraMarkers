@@ -5,13 +5,12 @@
 ### <a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a> 
 
 ## Icons
-Version 1.0 of Leaflet.extra-markers is designed for:
+Leaflet.extra-markers is designed for:
 - [Bootstrap 3 icons](http://twitter.github.com/bootstrap/)
-  -  [Getting Started Guide](http://getbootstrap.com/getting-started/)
-- [Font Awesome 4.0](http://fortawesome.github.com/Font-Awesome/)
-  - [Getting Started Guide](http://fortawesome.github.io/Font-Awesome/get-started/)
-- [Semantic UI 0.9.8 icons](http://semantic-ui.com/)
-- [Ion Icons 2.0.1](http://ionicons.com/)
+- [Font Awesome 4.x](http://fortawesome.github.com/Font-Awesome/)
+- [Font Awesome 5.x](http://fortawesome.github.com/Font-Awesome/)
+- [Semantic UI 2.x icons](http://semantic-ui.com/)
+- [Ion Icons 2.x](http://ionicons.com/)
 - Leaflet 0.5-Latest
 
 ## Using the plugin
