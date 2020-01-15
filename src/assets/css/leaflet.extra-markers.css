@@ -38,6 +38,10 @@
   }
 }
 
+.extra-marker .svg-inline--fa {
+    margin-top: 12px;
+}
+
 .extra-marker i {
   color: #fff;
   margin-top: 7px;
