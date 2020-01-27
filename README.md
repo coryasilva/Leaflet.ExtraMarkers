@@ -63,6 +63,9 @@ Now use the plugin to create a marker like this:
 | number          | Instead of an icon, define a plain text     | `''`          | `'1'` or `'A'`, must set `icon: 'fa-number'` |
 | prefix          | The icon library's base class               | `'glyphicon'` | `fa` (see icon library's documentation) |
 | shape           | Shape of the marker (css class)             | `'circle'`    | `'circle'`, `'square'`, `'star'`, or `'penta'` |
+| svg             | Use SVG version                             | `false`       | true or false
+| svgBorderColor  | Color for SVG border                        | `'#fff'`      | any valid hex color
+| svgOpacity      | Opacity of SVG marker                       | `1`           | decimal range from 0 to 1
 
 ## License
 - Leaflet.ExtraMarkers and colored markers are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.

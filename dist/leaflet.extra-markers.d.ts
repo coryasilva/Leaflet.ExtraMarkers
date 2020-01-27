@@ -20,6 +20,12 @@ declare module "leaflet" {
             prefix?: string;
             /** Shape of the marker (css class). Default value 'circle'. */
             shape?: "circle" | "square" | "star" | "penta";
+            /** Use SVG version of marker. Default value false. */
+            svg?: boolean;
+            /** Hex Color for SVG border. Default value '#fff'. */
+            svgBorderColor?: string;
+            /** Opacity of SVG marker. Default value 1. */
+            svgOpacity?: number;
         }
 
         export class Icon extends L.Icon {
