@@ -1,147 +1,99 @@
 // Setup map
-var map = L.map('map').setView([33.00, -117.255], 14);
+const shapes = ['circle', 'square', 'star', 'penta'];
+const colors = ['red', 'orange-dark', 'orange', 'yellow', 'blue-dark', 'cyan', 'purple', 'violet', 'pink', 'green-dark', 'green', 'white', 'black'];
+const space = 0.005;
+const lat = 33.000;
+const lng = -117.255;
+const lats = shapes.slice().map((shape,i) => lat-(space * i));
+const lngs = colors.slice().map((x,i) => lng+(space * i));
+const rows = lats.map((y) => lngs.map(x => [y, x]));
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-    detectRetina: true
-}).addTo(map);
+// Define test cases
+const tests = [{
+  icon: 'fa-spinner',
+  prefix: 'fa',
+  extraClasses: 'fa-spin',
+},{
+  icon: 'fa-coffee',
+  prefix: 'fa',
+  iconColor: 'black',
+  iconRotate: 270,
+},{
+  icon: 'fa-cog',
+  prefix: 'fa',
+  extraClasses: 'fa-5x',
+  iconColor: '#6b1d5c',
+},{
+  icon: 'fa-spinner',
+  prefix: 'fa',
+},{
+  icon: 'fa-spinner',
+  prefix: 'fa',
+  extraClasses: 'fa-spin',
+  svg: true,
+},{
+  icon: 'add sign',
+  prefix: 'icon',
+  svg: true,
+},{
+  icon: ' archive',
+  prefix: 'icon',
+},{
+  icon: 'sync',
+  prefix: 'icon',
+},{
+  icon: 'plus sign',
+  prefix: 'icon',
+},{
+  icon: 'glyphicon-cog',
+  prefix: 'glyphicon',
+},{
+  icon: 'fa-igloo',
+  prefix: 'fas',
+},{
+  icon: 'fa-number',
+  number: '1',
+},{
+  icon: 'glyphicon-cog',
+  prefix: 'glyphicon',
+},{
+  icon: 'fa-number',
+  number: '42',
+  svg: true,
+}];
 
-// Add markers to map
-// Font-Awesome markers
-L.marker([33.005, -117.270], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-spinner',
-        shape: 'circle',
-        markerColor: 'red',
-        prefix: 'fa',
-        extraClasses: 'fa-spin'
-    })
-}).addTo(map);
-L.marker([33.005, -117.265], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-coffee',
-        shape: 'square',
-        markerColor: 'orange-dark',
-        prefix: 'fa',
-        iconColor: 'black'
-    })
-}).addTo(map);
-L.marker([33.005, -117.260], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-cog',
-        shape: 'star',
-        prefix: 'fa',
-        markerColor: 'orange',
-        iconColor: '#6b1d5c'
-    })
-}).addTo(map);
-L.marker([33.005, -117.255], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-spinner',
-        shape: 'penta',
-        markerColor: 'yellow',
-        prefix: 'fa'
-    })
-}).addTo(map);
+// Create map
+const map = L.map('map').setView([lat - shapes.length / 2 * space, lng + colors.length / 2 * space], 14);
 
-//Semantic UI
-L.marker([33.005, -117.250], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'add sign',
-        shape: 'circle',
-        markerColor: 'blue-dark',
-        prefix: 'icon'
-    })
-}).addTo(map);
-L.marker([33.005, -117.245], {
-    icon: L.ExtraMarkers.icon({
-        icon: ' archive',
-        shape: 'square',
-        markerColor: 'cyan',
-        prefix: 'icon'
-    })
-}).addTo(map);
-L.marker([33.005, -117.240], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'sync',
-        shape: 'penta',
-        markerColor: 'purple',
-        prefix: 'icon'
-    })
-}).addTo(map);
+// Add test cases
+rows.forEach((row, shapeIdx) => {
+  row.forEach((col, colorIdx) => {
+    L.marker(col, {
+      icon: L.ExtraMarkers.icon(
+        Object.assign(
+          {},
+          tests[(shapeIdx * row.length + colorIdx) % tests.length],
+          {shape: shapes[shapeIdx], markerColor: colors[colorIdx]}
+        )
+      )
+    }).addTo(map);
+  })
+});
 
-// Second Row
-L.marker([32.995, -117.270], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'plus sign',
-        shape: 'circle',
-        markerColor: 'violet',
-        prefix: 'icon'
-    })
-}).addTo(map);
-
-// Glyphicons
-L.marker([32.995, -117.265], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'glyphicon-cog',
-        shape: 'square',
-        prefix: 'glyphicon',
-        markerColor: 'pink'
-    })
-}).addTo(map);
-L.marker([32.995, -117.260], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'glyphicon-bell',
-        shape: 'star',
-        prefix: 'glyphicon',
-        markerColor: 'green-dark'
-    })
-}).addTo(map);
-L.marker([32.995, -117.255], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-number',
-        shape: 'penta',
-        markerColor: 'green',
-        number: '1'
-    })
-}).addTo(map);
-L.marker([32.995, -117.250], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'glyphicon-cog',
-        shape: 'circle',
-        prefix: 'glyphicon',
-        markerColor: 'green-light'
-    })
-}).addTo(map);
-
-// No Icons
-L.marker([32.995, -117.245], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-number',
-        number: '42',
-        shape: 'square',
-        markerColor: 'black'
-    })
-}).addTo(map);
-L.marker([32.995, -117.240], {
-    icon: L.ExtraMarkers.icon({
-        icon: 'fa-number',
-        number: '42',
-        iconColor: 'black',
-        shape: 'star',
-        markerColor: 'white'
-    })
-}).addTo(map);
-
-//adds pop up to each marker 
+// Add pop up to each marker 
 map.eachLayer(function (layer) {
-    if(layer._icon && layer._icon.className.includes('leaflet-marker-icon')) {
-        var popUpTextArray = [];
-        console.log(layer)
-        popUpTextArray.push('icon: ' + layer.options.icon.options.icon);
-        popUpTextArray.push('shape: ' + layer.options.icon.options.shape);
-        popUpTextArray.push('markerColor: ' + layer.options.icon.options.markerColor);
-        var popUpText = popUpTextArray.join('<br />');
-        layer.bindPopup(popUpText);
-    }
+  if (layer._icon && layer._icon.className.includes('leaflet-marker-icon')) {
+    var popUpTextArray = [];
+    popUpTextArray.push('shape: \'' + layer.options.icon.options.shape + '\'');
+    popUpTextArray.push('markerColor: \'' + layer.options.icon.options.markerColor + '\'');
+    popUpTextArray.push('prefix: \'' + layer.options.icon.options.prefix + '\'');
+    popUpTextArray.push('icon: \'' + layer.options.icon.options.icon + '\'');
+    popUpTextArray.push('iconColor: \'' + layer.options.icon.options.iconColor + '\'');
+    popUpTextArray.push('iconRotate: ' + layer.options.icon.options.iconRotate);
+    popUpTextArray.push('extraClasses: \'' + layer.options.icon.options.extraClasses + '\'');
+    popUpTextArray.push('number: \'' + layer.options.icon.options.number + '\'');
+    popUpTextArray.push('svg: ' + layer.options.icon.options.svg);
+    var popUpText = popUpTextArray.join('<br />');
+    layer.bindPopup(popUpText);
+  }
 });
