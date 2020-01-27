@@ -6,10 +6,12 @@
 @extra-markers-shadow-url: "@{extra-markers-image-path}markers_shadow.png";
 @extra-markers-shadow-retina-url: "@{extra-markers-image-path}markers_shadow@2x.png";
 
+@extra-marker-width: 35px;
+
 /* Marker setup */
 .extra-marker {
   background: url(@extra-markers-sprite-url) no-repeat 0 0;
-  width: 35px;
+  width: @extra-marker-width;
   height: 46px;
   position:absolute;
   left:0;
@@ -33,7 +35,7 @@
   }
   .extra-marker-shadow {
     background-image: url(@extra-markers-shadow-retina-url);
-    background-size: 35px 16px;
+    background-size: @extra-marker-width 16px;
   }
 }
 
@@ -47,8 +49,8 @@
   &.extra-marker-svg .svg-inline--fa,
   &.extra-marker-svg i {
     position: absolute;
-    top: -2px;
-    left: 9px;
+    left: 0;
+    width: @extra-marker-width;
   }
 
   .svg-inline--fa,

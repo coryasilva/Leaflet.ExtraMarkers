@@ -52,6 +52,7 @@ const tests = [{
   icon: 'fa-coffee',
   prefix: 'fa',
   iconColor: 'black',
+  iconRotate: 270,
 },{
   icon: 'fa-cog',
   prefix: 'fa',
@@ -93,10 +94,7 @@ const tests = [{
 },{
   icon: 'fa-number',
   number: '42',
-},{
-  icon: 'fa-number',
-  number: '42',
-  iconColor: 'black',
+  svg: true,
 }];
 
 // Create map
@@ -126,11 +124,10 @@ map.eachLayer(function (layer) {
     popUpTextArray.push('prefix: \'' + layer.options.icon.options.prefix + '\'');
     popUpTextArray.push('icon: \'' + layer.options.icon.options.icon + '\'');
     popUpTextArray.push('iconColor: \'' + layer.options.icon.options.iconColor + '\'');
+    popUpTextArray.push('iconRotate: ' + layer.options.icon.options.iconRotate);
     popUpTextArray.push('extraClasses: \'' + layer.options.icon.options.extraClasses + '\'');
     popUpTextArray.push('number: \'' + layer.options.icon.options.number + '\'');
     popUpTextArray.push('svg: ' + layer.options.icon.options.svg);
-    popUpTextArray.push('svgBorderColor: \'' + layer.options.icon.options.svgBorderColor + '\'');
-    popUpTextArray.push('svgOpacity: ' + layer.options.icon.options.svgOpacity);
     var popUpText = popUpTextArray.join('<br />');
     layer.bindPopup(popUpText);
   }

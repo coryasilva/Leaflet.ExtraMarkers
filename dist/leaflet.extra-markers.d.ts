@@ -9,6 +9,8 @@ declare module "leaflet" {
             icon?: string;
             /** Color of the icon. Default value 'white'. */
             iconColor?: string;
+            /** Rotates the icon with css transformations. Default value 0. */
+            iconRotation?: numeric;
             /** Custom HTML code. */
             innerHTML?: string;
             /** Color of the marker (css class). Default value 'blue'. */
@@ -22,9 +24,9 @@ declare module "leaflet" {
             shape?: "circle" | "square" | "star" | "penta";
             /** Use SVG version of marker. Default value false. */
             svg?: boolean;
-            /** Hex Color for SVG border. Default value '#fff'. */
+            /** DEPRECATED No Effect. Default value '#fff'. */
             svgBorderColor?: string;
-            /** Opacity of SVG marker. Default value 1. */
+            /** DEPRECATED: No effect. Default value 1. */
             svgOpacity?: number;
         }
 
