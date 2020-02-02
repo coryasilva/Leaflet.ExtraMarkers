@@ -10,7 +10,7 @@ declare module "leaflet" {
             /** Color of the icon. Default value 'white'. */
             iconColor?: string;
             /** Rotates the icon with css transformations. Default value 0. */
-            iconRotation?: numeric;
+            iconRotation?: number;
             /** Custom HTML code. */
             innerHTML?: string;
             /** Color of the marker (css class). Default value 'blue'. */
