@@ -34,7 +34,8 @@
             iconColor: "#fff",
             iconRotate: 0,
             number: "",
-            svg: false
+            svg: false,
+            name: ""
         },
         initialize: function(options) {
             options = L.Util.setOptions(this, options);
@@ -110,7 +111,13 @@
             if (options.svg) {
                 result += this._createSvg(options.shape, this._getColorHex(options.markerColor));
             }
+
             result += '<i ' + iconNumber + 'style="' + iconStyle + '" class="' + iconClass + '"></i>';
+
+            if (options.name.length) {
+                result += '<div class="' + (options.nameClasses !== undefined ? options.nameClasses : '') + '">' + options.name + '</div>';
+            }
+
             return result;
         },
         _setIconStyles: function(img, name) {
