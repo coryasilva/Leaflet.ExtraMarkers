@@ -1,5 +1,5 @@
 const rollupGitVersion = require('rollup-plugin-git-version');
-const json = require('rollup-plugin-json');
+const json = require('@rollup/plugin-json');
 const gitRev = require('git-rev-sync');
 
 const pkg = require('../../package.json');
