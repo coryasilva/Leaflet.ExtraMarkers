@@ -1,5 +1,7 @@
 import * as L from "leaflet";
 
+type HEX = `#${string}`;
+
 declare module "leaflet" {
     export namespace ExtraMarkers {
         export interface IconOptions extends L.BaseIconOptions {
@@ -15,7 +17,7 @@ declare module "leaflet" {
             innerHTML?: string;
             /** Color of the marker (css class). Default value 'blue'. */
             markerColor?: "red" | "orange-dark" | "orange" | "yellow" | "blue" | "blue-dark" | "cyan" | "purple"
-            | "violet" | "pink" | "green-dark" | "green" | "green-light" | "black" | "white";
+            | "violet" | "pink" | "green-dark" | "green" | "green-light" | "black" | "white" | HEX;
             /** Instead of an icon, define a plain text. */
             number?: string;
             /** The icon library's base class. Default value 'glyphicon'. */
