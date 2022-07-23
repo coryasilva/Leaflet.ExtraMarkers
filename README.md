@@ -68,7 +68,7 @@ Now use the plugin to create a marker like this:
 | extraClasses    | Additional classes in the created `<i>` tag | `''`          | `fa-rotate90 myclass`; space delimited classes to add |
 | icon            | Name of the icon **with** prefix            | `''`          | `fa-coffee` (see icon library's documentation)  |
 | iconColor       | Color of the icon                           | `'white'`     | `'white'`, `'black'` or css code (hex, rgba etc) |
-| iconRotation    | Rotates the icon with css transformations   | `0`           | numeric degrees
+| iconRotate    | Rotates the icon with css transformations   | `0`           | numeric degrees
 | innerHTML       | Custom HTML code                            | `''`          | `<svg>`, images, or other HTML; a truthy assignment will override the default html icon creation behavior |
 | markerColor     | Color of the marker (css class)             | `'blue'`      | `'red'`, `'orange-dark'`, `'orange'`, `'yellow'`, `'blue-dark'`, `'cyan'`, `'purple'`, `'violet'`, `'pink'`, `'green-dark'`, `'green'`, `'green-light'`, `'black'`, `'white'`, or color hex code **if `svg` is true** |
 | number          | Instead of an icon, define a plain text     | `''`          | `'1'` or `'A'`, must set `icon: 'fa-number'` |
