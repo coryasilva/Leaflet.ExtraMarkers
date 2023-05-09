@@ -2,7 +2,7 @@
   "name": "leaflet-extra-markers",
   "title": "Leaflet ExtraMarkers",
   "url": "https://github.com/coryasilva/Leaflet.ExtraMarkers/",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Custom Markers for Leaflet JS based on Awesome Markers",
   "author": "coryasilva <https://github.com/coryasilva>",
   "repository": {
