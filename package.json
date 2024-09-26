@@ -24,7 +24,7 @@
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-uglify": "^4.0.1",
-    "grunt-rollup": "^9.0.0",
+    "grunt-rollup": "^12.0.0",
     "less-plugin-autoprefix": "^2.0.0",
     "rollup-plugin-git-version": "^0.3.1",
     "time-grunt": "^2.0.0",
