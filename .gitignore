@@ -1,60 +1,18 @@
-### General Ignores ###
-
+# General
+node_modules
 .idea
+.vscode
 *~
 
-
-
-
-
-### Operating System Ignores ###
-
-# Windows image file caches
+# OS
 Thumbs.db
 ehthumbs.db
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-
-# OSX
-
 .DS_Store
-.AppleDouble
-.LSOverride
 
-# Icon must end with two \r
-Icon
-
-
-
-###Node###
-
-# Logs
-logs
-*.log
-
-# Runtime data
+# Runtime
 pids
 *.pid
 *.seed
+logs
+*.log
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Dependency directory
-# Commenting this out is preferred by some people, see
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
-node_modules
-
-# Users Environment Variables
-.lock-wscript
