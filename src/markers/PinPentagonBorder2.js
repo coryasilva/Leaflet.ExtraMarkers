@@ -1,0 +1,31 @@
+/**
+ * @name PinPentagonBorder2
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgNDEiPiAgPHBhdGggZD0iTTIyLjQ5IDJjMS4yMSAwIDIuMzEuNzEgMi44IDEuODJsNC40NSAxMGMuMzguODYuMzQgMS44Ni0uMTEgMi43TDE1Ljg4IDQwLjQ4YTEgMSAwIDAgMS0xLjc2IDBMLjM3IDE2LjUyYTMuMDYgMy4wNiAwIDAgMS0uMS0yLjdsNC40My0xMEEzLjEgMy4xIDAgMCAxIDcuNTEgMmgxNC45OFoiLz4gIDxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIyLjQ5IDJjMS4yMSAwIDIuMzEuNzEgMi44IDEuODJsNC40NSAxMGMuMzguODYuMzQgMS44Ni0uMTEgMi43TDE1Ljg4IDQwLjQ4YTEgMSAwIDAgMS0xLjc2IDBMLjM3IDE2LjUyYTMuMDYgMy4wNiAwIDAgMS0uMS0yLjdsNC40My0xMEEzLjEgMy4xIDAgMCAxIDcuNTEgMmgxNC45OFpNNy41MSA0Yy0uNDMgMC0uOC4yNS0uOTguNjNsLTQuNDQgMTBjLS4xMy4zLS4xMi42NC4wNC45M3YuMDFsMTIuNDQgMjEuNjdhLjUuNSAwIDAgMCAuODYgMGwxMi40NC0yMS42N3YtLjAxYy4xNC0uMjUuMTctLjU1LjA4LS44MmwtLjA0LS4xMS00LjQ0LTEwYTEuMDcgMS4wNyAwIDAgMC0uODItLjYyaC0uMTNMMjIuNSA0aC0xNVoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==)
+ */
+export const PinPentagonBorder2 = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "41",
+    fill: "currentColor",
+    viewBox: "0 0 30 41",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M22.49 2c1.21 0 2.31.71 2.8 1.82l4.45 10c.38.86.34 1.86-.11 2.7L15.88 40.48a1 1 0 0 1-1.76 0L.37 16.52a3.06 3.06 0 0 1-.1-2.7l4.43-10A3.1 3.1 0 0 1 7.51 2h14.98Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M22.49 2c1.21 0 2.31.71 2.8 1.82l4.45 10c.38.86.34 1.86-.11 2.7L15.88 40.48a1 1 0 0 1-1.76 0L.37 16.52a3.06 3.06 0 0 1-.1-2.7l4.43-10A3.1 3.1 0 0 1 7.51 2h14.98ZM7.51 4c-.43 0-.8.25-.98.63l-4.44 10c-.13.3-.12.64.04.93v.01l12.44 21.67a.5.5 0 0 0 .86 0l12.44-21.67v-.01c.14-.25.17-.55.08-.82l-.04-.11-4.44-10a1.07 1.07 0 0 0-.82-.62h-.13L22.5 4h-15Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];

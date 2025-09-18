@@ -1,0 +1,31 @@
+/**
+ * @name PointTriangleBorder
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzAiPiAgPHBhdGggZD0iTTEzLjYyLjM0YTIuOTggMi45OCAwIDAgMSAyLjk0LjFjNy41NyA0LjYzIDEyLjc0IDEyLjUyIDEzLjQzIDIxLjQ3YTMuMDYgMy4wNiAwIDAgMS0xLjY2IDIuOTcgMjguNzMgMjguNzMgMCAwIDEtMTIuMTYgMy4xbC0uNTcuMDJhMyAzIDAgMCAxLS4xIDBoLTEuMWwtLjU3LS4wMmgtLjA0bC0uODctLjA1aC0uMDRhMjguNjMgMjguNjMgMCAwIDEtMTEuMi0zLjA1QTMuMDYgMy4wNiAwIDAgMSAwIDIxLjlDLjcgMTIuOTYgNS44OCA1LjA3IDEzLjQ0LjQ0bC4xOC0uMVoiLz4gIDxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjYyLjM0YTIuOTkgMi45OSAwIDAgMSAyLjk0LjFDMjQuMTMgNS4wNiAyOS4zIDEyLjk2IDI5Ljk5IDIxLjlhMy4wNiAzLjA2IDAgMCAxLTEuNjYgMi45NyAyOC43MyAyOC43MyAwIDAgMS0xMi4xNiAzLjFsLS41Ny4wMmgtMS4ybC0uNTctLjAyaC0uMDRsLS44Ny0uMDVoLS4wNGEyOC42MyAyOC42MyAwIDAgMS0xMS4yLTMuMDVBMy4wNiAzLjA2IDAgMCAxIDAgMjEuOUMuNyAxMi45NiA1Ljg4IDUuMDYgMTMuNDQuNDRsLjE4LS4xWm0yLjQyLjk1YTEuOTkgMS45OSAwIDAgMC0xLjk0LS4wOGwtLjE0LjA4LS42OC40M0EyNi43OCAyNi43OCAwIDAgMCAxLjAxIDIxLjk5Yy0uMDcuODQuMzggMS42MiAxLjExIDJhMjcuNjMgMjcuNjMgMCAwIDAgMTAuODEgMi45NGguMDRsLjg3LjA1aC4wM2wuNTYuMDJoMS4xM2wuNTctLjAyYTI3LjczIDI3LjczIDAgMCAwIDExLjc1LTMgMi4wNiAyLjA2IDAgMCAwIDEuMTEtMmMtLjY2LTguNi01LjY0LTE2LjIyLTEyLjk1LTIwLjY5WiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PC9zdmc+)
+ */
+export const PointTriangleBorder = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "30",
+    fill: "currentColor",
+    viewBox: "0 0 30 30",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M13.62.34a2.98 2.98 0 0 1 2.94.1c7.57 4.63 12.74 12.52 13.43 21.47a3.06 3.06 0 0 1-1.66 2.97 28.73 28.73 0 0 1-12.16 3.1l-.57.02a3 3 0 0 1-.1 0h-1.1l-.57-.02h-.04l-.87-.05h-.04a28.63 28.63 0 0 1-11.2-3.05A3.06 3.06 0 0 1 0 21.9C.7 12.96 5.88 5.07 13.44.44l.18-.1Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M13.62.34a2.99 2.99 0 0 1 2.94.1C24.13 5.06 29.3 12.96 29.99 21.9a3.06 3.06 0 0 1-1.66 2.97 28.73 28.73 0 0 1-12.16 3.1l-.57.02h-1.2l-.57-.02h-.04l-.87-.05h-.04a28.63 28.63 0 0 1-11.2-3.05A3.06 3.06 0 0 1 0 21.9C.7 12.96 5.88 5.06 13.44.44l.18-.1Zm2.42.95a1.99 1.99 0 0 0-1.94-.08l-.14.08-.68.43A26.78 26.78 0 0 0 1.01 21.99c-.07.84.38 1.62 1.11 2a27.63 27.63 0 0 0 10.81 2.94h.04l.87.05h.03l.56.02h1.13l.57-.02a27.73 27.73 0 0 0 11.75-3 2.06 2.06 0 0 0 1.11-2c-.66-8.6-5.64-16.22-12.95-20.69Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];

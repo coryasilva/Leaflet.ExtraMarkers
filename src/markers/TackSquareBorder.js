@@ -1,0 +1,31 @@
+/**
+ * @name TackSquareBorder
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzUiPiAgPHBhdGggZD0iTTI0IDJjLjk3IDAgMS45MS4zNiAyLjY0IDFsLjE0LjEzQzI3LjU1IDMuODggMjggNC45MyAyOCA2djE4YTQgNCAwIDAgMS00IDRoLTQuMTJhMiAyIDAgMCAwLTEuODUgMS4yNGwtMi4xIDUuMTRhMSAxIDAgMCAxLTEuOC4xM2wtLjA2LS4xMy0yLjEtNS4xM0EyIDIgMCAwIDAgMTAuMTIgMjhINmE0IDQgMCAwIDEtNC00VjZhNCA0IDAgMCAxIDQtNGgxOFoiLz4gIDxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTI0IDJjLjk3IDAgMS45MS4zNiAyLjY0IDFsLjE0LjEzQTQgNCAwIDAgMSAyOCA2djE4YTQgNCAwIDAgMS00IDRoLTQuMTJhMiAyIDAgMCAwLTEuODUgMS4yNGwtMi4xIDUuMTRhMSAxIDAgMCAxLTEuOC4xM2wtLjA2LS4xMy0yLjEtNS4xM0EyIDIgMCAwIDAgMTAuMTIgMjhINmE0IDQgMCAwIDEtNC00VjZhNCA0IDAgMCAxIDQtNGgxOFpNNiAzYTMgMyAwIDAgMC0zIDN2MThhMyAzIDAgMCAwIDMgM2g0LjEyYTMgMyAwIDAgMSAyLjc3IDEuODdsMS42NCA0YS41LjUgMCAwIDAgLjkzIDBsMS42NS00QTMgMyAwIDAgMSAxOS44OCAyN0gyNGEzIDMgMCAwIDAgMy0zVjZjMC0uOC0uMzMtMS41OC0uOS0yLjE0bC0uMDItLjAxLS4xMS0uMS0uMDEtLjAyQTMuMDEgMy4wMSAwIDAgMCAyNCAzSDZaIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)
+ */
+export const TackSquareBorder = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "35",
+    fill: "currentColor",
+    viewBox: "0 0 30 35",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M24 2c.97 0 1.91.36 2.64 1l.14.13C27.55 3.88 28 4.93 28 6v18a4 4 0 0 1-4 4h-4.12a2 2 0 0 0-1.85 1.24l-2.1 5.14a1 1 0 0 1-1.8.13l-.06-.13-2.1-5.13A2 2 0 0 0 10.12 28H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h18Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M24 2c.97 0 1.91.36 2.64 1l.14.13A4 4 0 0 1 28 6v18a4 4 0 0 1-4 4h-4.12a2 2 0 0 0-1.85 1.24l-2.1 5.14a1 1 0 0 1-1.8.13l-.06-.13-2.1-5.13A2 2 0 0 0 10.12 28H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h18ZM6 3a3 3 0 0 0-3 3v18a3 3 0 0 0 3 3h4.12a3 3 0 0 1 2.77 1.87l1.64 4a.5.5 0 0 0 .93 0l1.65-4A3 3 0 0 1 19.88 27H24a3 3 0 0 0 3-3V6c0-.8-.33-1.58-.9-2.14l-.02-.01-.11-.1-.01-.02A3.01 3.01 0 0 0 24 3H6Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];

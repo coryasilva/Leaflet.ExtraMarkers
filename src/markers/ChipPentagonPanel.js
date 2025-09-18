@@ -1,0 +1,31 @@
+/**
+ * @name ChipPentagonPanel
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMyIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzMiPiAgPHBhdGggZD0iTTIxLjcxIDJjMS44IDAgMy4zOCAxLjEyIDMuOTQgMi43N2w0LjE1IDEyLjM2YTMuOSAzLjkgMCAwIDEtMS4wNiA0LjFMMTcuOSAzMS43NmEzLjk5IDMuOTkgMCAwIDEtNS44IDBMMS4yMyAyMS4yMmEzLjkxIDMuOTEgMCAwIDEtMS4wMy00LjFMNC4zNSA0Ljc4QTQuMTIgNC4xMiAwIDAgMSA4LjI4IDJoMTMuNDNaIi8+ICA8cGF0aCBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMS43MSAyYzEuOCAwIDMuMzggMS4xMiAzLjk0IDIuNzZsNC4xNSAxMi4zNmEzLjk0IDMuOTQgMCAwIDEtMS4wNiA0LjEyTDE3LjkgMzEuNzVhMy45OSAzLjk5IDAgMCAxLTUuOCAwTDEuMjMgMjEuMjFBMy45MSAzLjkxIDAgMCAxIC4yIDE3LjEyTDQuMzUgNC43N0E0LjEyIDQuMTIgMCAwIDEgOC4yOCAyaDEzLjQ0Wk04LjMgNGMtLjkxIDAtMS42Ny41My0xLjk4IDEuMjVsLS4wNi4xNUwyLjEgMTcuNzZjLS4yNy43OS4wMSAxLjY4Ljc1IDIuMmwxMC44NyA3LjY0Yy43Ni41MyAxLjguNTMgMi41NiAwbDEwLjg3LTcuNjRhMS45MyAxLjkzIDAgMCAwIC43NS0yLjJMMjMuNzUgNS40QTIuMTIgMi4xMiAwIDAgMCAyMS43MiA0SDguMjlaIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)
+ */
+export const ChipPentagonPanel = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "33",
+    fill: "currentColor",
+    viewBox: "0 0 30 33",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M21.71 2c1.8 0 3.38 1.12 3.94 2.77l4.15 12.36a3.9 3.9 0 0 1-1.06 4.1L17.9 31.76a3.99 3.99 0 0 1-5.8 0L1.23 21.22a3.91 3.91 0 0 1-1.03-4.1L4.35 4.78A4.12 4.12 0 0 1 8.28 2h13.43Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M21.71 2c1.8 0 3.38 1.12 3.94 2.76l4.15 12.36a3.94 3.94 0 0 1-1.06 4.12L17.9 31.75a3.99 3.99 0 0 1-5.8 0L1.23 21.21A3.91 3.91 0 0 1 .2 17.12L4.35 4.77A4.12 4.12 0 0 1 8.28 2h13.44ZM8.3 4c-.91 0-1.67.53-1.98 1.25l-.06.15L2.1 17.76c-.27.79.01 1.68.75 2.2l10.87 7.64c.76.53 1.8.53 2.56 0l10.87-7.64a1.93 1.93 0 0 0 .75-2.2L23.75 5.4A2.12 2.12 0 0 0 21.72 4H8.29Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];
