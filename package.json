@@ -1,34 +1,55 @@
 {
   "name": "leaflet-extra-markers",
-  "title": "Leaflet ExtraMarkers",
-  "url": "https://github.com/coryasilva/Leaflet.ExtraMarkers/",
-  "version": "1.2.2",
-  "description": "Custom Markers for Leaflet JS based on Awesome Markers",
-  "author": "coryasilva <https://github.com/coryasilva>",
+  "version": "2.0.0",
+  "description": "Custom map markers for Leaflet JS",
+  "homepage": "https://github.com/coryasilva/Leaflet.ExtraMarkers#readme",
+  "bugs": {
+    "url": "https://github.com/coryasilva/Leaflet.ExtraMarkers/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/coryasilva/Leaflet.ExtraMarkers"
   },
-  "main": "dist/js/leaflet.extra-markers.js",
-  "types": "dist/leaflet.extra-markers.d.ts",
+  "author": {
+    "name": "Cory Silva",
+    "url": "https://corysilva.com"
+  },
+  "keywords": [
+    "leaflet",
+    "map",
+    "mapmarker",
+    "markers",
+    "pin",
+    "symbol",
+    "symbology"
+  ],
+  "main": "leaflet.extra-markers.js",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./colors": {
+      "types": "./src/colors/index.d.ts",
+      "default": "./src/colors/index.js"
+    }
+  },
   "scripts": {
-    "start": "grunt",
-    "build": "grunt build"
+    "test": "xo && ava && tsc index.d.ts",
+    "build:markers": "node ./scripts/build-markers.js",
+    "optimize": "node ./scripts/optimize-svgs.js"
   },
   "peerDependencies": {
-    "leaflet": ">= 0.5 < 2"
+    "leaflet": "^2.0.0-alpha.1"
   },
   "devDependencies": {
-    "git-rev-sync": "^1.12.0",
-    "grunt": "^1.1.0",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-less": "^2.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-rollup": "^9.0.0",
-    "less-plugin-autoprefix": "^2.0.0",
-    "rollup-plugin-git-version": "^0.3.1",
-    "time-grunt": "^2.0.0",
-    "@rollup/plugin-json": "^4.0.3"
-  },
-  "dependencies": {}
+    "ava": "^6.4.1",
+    "leaflet": "^2.0.0-alpha.1",
+    "prettier": "^3.6.2",
+    "svgson": "^5.3.1",
+    "typescript": "^5.3.3",
+    "xo": "^1.2.2"
+  }
 }

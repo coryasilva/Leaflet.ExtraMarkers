@@ -2,10 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ES2022",
-    "moduleResolution": "Bundler",
-    "checkJs": true
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "checkJs": true,
   },
   "include": [
-    "./*.d.ts"
-  ]
+    "src/**/*.js",
+    "src/**/*.d.ts"
+  ],
 }
