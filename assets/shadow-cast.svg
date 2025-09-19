@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="34" height="36" fill="currentColor" viewBox="0 0 34 36">
+<svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" fill="currentColor" viewBox="0 0 39 36">
   <g filter="url(#a)">
-    <path fill="url(#b)" d="M20 4.34c7.3.76 11.47 6.93 9.54 12.27a9.99 9.99 0 0 1-3.9 4.77L10.92 31.8a1.2 1.2 0 0 1-.93.19c-.34-.07-.6-.27-.68-.5L7 16.97c-.39-2 .12-4.76 1.08-6.77C10.64 5.96 13.16 3.63 20 4.34Z"/>
+    <path fill="url(#b)" d="M25 4.34c7.3.76 11.47 6.93 9.54 12.27a9.99 9.99 0 0 1-3.9 4.77L15.92 31.8a1.2 1.2 0 0 1-.93.19c-.34-.07-.6-.27-.68-.5L12 16.97c-.39-2 .12-4.76 1.08-6.77C15.64 5.96 18.16 3.63 25 4.34Z"/>
   </g>
   <defs>
-    <linearGradient id="b" x1="22" x2="8.84" y1="6" y2="31.86" gradientUnits="userSpaceOnUse">
+    <linearGradient id="b" x1="27" x2="14.75" y1="6" y2="32.33" gradientUnits="userSpaceOnUse">
       <stop stop-opacity="0"/>
       <stop offset="1" stop-opacity=".32"/>
     </linearGradient>
-    <filter id="a" width="31.14" height="35.78" x="2.87" y=".22" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <filter id="a" width="31.14" height="35.78" x="7.87" y=".22" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
       <feGaussianBlur result="effect1_foregroundBlur_53_1294" stdDeviation="2"/>
