@@ -1,6 +1,7 @@
 const spaceRegex = /\s+/;
 
-export const setAttributes = (element, attributes) => {
+export const setAttributes = (element, attributes = {}) => {
+  if (!attributes) return;
   for (const [key, value] of Object.entries(attributes)) {
     if (typeof value === "undefined") {
       continue;
@@ -32,14 +33,14 @@ export const appendChildren = (el, children, creator) => {
   el.append(frag)
 }
 
-export const createSvgElement = ([tag, attributes, children = []]) => {
+export const createSvgElement = ([tag, attributes, children]) => {
   const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
   if (attributes) setAttributes(el, attributes)
   if (children?.length) appendChildren(el, children, createSvgElement)
   return el;
 };
 
-export const createElement = ([tag, attributes, children = []]) => {
+export const createElement = ([tag, attributes, children]) => {
   const el = document.createElement(tag);
   if (attributes) setAttributes(el, attributes)
   if (children?.length) appendChildren(el, children, createElement)

@@ -104,7 +104,7 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
    * The shadow variant.
    * @default "cast"
    */
-  shadow?: "cast" | "ellipse" | "none";
+  shadow?: "cast" | "drop" | "ellipse" | "none";
   /**
    * The size (width) of the SVG marker/icon; height will
    * be scaled proportionately.

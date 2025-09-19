@@ -5,7 +5,7 @@ import {
   ElementParams,
 } from "./types.js";
 
-export function setAttributes(element: Element, attributes: ElementAttributes): void;
+export function setAttributes(element: Element, attributes?: ElementAttributes): void;
 export function appendChildren(
     element: Element,
     children: ElementChildren,
