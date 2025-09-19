@@ -162,7 +162,6 @@ These are the options you can pass into the `new Icon()` contructor. Note that t
   svgStyle?;
 ```
 
-
 ### createSvgElement
 // TODO:
 
@@ -193,7 +192,7 @@ Each icon **family** has many **shapes**:
 Each **shape** has many optional **variants**:
 - `border-1` is a relative 1px border 
 - `border-2` is a relative 2px border 
-- `panel` is a relative 2px border th a solid fill on the arrow part.
+- `panel` is a relative 2px border th a solid fill on the marker tail/pointer.
 
 The variants are designed to completely cover the base shape so you can have fun with [opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity), [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), or [mix-blend-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode).
 
@@ -201,9 +200,9 @@ The SVG Icons are designed on a base 30px wide grid. The height varies per icon 
 
 ### Shadows
 
-The SVG shadows are inlined as data uris to increase performance. It is possible to a custom shadow by passing in a `shadowUrl` options.
+The SVG shadows are inlined as data URIs to increase performance. It is possible to a custom shadow by passing in a `shadowUrl` options.
 
-The following script was used to efficently encode the svgs uris.
+The following script was used to efficently encode the shadow SVGs into data URIs.
 
 ```sh
 npx mini-svg-data-uri ./assets/shadow-ellipse.svg
