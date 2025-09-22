@@ -1,6 +1,7 @@
 /**
  * @name PointSquare
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzAiPiAgPHBhdGggZD0iTTI0IDJhNCA0IDAgMCAxIDQgNHYxOGE0IDQgMCAwIDEtNCA0SDZhNCA0IDAgMCAxLTQtNFY2YTQgNCAwIDAgMSA0LTRoMThaIi8+PC9zdmc+)
+ * @type {Array}
  */
 export const PointSquare = [
   "svg",

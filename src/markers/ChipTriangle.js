@@ -1,6 +1,7 @@
 /**
  * @name ChipTriangle
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMyIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzMiPiAgPHBhdGggZD0iTTEzLjQ0LjQ0YTMgMyAwIDAgMSAyLjk0LS4xbC4xOC4xQzI0LjEyIDUuMDYgMjkuMyAxMi45NiAyOS45OSAyMS45di4yNmwuMDEuMDNhMyAzIDAgMCAxLTEuMzcgMi41MkwxNy4yNiAzMi4zYTMuOTggMy45OCAwIDAgMS00LjUyIDBMMS4zNyAyNC43MkEzIDMgMCAwIDEgMCAyMi4ydi0uM0MuNyAxMi45NiA1Ljg4IDUuMDcgMTMuNDUuNDRaIi8+PC9zdmc+)
+ * @type {Array}
  */
 export const ChipTriangle = [
   "svg",

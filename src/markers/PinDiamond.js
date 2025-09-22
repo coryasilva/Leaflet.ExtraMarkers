@@ -1,6 +1,7 @@
 /**
  * @name PinDiamond
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgNDEiPiAgPHBhdGggZD0iTTEyLjIgMS4xNmEzLjk3IDMuOTcgMCAwIDEgNS42IDBMMjguODUgMTIuMmEzLjk5IDMuOTkgMCAwIDEgLjM5IDUuMTZMMTUuOTMgNDAuNGExIDEgMCAwIDEtMS44My4wNUwuNjkgMTcuMjRhMy45NyAzLjk3IDAgMCAxIC40Ny01LjA1TDEyLjIgMS4xNloiLz48L3N2Zz4=)
+ * @type {Array}
  */
 export const PinDiamond = [
   "svg",

@@ -1,6 +1,7 @@
 /**
  * @name ChipPentagon
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMyIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzMiPiAgPHBhdGggZD0iTTIxLjcxIDJjMS44IDAgMy4zOCAxLjEyIDMuOTQgMi43N2w0LjE1IDEyLjM2YTMuOSAzLjkgMCAwIDEtMS4wNiA0LjFMMTcuOSAzMS43NmEzLjk5IDMuOTkgMCAwIDEtNS44IDBMMS4yMyAyMS4yMmEzLjkxIDMuOTEgMCAwIDEtMS4wMy00LjFMNC4zNSA0Ljc4QTQuMTIgNC4xMiAwIDAgMSA4LjI4IDJoMTMuNDNaIi8+PC9zdmc+)
+ * @type {Array}
  */
 export const ChipPentagon = [
   "svg",

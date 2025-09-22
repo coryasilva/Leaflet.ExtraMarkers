@@ -1,6 +1,7 @@
 /**
  * @name ChipSquare
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMyIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzMiPiAgPHBhdGggZD0iTTI0IDJhNCA0IDAgMCAxIDQgNHYxOGE0IDQgMCAwIDEtMiAzLjQ3bC04LjI1IDQuN2E0Ljk4IDQuOTggMCAwIDEtNS41IDBsLTguMTItNC42My0uMjMtLjE0QTQgNCAwIDAgMSAyIDI0VjZhNCA0IDAgMCAxIDQtNGgxOFoiLz48L3N2Zz4=)
+ * @type {Array}
  */
 export const ChipSquare = [
   "svg",

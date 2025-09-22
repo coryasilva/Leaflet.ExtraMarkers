@@ -1,6 +1,7 @@
 /**
  * @name PinPentagon
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgNDEiPiAgPHBhdGggZD0iTTIyLjQ5IDJjMS4yMSAwIDIuMzEuNzEgMi44IDEuODJsNC40NSAxMGMuMzguODYuMzQgMS44Ni0uMTEgMi43TDE1Ljg4IDQwLjQ4YTEgMSAwIDAgMS0xLjc2IDBMLjM3IDE2LjUyYTMuMDYgMy4wNiAwIDAgMS0uMS0yLjdsNC40My0xMEEzLjEgMy4xIDAgMCAxIDcuNTEgMmgxNC45OFoiLz48L3N2Zz4=)
+ * @type {Array}
  */
 export const PinPentagon = [
   "svg",

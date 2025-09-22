@@ -1,4 +1,5 @@
 /**
+ * @name ChipCircle
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMyIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzMiPiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTUgMWExNCAxNCAwIDAgMSA5LjggMjRsLTYuMTcgNi40NGE0Ljk5IDQuOTkgMCAwIDEtNy4yNiAwTDUuMiAyNUExNCAxNCAwIDAgMSAxNSAxWiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PC9zdmc+)
  * @type {Array}
  */

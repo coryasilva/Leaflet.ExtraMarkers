@@ -1,6 +1,7 @@
 /**
  * @name PinCircle
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgNDEiPiAgPHBhdGggZD0iTTE1IDFhMTQgMTQgMCAwIDEgMTEuODMgMjEuNDlsLTExIDE4LjAyYTEgMSAwIDAgMS0xLjczIDBMMy4xNSAyMi40NUExNCAxNCAwIDAgMSAxNSAxWiIvPjwvc3ZnPg==)
+ * @type {Array}
  */
 export const PinCircle = [
   "svg",

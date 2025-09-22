@@ -1,6 +1,7 @@
 /**
  * @name PointTriangle
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzAiPiAgPHBhdGggZD0iTTEzLjYyLjM0YTIuOTggMi45OCAwIDAgMSAyLjk0LjFjNy41NyA0LjYzIDEyLjc0IDEyLjUyIDEzLjQzIDIxLjQ3YTMuMDYgMy4wNiAwIDAgMS0xLjY2IDIuOTcgMjguNzMgMjguNzMgMCAwIDEtMTIuMTYgMy4xbC0uNTcuMDJhMyAzIDAgMCAxLS4xIDBoLTEuMWwtLjU3LS4wMmgtLjA0bC0uODctLjA1aC0uMDRhMjguNjMgMjguNjMgMCAwIDEtMTEuMi0zLjA1QTMuMDYgMy4wNiAwIDAgMSAwIDIxLjlDLjcgMTIuOTYgNS44OCA1LjA3IDEzLjQ0LjQ0bC4xOC0uMVoiLz48L3N2Zz4=)
+ * @type {Array}
  */
 export const PointTriangle = [
   "svg",

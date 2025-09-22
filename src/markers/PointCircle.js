@@ -1,6 +1,7 @@
 /**
  * @name PointCircle
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzAiPiAgPHBhdGggZD0iTTE1IDFhMTQgMTQgMCAxIDEgMCAyOCAxNCAxNCAwIDAgMSAwLTI4WiIvPjwvc3ZnPg==)
+ * @type {Array}
  */
 export const PointCircle = [
   "svg",
