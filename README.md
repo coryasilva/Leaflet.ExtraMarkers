@@ -1,14 +1,12 @@
 # Leaflet extra markers v2
 
-// TODO: createSvgElement api + example
-// TODO: createElement api + example
-// TODO: Marker variants demo
-// TODO: Shadows demo
-// TODO: Sizes demo
-// TODO: Content + Icons demo
+// TODO: Impl Origin (for point markers)
+// TODO: Color demo
 // TODO: 1000 markers demo
 // TODO: React demo
 // TODO: Update screenshot
+// TODO: Route to examples/demos in gh
+<!-- FIXME: **<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>** -->
 
 ![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")
 
@@ -18,10 +16,10 @@ A collection of fine SVG map markers that can easily be colored, resized, or ove
 - [**Getting started**](#getting-started)
 - [**Demos**](#demos)
 - [**API**](#api)
-  - [**Icon**](#icon)
-  - [**ExtraOptions**](#extraoptions)
-  - [**createSvgElement**](#createSvgElement)
-  - [**createElement**](#createElement)
+  - [**Icon**](#class-icon)
+  - [**ExtraOptions**](#interface-extraoptions)
+  - [**createElement**](#function-createelementparams-elementparams-htmlelement)
+  - [**createSvgElement**](#function-createsvgelementparams-elementparams-svgelement)
 - [**Design**](#design)
   - [**SVG**](#svg)
   - [**Shadows**](#shadows)
@@ -43,7 +41,7 @@ const marker = new Marker([32.82,-117.43], {
   icon: new Icon({
     accentColor: "firebrick",
     color: "indianred",
-    content: "42"
+    content: "42",
     contentColor: "white",
     size: 25,
     svg: PinCirclePanel,
@@ -52,8 +50,7 @@ const marker = new Marker([32.82,-117.43], {
 ```
 
 ## Demos
-<!-- FIXME: **<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>** -->
-- [**Marker variants**]()
+- [**Marker options**]()
 - [**Shadows**]()
 - [**Sizes**]()
 - [**Content + Icons**]()
@@ -62,9 +59,24 @@ const marker = new Marker([32.82,-117.43], {
 
 ## API
 
-### Icon
+### `class Icon`
 The Icon class extends [Leaflet's Icon class](https://leafletjs.com/reference-2.0.0.html#icon).
 
+```ts
+import { Marker } from "leaflet";
+import { Icon, PinCirclePanel } from "leaflet-extra-markers";
+
+const marker = new Marker([32.82,-117.43], {
+	icon: new Icon({
+		accentColor: "firebrick",
+		color: "indianred",
+		content: "42",
+		contentColor: "white",
+		size: 25,
+		svg: PinCirclePanel,
+	}),
+});
+```
 ```ts
 class Icon extends IconBase<ExtraOptions> {
   constructor(options: ExtraOptions);
@@ -73,112 +85,156 @@ class Icon extends IconBase<ExtraOptions> {
 }
 ```
 
-### ExtraOptions
-These are the options you can pass into the `new Icon()` contructor. Note that this class extend [Leaflet's Icon class](https://leafletjs.com/reference-2.0.0.html#icon), while these options are supported for escape hatches, they should not be used in most circumstances.
-```ts
-  /**
-   * The icon/marker (`Marker.icon` in leaflet) svg node.
-   * @default PinTeardropBorder
-   */
-  svg?: SvgNode;
-  /**
-   * The accent color is applied to the icon variant and also
-   * the dot on the empty state.
-   * @default "#fff"
-   */
-  accentColor?: string;
-  /**
-   * The icon/marker color. Will be set on the `root.style.color property.
-   * The SVG icon `fill` is set to `currentColor` to inherit this color.
-   * 
-   * Note: This setting could be overwritten by `rootStyle.color`.
-   * @default "#000"
-   */
-  color?: string;
-  /**
-   * The content node to append to the `contentWrapper`.
-   * This will be ignored if `contentHtml is set.
-   * @default <div style="...transparent dot styles" />
-   */
-  content?: Content | ((opts: IconOptions) => Content);
-  /**
-   * Dangerously sets innerHTML of the contentWrapper.
-   * If set this will override the `content` property.
-   * WARNING: Possible XSS vector; sanitize user inputs if using this.
-   */
-  contentHtml?: string;
-  /**
-   * The content (wrapper) color. Will be set on the `contentWrapper.style.color property.
-   * Note: This setting could be overwritten by `contentWrapperStyle.color`.
-   * @default "#fff"
-   */
-  contentColor?: string;
-  /**
-   * The shadow variant.
-   * @default "cast"
-   */
-  shadow?: "cast" | "drop" | "ellipse" | "none";
-  /**
-   * The size (width) of the SVG marker/icon; height will
-   * be scaled proportionately.
-   * @default 30
-   */
-  size?: number;
-    /**
-   * The CSS class names added to the `contentWrapper` element.
-   */
-  contentWrapperClass?: string;
-  /**
-   * The styles to set on `contentWrapper` element.
-   * @default {}
-   */
-  contentWrapperStyle?: CSSStyleDeclaration
-  /**
-   * The CSS class names added to the `root` element.
-   */
-  rootClass?: string;
-  /**
-   * The styles to set on `root` element.
-   * @default {}
-   */
-  rootStyle?: CSSStyleDeclaration;
-  /**
-   * The CSS class names added to the `shadow` element.
-   */
-  shadowClass?: string;
-  /**
-   * The styles to set on `shadow` element.
-   * @default {}
-   */
-  shadowStyle?: CSSStyleDeclaration;
-  /**
-   * The CSS class names added to the `svg` element.
-   */
-  svgClass?;
-  /**
-   * The styles to set on `svg` element.
-   * @default {}
-   */
-  svgStyle?;
+### `interface ExtraOptions`
+These are the options you can pass into the `new Icon()` contructor. Note that this interface extends [Leaflet's IconOption](https://leafletjs.com/reference-2.0.0.html#icon-option), while these base options are supported as escape hatches, they should not be used in most circumstances.
+
+#### `svg: SvgNode | undefined`
+The marker (`Marker.icon` in leaflet) svg node.
+
+*Default*: `"#000"`
+
+#### `accentColor: string | undefined`
+The accent color is applied to the icon variant and also
+the dot on the empty state.
+
+*Default*: `"#fff"`
+
+#### `color: string | undefined`
+The marker color. Will be set on the `root.style.color property.
+The SVG path for the base marker shape has a `fill` set to `currentColor` to inherit this color.
+
+Note: This setting could be overwritten by `rootStyle.color`.
+
+*Default*: `"#000"`.
+
+#### `content: Content | ((opts: ExtraOptions) => Content) | undefined`
+The content node to append to the `contentWrapper`.
+This will be ignored if `contentHtml is set.
+
+*Default*:
+```js
+createElement(["div", {
+	style: {
+		display: "block",
+		height: "0.8em",
+		width: "0.8em",
+		backgroundColor: accentColor,
+		borderRadius: "100%",
+	},
+}]);
 ```
 
-### createSvgElement
-// TODO:
+#### `contentHtml: string | undefined`
+Dangerously sets innerHTML of the contentWrapper.
+If set this will override the `content` property.
+WARNING: Possible XSS vector; sanitize user inputs if using this.
 
-### createElement
-// TODO: 
+Example: `<i class="fa fa-coffee" />`
+
+#### `contentColor: string | undefined`
+The content (wrapper) color. Will be set on the `contentWrapper.style.color property.
+
+Note: This setting could be overwritten by `contentWrapperStyle.color`.
+
+*Default*: `"#fff"`
+
+#### `shadow: "cast" | "drop" | "ellipse" | "none" | undefined`
+The shadow variant.
+
+*Default*: `"cast"`
+
+#### `size: number | undefined`
+The size (width) of the SVG marker/icon; height will be scaled proportionately.
+
+Note: The markers are designed on a base 30px wide grid.
+
+*Default*: `30`
+
+#### `contentWrapperClass: string | undefined`
+The CSS class names added to the `contentWrapper` element.
+
+#### `contentWrapperStyle: CSSStyleDeclaration | undefined`
+The styles to set on `contentWrapper` element.
+
+*Default*: `{}`
+
+#### `rootClass: string | undefined`
+The CSS class names added to the `root` element.
+
+#### `rootStyle: CSSStyleDeclaration | undefined`
+The styles to set on `root` element.
+
+*Default*: `{}`
+
+#### `shadowClass: string | undefined`
+The CSS class names added to the `shadow` element.
+
+#### `shadowStyle: CSSStyleDeclaration | undefined`
+The styles to set on `shadow` element.
+
+*Default*: `{}`
+
+#### `svgClass: string | undefined`
+The CSS class names added to the `svg` element.
+
+#### `svgStyle: CSSStyleDeclaration | undefined`
+The styles to set on `svg` element.
+
+*Default*: `{}`
+
+### `function createElement(params: ElementParams): HTMLElement`
+Creates HTML element recursively from a data structure. Efficently uses document fragements and support style objects and class arrays -- skipping falsy values.
+
+```js
+const svg = createElement([
+	"i",
+	{
+		"data-foo": "bar"
+		style: {
+			filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))",
+		},
+		class: [
+			"fa",
+			isCafe && "fa-coffee",
+		],
+	},
+	[
+		// Optionally pass in children with same structure.
+	]
+])
+```
+
+### `function createSvgElement(params: ElementParams): SVGElement`
+Creates SVG element recursively from a data structure. Efficently uses document fragements and support style objects and class arrays -- skipping falsy values.
+
+```js
+const svg = createSvgElement([
+	"svg",
+	{
+		width: "30px",
+		height: "30px",
+		style: {
+			filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))",
+		},
+		class: [
+			"extra-marker-icon",
+		],
+	},
+	["circle", { cx: "10", cy: "10", r: "5", fill: "currentColor" }],
+])
+```
 
 ## Design
 
-Original marker/icon design file (Figma) is located at `./assets/markers.fig`.
+Original marker design file (Figma) is located at `./assets/markers.fig`.
 
 ### SVG
 
-The Marker Icons are divided into 4 **families**:
+The markers are divided into 4 **families**:
 - `pin` - taller map markers; like a pushpin; origin at bottom center
-- `tack` - short map marker; like a thumbtack; origin at bottom center
-- `chip` - shorter map marker; like a poker chip; origin at bottom center
-- `point` - simple point marker; origin at center center
+- `tack` - short map markers; like a thumbtack; origin at bottom center
+- `chip` - shorter map markers; like a poker chip; origin at bottom center
+- `point` - simple point markers; origin at center center
 
 Each icon **family** has many **shapes**:
 - `circle`
@@ -186,17 +242,17 @@ Each icon **family** has many **shapes**:
 - `pentagon`
 - `square`
 - `star`
-- `teardrop` (only for `pin` set)
+- `teardrop` (only for `pin` family)
 - `triangle`
 
 Each **shape** has many optional **variants**:
-- `border-1` is a relative 1px border 
-- `border-2` is a relative 2px border 
+- `border-1` is a relative 1px border
+- `border-2` is a relative 2px border
 - `panel` is a relative 2px border th a solid fill on the marker tail/pointer.
 
 The variants are designed to completely cover the base shape so you can have fun with [opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity), [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), or [mix-blend-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode).
 
-The SVG Icons are designed on a base 30px wide grid. The height varies per icon **family**.
+The SVG Icons are designed on a base 30px wide grid. The height varies per icon family.
 
 ### Shadows
 
@@ -217,7 +273,7 @@ Below is the HTML structure of the Marker Icon.
     <!-- `svg` -->
     <div> <!-- `contentWrapper` -->
       <!-- `content` or `contentHtml` -->
-    </div>  
+    </div>
   </div>
 </div>
 
@@ -230,16 +286,35 @@ Below is the HTML structure of the Marker Icon.
 
 ### V1 to V2
 Version 2 is a complete rewrite to support svg only icons with no image or css file dependencies.
-- V2 requires Leaflet v2.
-- Remove referenced CSS files
-- Remove referenced image files
-- Icon options/properties mapping
+1. Upgrade to Leaflet v2.
+2. Remove referenced CSS files.
+3. Remove referenced image files.
+4. Update Icon options/properties per the mapping below:
   - `extraClasses` --> `rootClass`.
   - `icon` --> `content` or `contentHtml`.
   - `iconColor` --> `contentColor`.
   - `iconRotate` - removed; instead add the appropriate class or style to the element passed into `content`.
   - `innerHtml` - removed.
-  - `markerColor` --> `color`; note that named colors have been moved to a color palette.  `import { legacy } from "leaflet-extra-markers/colors/index.js"`
+  - `markerColor` --> `color`; note that named colors have been removed. The legacy color mapping is below;
+	```js
+	const colors: {
+		"red": "#a23337",
+		"orange": "#ef9227",
+		"orange-dark": "#d73e29",
+		"yellow": "#f5bb39",
+		"cyan": "#32a9dd",
+		"blue": "#1b75bb",
+		"blue-dark": "#276273",
+		"purple": "#440444",
+		"violet": "#90278d",
+		"pink": "#c057a0",
+		"green-light": "#70b044",
+		"green": "#009549",
+		"green-dark": "#006838",
+		"white": "#ffffff",
+		"black": "#231f20",
+	};
+	```
   - `number` --> `content`.
   - `prefix` - removed.
   - `shape` - removed; instead import the desired marker. `import { PinCircleBorder } from "leaflet-extra-markers";`

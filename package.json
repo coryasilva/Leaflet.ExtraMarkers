@@ -29,10 +29,6 @@
     ".": {
       "types": "./src/index.d.ts",
       "default": "./src/index.js"
-    },
-    "./colors": {
-      "types": "./src/colors/index.d.ts",
-      "default": "./src/colors/index.js"
     }
   },
   "files": [
