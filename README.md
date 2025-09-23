@@ -1,10 +1,9 @@
 # Leaflet extra markers v2
 
-// TODO: Impl Origin (for point markers)
-// TODO: Color demo
-// TODO: 1000 markers demo
-// TODO: React demo
 // TODO: Update screenshot
+// TODO: Marker builder
+// TODO: React demo
+// TODO: Impl Origin (for point markers)
 // TODO: Route to examples/demos in gh
 <!-- FIXME: **<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>** -->
 
@@ -143,12 +142,10 @@ The shadow variant.
 
 *Default*: `"cast"`
 
-#### `size: number | undefined`
-The size (width) of the SVG marker/icon; height will be scaled proportionately.
+#### `scale: number | undefined`
+The scale of the SVG marker; height will be scaled proportionately. The markers are designed on a base `30px` wide grid. Min: `0.1`
 
-Note: The markers are designed on a base 30px wide grid.
-
-*Default*: `30`
+*Default*: `1`
 
 #### `contentWrapperClass: string | undefined`
 The CSS class names added to the `contentWrapper` element.

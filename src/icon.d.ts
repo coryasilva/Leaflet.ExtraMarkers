@@ -142,13 +142,12 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 	*/
 	shadow?: "cast" | "drop" | "ellipse" | "none";
 	/**
-	The size (width) of the SVG marker; height will
-	be scaled proportionately.
-
-	Note: The markers are designed on a base 30px wide grid.
-	@default 30
+	The scale of the SVG marker; height will
+	be scaled proportionately. The markers are designed
+	on a base 30px wide grid. Min: `0.1`
+	@default 1
 	*/
-	size?: number;
+	scale?: number;
 }
 
 /**

@@ -17,7 +17,7 @@ export class Icon extends IconBase {
 			rootStyle: {},
 			shadow: "cast",
 			shadowStyle: {},
-			size: 30,
+			scale: 1,
 			svgStyle: {},
 		});
 	}
@@ -58,11 +58,11 @@ export class Icon extends IconBase {
 
 	calcIconSize() {
 		const opts = this.options;
-		const size = Math.max(Math.abs(opts.size), 1);
-		const origIconWidth = opts.svg?.[1]?.width ?? size;
-		const origIconHeight = opts.svg?.[1]?.height ?? size;
-		const iconWidth = size;
-		const iconHeight = size * origIconHeight / origIconWidth;
+		const scale = Math.max(Math.abs(opts.scale), 0.1);
+		const origIconWidth = opts.svg?.[1]?.width;
+		const origIconHeight = opts.svg?.[1]?.height;
+		const iconWidth = 30 * scale;
+		const iconHeight = 30 * scale * origIconHeight / origIconWidth;
 		const iconSize = opts.iconSize === "number" ? [opts.iconSize, opts.iconSize] : opts.iconSize;
 
 		if (Point.validate(iconSize)) {
@@ -91,7 +91,7 @@ export class Icon extends IconBase {
 				alignItems: "center",
 				justifyContent: "center",
 				textAlign: "center",
-				fontSize: `${opts.iconSize.x / 30}em`,
+				fontSize: `${opts.scale}em`,
 				fontWeight: "700",
 				lineHeight: "1",
 				color: opts.contentColor,
