@@ -1,6 +1,4 @@
-const spaceRegex = /\s+/;
-
-export const setAttributes = (element, attributes = {}) => {
+export const setAttributes = (element, attributes) => {
 	if (!attributes) return;
 	for (const [key, value] of Object.entries(attributes)) {
 		if (typeof value === "undefined") {
@@ -8,8 +6,7 @@ export const setAttributes = (element, attributes = {}) => {
 		} else if (key === "class" && Array.isArray(value)) {
 			for (const c of value) {
 				if (!c) continue;
-				const cArr = c.trim().split(spaceRegex);
-				element.classList.add(...cArr);
+				element.classList.add(c);
 			}
 		} else if (key === "style" && typeof value === "object") {
 			Object.assign(element.style, value);
@@ -23,6 +20,7 @@ export const appendChildren = (el, children, creator) => {
 	const frag = document.createDocumentFragment();
 
 	for (const child of children) {
+		if (!child) continue;
 		if (Array.isArray(child)) {
 			frag.append(creator(child));
 		} else {

@@ -40,20 +40,20 @@ export class Icon extends IconBase {
 		const opts = this.options;
 		opts.iconSize = this.calcIconSize();
 		const { x, y } = opts.iconSize;
-		opts.iconAnchor = Point.validate(options.iconAnchor) ? new Point(options.iconAnchor) : new Point([x / 2, y]);
+		opts.iconAnchor = options.iconAnchor ? new Point(options.iconAnchor) : new Point([x / 2, y]);
 
 		if (opts.shadow === "ellipse") {
 			// 30w 6h
-			opts.shadowSize = Point.validate(options.shadowSize) ? new Point(options.shadowSize) : new Point([x, x * 6 / 30]);
-			opts.shadowAnchor = Point.validate(options.shadowAnchor) ? new Point(options.shadowAnchor) : new Point([x / 2, x * 6 / 30 / 2]);
+			opts.shadowSize = options.shadowSize ? new Point(options.shadowSize) : new Point([x, x * 6 / 30]);
+			opts.shadowAnchor = options.shadowAnchor ? new Point(options.shadowAnchor) : new Point([x / 2, x * 6 / 30 / 2]);
 		} else {
 			// 39w 36h
-			opts.shadowSize = Point.validate(options.shadowSize) ? new Point(options.shadowSize) : new Point([x * 39 / 30, x * 36 / 30]);
-			opts.shadowAnchor = Point.validate(options.shadowAnchor) ? new Point(options.shadowAnchor) : new Point([x / 2, x / 30 * 32]);
+			opts.shadowSize = options.shadowSize ? new Point(options.shadowSize) : new Point([x * 39 / 30, x * 36 / 30]);
+			opts.shadowAnchor = options.shadowAnchor ? new Point(options.shadowAnchor) : new Point([x / 2, x / 30 * 32]);
 		}
 
-		opts.popupAnchor = Point.validate(options.popupAnchor) ? new Point(options.popupAnchor) : new Point([0, -y + x / 2]);
-		opts.tooltipAnchor = Point.validate(options.tooltipAnchor) ? new Point(options.tooltipAnchor) : new Point([0, -y + x / 2]);
+		opts.popupAnchor = options.popupAnchor ? new Point(options.popupAnchor) : new Point([0, -y + x / 2]);
+		opts.tooltipAnchor = options.tooltipAnchor ? new Point(options.tooltipAnchor) : new Point([0, -y + x / 2]);
 	}
 
 	calcIconSize() {
@@ -65,7 +65,7 @@ export class Icon extends IconBase {
 		const iconHeight = 30 * scale * origIconHeight / origIconWidth;
 		const iconSize = opts.iconSize === "number" ? [opts.iconSize, opts.iconSize] : opts.iconSize;
 
-		if (Point.validate(iconSize)) {
+		if (iconSize) {
 			return new Point(iconSize);
 		}
 
