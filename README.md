@@ -1,15 +1,17 @@
 # Leaflet extra markers v2
 
 // TODO: Update screenshot
-// TODO: Marker builder
 // TODO: React demo
 // TODO: Impl Origin (for point markers)
 // TODO: Route to examples/demos in gh
 <!-- FIXME: **<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>** -->
 
-![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")
+[![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")](http://coryasilva.github.io/Leaflet.ExtraMarkers/)
 
 A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, or Material.
+
+> [!WARNING]
+> This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility use ...
 
 ## Table of contents
 - [**Getting started**](#getting-started)
@@ -27,25 +29,79 @@ A collection of fine SVG map markers that can easily be colored, resized, or ove
 - [**License**](#license)
 
 ## Getting started
-
-```sh
-npm i leaflet-extra-markers
-```
-
+### Install
+- NodeJS
+	```sh
+	npm i leaflet-extra-markers
+	```
+- Browser
+	```html
+	<script type="importmap">
+	{
+		"imports": {
+			"leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
+			"leaflet-extra-marker": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
+		}
+	}
+	</script>
+	```
+### Usage
 ```js
 import { Marker } from "leaflet";
 import { Icon, PinCirclePanel } from "leaflet-extra-markers";
 
-const marker = new Marker([32.82,-117.43], {
-  icon: new Icon({
-    accentColor: "firebrick",
-    color: "indianred",
-    content: "42",
-    contentColor: "white",
-    size: 25,
-    svg: PinCirclePanel,
-  }),
+const marker = new Marker(map.getCenter(), {
+	icon: new Icon({
+		accentColor: "firebrick",
+		color: "indianred",
+		content: "42",
+		contentColor: "white",
+		scale: 1,
+		svg: PinCirclePanel,
+	}),
 });
+```
+### Full example
+```html
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css"
+		/>
+	</head>
+	<body>
+		<div id="map" style="width:100%;height:400px;">
+		<script type="importmap">
+		{
+			"imports": {
+				"leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
+				"leaflet-extra-marker": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
+			}
+		}
+		</script>
+		<script type="module">
+			import { Map, Marker } from "leaflet";
+			import { Icon, PinCirclePanel } from "leaflet-extra-markers";
+
+			const map = new Map("map").setView([0, 0], 3);
+
+			const marker = new Marker(map.getCenter(), {
+				icon: new Icon({
+					accentColor: "firebrick",
+					color: "indianred",
+					content: "42",
+					contentColor: "white",
+					scale: 1,
+					svg: PinCirclePanel,
+				}),
+			}).addTo(map);
+		</script>
+	</body>
+</html>
 ```
 
 ## Demos
@@ -281,14 +337,14 @@ Below is the HTML structure of the Marker Icon.
 
 ## Migration guide
 
-### V1 to V2
+### v1 to v2
 Version 2 is a complete rewrite to support svg only icons with no image or css file dependencies.
 1. Upgrade to Leaflet v2.
-2. Remove referenced CSS files.
-3. Remove referenced image files.
-4. Update Icon options/properties per the mapping below:
+2. Remove referenced Image and CSS files as v2 only has JS dependencies.
+3. Update `Icon` options/properties per the mapping below:
   - `extraClasses` --> `rootClass`.
   - `icon` --> `content` or `contentHtml`.
+	  - Consider using the `createElement` util here.
   - `iconColor` --> `contentColor`.
   - `iconRotate` - removed; instead add the appropriate class or style to the element passed into `content`.
   - `innerHtml` - removed.
@@ -313,13 +369,8 @@ Version 2 is a complete rewrite to support svg only icons with no image or css f
 	};
 	```
   - `number` --> `content`.
-  - `prefix` - removed.
+  - `prefix` - removed. Instead add it to your HTML string for `contentHtml` or on the element if using `content`
   - `shape` - removed; instead import the desired marker. `import { PinCircleBorder } from "leaflet-extra-markers";`
-  - `svg` --> not supported as boolean.
-  - `svgBorderColor` - removed.
-  - `svgOpacity` - removed.
-
-## License
-
-Leaflet.ExtraMarkers and marker svgs are licensed under the MIT License - http://opensource.org/licenses/mit-license.html.
-
+  - `svg` --> not supported as boolean; now this takes an SvgNode type (import desired marker and pass by reference)
+  - `svgBorderColor` - removed; this never worked but its intended effect can now be accomplished by setting `accentColor`.
+  - `svgOpacity` - removed; this never worked but its intended effect can now be accomplished by setting `svgStyle.opacity`.

@@ -161,7 +161,7 @@ const marker = new Marker([32.82,-117.43], {
 		color: "indianred",
 		content: "42",
 		contentColor: "white",
-		size: 25,
+		scale: 1,
 		svg: PinCirclePanel,
 	}),
 });
