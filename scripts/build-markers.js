@@ -71,7 +71,8 @@ export const ${name} = ${JSON.stringify(markerNode)};
     const formattedCode = await prettier.format(code, prettierConfig);
     await fsp.writeFile(codePath, formattedCode, "utf-8");
 
-    const typeDef = `import { SvgNode } from "../types.js";
+    const typeDef = `import type { SvgNode } from "../types.js";
+
 export declare const ${name}: SvgNode;
 `;
     await fsp.writeFile(typeDefPath, typeDef, "utf-8");

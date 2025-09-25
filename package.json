@@ -40,7 +40,7 @@
     "!src/**/*.test.js"
   ],
   "scripts": {
-    "test": "@biomejs/biome lint && ava && tsc index.d.ts",
+    "test": "@biomejs/biome lint && ava && tsc src/index.d.ts",
     "build:markers": "node ./scripts/build-markers.js",
     "optimize": "node ./scripts/optimize-svgs.js"
   },

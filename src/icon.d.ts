@@ -1,5 +1,6 @@
-import { Icon as IconBase, IconOptions } from "leaflet";
-import { Content, SvgNode } from "./types.js";
+// @ts-expect-error
+import type { Icon as IconBase, IconOptions } from "leaflet";
+import type { Content, SvgNode } from "./types.js";
 
 export interface ExtraOverrides {
   /**

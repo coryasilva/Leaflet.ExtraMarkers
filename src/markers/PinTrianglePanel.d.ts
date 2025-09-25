@@ -1,2 +1,3 @@
-import { SvgNode } from "../types.js";
+import type { SvgNode } from "../types.js";
+
 export declare const PinTrianglePanel: SvgNode;
