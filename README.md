@@ -2,15 +2,15 @@
 
 - TODO: Impl `origin`
 
-[![ExtraMarkers screenshot](assets/screenshot.png "Screenshot of ExtraMarkers")](demos/index.html)
-
 A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, or Material.
+
+>✨ **DEMO**<br>
+>[Check out the demo**](demos/index.html)
 
 > ⚠️ **WARNING**<br>
 > This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility [view the v1 branch](https://github.com/coryasilva/Leaflet.ExtraMarkers/tree/v1)
 
 ## Table of contents
-- [**Demo**](demos/index.html)
 - [**Getting started**](#getting-started)
 - [**API**](#api)
   - [**Icon**](#class-icon)
