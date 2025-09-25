@@ -1,21 +1,20 @@
 # Leaflet extra markers v2
 
-// TODO: Impl svgFillImgSrc
-// TODO: Update screenshot
-// TODO: Impl Origin (for point markers)
-// TODO: Route to examples/demos in gh
-<!-- FIXME: **<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>** -->
+- TODO: Impl `svgFillImage`
+- TODO: Update screenshot
+- TODO: Impl `origin`
 
-[![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")](http://coryasilva.github.io/Leaflet.ExtraMarkers/)
+[![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")](http://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html)
 
 A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, or Material.
 
+[**Take a look at the DEMO**](/demos/index.html)
+
 > [!WARNING]
-> This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility use ...
+> This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility [view the v1 branch](https://github.com/coryasilva/Leaflet.ExtraMarkers/tree/v1)
 
 ## Table of contents
 - [**Getting started**](#getting-started)
-- [**Demos**](#demos)
 - [**API**](#api)
   - [**Icon**](#class-icon)
   - [**ExtraOptions**](#interface-extraoptions)
@@ -103,14 +102,6 @@ const marker = new Marker(map.getCenter(), {
 	</body>
 </html>
 ```
-
-## Demos
-- [**Marker options**]()
-- [**Shadows**]()
-- [**Sizes**]()
-- [**Content + Icons**]()
-- [**1000 markers**]()
-- [**React**]()
 
 ## API
 
