@@ -6,7 +6,7 @@ const shadowCast = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'
 const shadowEllipse = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='6' fill='currentColor' viewBox='0 0 30 6'%3e %3cellipse cx='15' cy='3' fill='url(%23a)' rx='10' ry='3'/%3e %3cdefs%3e %3cradialGradient id='a' cx='0' cy='0' r='1' gradientTransform='matrix(0 3 -10 0 15 3)' gradientUnits='userSpaceOnUse'%3e %3cstop offset='.05' stop-opacity='.32'/%3e %3cstop offset='1' stop-opacity='0'/%3e %3c/radialGradient%3e %3c/defs%3e %3c/svg%3e";
 
 export class Icon extends IconBase {
-
+	static dropShadowCss = "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))";
 	static {
 		this.setDefaultOptions({
 			svg: PinTeardropBorder,
@@ -24,10 +24,6 @@ export class Icon extends IconBase {
 
 	constructor(options = {}) {
 		super(options);
-
-		if (options.iconUrl || options.iconRetinaUrl) {
-			console.warn("leaflet-extra-markers", "`iconUrl` and `iconRetinaUrl` are not supported.");
-		}
 	}
 
 	initialize(options) {
@@ -38,6 +34,15 @@ export class Icon extends IconBase {
 		}
 
 		const opts = this.options;
+
+		// Normalize cross origin
+		if (opts.crossOrigin || opts.crossOrigin === "") {
+			opts.crossOrigin = opts.crossOrigin === true ? "" : String(opts.crossOrigin);
+		} else {
+			opts.crossOrigin = undefined
+		}
+
+		// Set anchors
 		opts.iconSize = this.calcIconSize();
 		const { x, y } = opts.iconSize;
 		opts.iconAnchor = options.iconAnchor ? new Point(options.iconAnchor) : new Point([x / 2, y]);
@@ -72,11 +77,10 @@ export class Icon extends IconBase {
 		return new Point([iconWidth, iconHeight]);
 	}
 
-	createIcon() {
+	createContentWrapper() {
 		const opts = this.options;
 
-		const contentWrapper = createElement(["div", {
-			"data-content": "",
+		return createElement(["div", {
 			class: [
 				"extra-marker-content",
 				opts.contentClass,
@@ -98,41 +102,44 @@ export class Icon extends IconBase {
 				...(opts.contentStyle ?? {}),
 			},
 		}]);
+	}
 
-		// TODO: move this to a svg pattern thingy
-		if (opts.svgFillImageSrc) {
-			contentWrapper.append(createElement(["img", {
-				src: opts.svgFillImageSrc,
-				style: {
-					position: "absolute",
-					width: "100%",
-					height: "100%",
-					zIndex: "-1",
-					clipPath: `path("${opts.svg?.[2]?.[0]?.[1]?.d}")`,
-					transform: `scale(${opts.scale})`,
-					transformOrigin: "top left",
-				},
-			}]));
-		}
+	createDot() {
+		const opts = this.options;
 
-		if (opts.contentHtml) {
-			contentWrapper.innerHTML = opts.contentHtml;
-		} else if (typeof opts.content === "function") {
-			contentWrapper.append(opts.content(opts));
-		} else if (opts.content !== null & typeof opts.content !== "undefined") {
-			contentWrapper.append(opts.content);
-		} else if (!opts.svgFillImageSrc) {
-			contentWrapper.append(createElement(["div", {
-				style: {
-					display: "block",
-					height: "0.8em",
-					width: "0.8em",
-					backgroundColor: opts.accentColor,
-					borderRadius: "100%",
-				},
-			}]));
-		}
+		return createElement(["div", {
+			style: {
+				display: "block",
+				height: "0.8em",
+				width: "0.8em",
+				backgroundColor: opts.accentColor,
+				borderRadius: "100%",
+			},
+		}]);
+	}
 
+	createImageMarker() {
+		const opts = this.options;
+		const url = Browser.retina && opts.iconRetinaUrl || opts.iconUrl;
+
+		return createElement(["img", {
+			src: url,
+			crossOrigin: opts.crossOrigin,
+			style: {
+				width: `${opts.iconSize.x}px`,
+				height: `${opts.iconSize.y}px`,
+				filter: opts.shadow === "drop" ? this.dropShadowCss : "",
+				...(opts.svgStyle ?? {}),
+			},
+			class: [
+				"extra-marker-icon",
+				opts.svgClass,
+			],
+		}]);
+	}
+
+	createSvgMarker() {
+		const opts = this.options;
 		const [svgTag, svgAttrs, svgChildren] = opts.svg;
 		const svg = createSvgElement([
 			svgTag,
@@ -141,7 +148,7 @@ export class Icon extends IconBase {
 				width: `${opts.iconSize.x}px`,
 				height: `${opts.iconSize.y}px`,
 				style: {
-					filter: opts.shadow === "drop" ? "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))" : "",
+					filter: opts.shadow === "drop" ? this.dropShadowCss : "",
 					...(opts.svgStyle ?? {}),
 				},
 				class: [
@@ -152,15 +159,29 @@ export class Icon extends IconBase {
 			svgChildren,
 		]);
 
-		if (svgChildren.length > 1) {
-			svg.lastChild.style.fill = opts.accentColor;
+		if (opts.svgFillImageSrc) {
+			const id = crypto.randomUUID();
+			svg.firstChild.setAttribute("fill", `url(#${id})`);
+			svg.prepend(createSvgElement(
+				["pattern", {id, patternUnits: "userSpaceOnUse", width: "30", height: "30"}, [
+					["image", { href: opts.svgFillImageSrc, width: "30", height: "30", crossOrigin: opts.crossOrigin }]
+				]]
+			));
 		}
 
-		const root = createElement([
+		if (svgChildren.length > 1) {
+			svg.lastChild.setAttribute("fill", opts.accentColor);
+		}
+
+		return svg;
+	}
+
+	createRootElement(children) {
+		const opts = this.options;
+
+		return createElement([
 			"div",
 			{
-				"data-extra-marker": "icon",
-				"data-root": "",
 				style: {
 					color: opts.color,
 					position: "absolute",
@@ -177,44 +198,39 @@ export class Icon extends IconBase {
 					opts.rootClass,
 				],
 			},
-			[
-				svg,
-				contentWrapper,
-			],
+			children,
 		]);
-
-		return root;
 	}
 
-	createShadow() {
+	createIcon() {
 		const opts = this.options;
+		const marker = (opts.iconUrl || opts.iconRetinaUrl) ? this.createImageMarker() : this.createSvgMarker();
+		const contentWrapper = this.createContentWrapper()
 
-		if (opts.shadow === "none" | opts.shadow === "drop") return;
-
-		const positionStyles = {
-			width: `${opts.shadowSize.x}px`,
-			height: `${opts.shadowSize.y}px`,
-			marginLeft: `${-opts.shadowAnchor.x}px`,
-			marginTop: `${-opts.shadowAnchor.y}px`,
-		};
-
-		if (opts.shadowUrl || opts.shadowRetinaUrl) {
-			const url = Browser.retina && opts.shadowRetinaUrl || opts.shadowUrl;
-			const hasCrossOrigin = opts.crossOrigin || opts.crossOrigin === "";
-
-			return createElement(["img", {
-				src: url,
-				crossOrigin: hasCrossOrigin && opts.crossOrigin === true ? "" : String(opts.crossOrigin),
-				style: { ...positionStyles },
-			}]);
+		// InnerHtml > function > content > svgFillImageSrc > empty dot
+		if (opts.contentHtml) {
+			contentWrapper.innerHTML = opts.contentHtml;
+		} else if (typeof opts.content === "function") {
+			contentWrapper.append(opts.content(opts));
+		} else if (opts.content !== null & typeof opts.content !== "undefined") {
+			contentWrapper.append(opts.content);
+		} else if (!opts.svgFillImageSrc) {
+			contentWrapper.append(this.createDot());
 		}
 
-		const src = opts.shadow === "ellipse" ? shadowEllipse : shadowCast;
+		return this.createRootElement([
+			marker,
+			contentWrapper,
+		]);
+	}
+
+	createShadowImg() {
+		const opts = this.options;
+		const url = Browser.retina && opts.shadowRetinaUrl || opts.shadowUrl;
+		const svgUri = opts.shadow === "ellipse" ? shadowEllipse : shadowCast;
 
 		return createElement(["img", {
-			src,
-			style: { ...positionStyles },
-			"data-extra-marker": "shadow",
+			src: url ?? svgUri,
 			class: [
 				"extra-marker-shadow",
 				opts.className,
@@ -222,9 +238,21 @@ export class Icon extends IconBase {
 			],
 			style: {
 				position: "absolute",
-				...positionStyles,
+				width: `${opts.shadowSize.x}px`,
+				height: `${opts.shadowSize.y}px`,
+				marginLeft: `${-opts.shadowAnchor.x}px`,
+				marginTop: `${-opts.shadowAnchor.y}px`,
 				...(opts.shadowStyle ?? {}),
 			},
+			crossOrigin: url ? opts.crossOrigin : undefined,
 		}]);
+	}
+
+	createShadow() {
+		const opts = this.options;
+
+		if (opts.shadow === "none" | opts.shadow === "drop") return;
+
+		return this.createShadowImg();
 	}
 }

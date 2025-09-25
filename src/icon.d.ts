@@ -80,6 +80,8 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 	`currentColor` to inherit this color.
 
 	Note: This setting could be overwritten by `rootStyle.color`.
+	Note: If `svgFillImageSrc` is defined, this setting will still
+	be set but effectively ignored.
 
 	@example
 	// Diverging spectral colors with hue rotation
@@ -148,6 +150,12 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 	@default 1
 	*/
 	scale?: number;
+	/**
+	The url of an image to use as a fill for the marker.
+	Image will be clipped by marker base shape.
+	Consider retina devices when sizing images.
+	*/
+	svgFillImageSrc?: string;
 }
 
 /**

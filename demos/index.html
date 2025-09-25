@@ -41,6 +41,20 @@
 			margin: 2rem 0;
 		}
 
+		input, select {
+			background-color: white;
+			border-style: solid;
+  		border-width: 1px;
+		}
+
+		h1,h2 {
+			margin-top: 3rem;
+		}
+
+		h3 {
+			margin-top: 2rem;
+		}
+
 		.container {
 			width: 100%;
 			max-width: 50rem;
@@ -71,8 +85,7 @@
 				background-color: #121212;
 				color: #e2e2e2;
 			}
-			select,
-			input {
+			input, select {
 				background-color: #222222;
 				color: #e2e2e2;
 			}
@@ -158,7 +171,7 @@
 		<h2 id="performance">Performance</h2>
 		<label>
 			Marker count:
-			<input type="number" id="performance-count" value="100" min="1" max="10000" step="100"/>
+			<input type="number" id="performance-count" value="1000" min="0" max="10000" step="100"/>
 		</label>
 		<label>
 			Marker type:
@@ -252,6 +265,7 @@
 				opts.accentColor && ["div", {}, ["accentColor: ", colorChip(opts.accentColor), opts.accentColor]],
 				opts.scale && ["div", {}, ["scale: ", opts.scale]],
 				opts.shadow && ["div", {}, ["shadow: ", opts.shadow]],
+				opts.svgFillImageSrc && ["div", {}, ["svgFillImageSrc: ", opts.svgFillImageSrc]],
 				svgName && ["div", {}, ["svg: ", svgName]],
 				content && ["div", {}, [
 					"content: ",
@@ -331,7 +345,6 @@
 				.map(([svgName, svg], i) => ({
 					svgName,
 					svg,
-					color: "rgba(0,0,0,0)",
 					accentColor: "white",
 					svgFillImageSrc: `https://picsum.photos/seed/${svgName}/60/60`,
 					shadow: "drop",

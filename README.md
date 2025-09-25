@@ -1,19 +1,18 @@
 # Leaflet extra markers v2
 
-- TODO: Impl `svgFillImage`
-- TODO: Update screenshot
 - TODO: Impl `origin`
 
-[![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")](http://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html)
+[![ExtraMarkers screenshot](assets/screenshot.png "Screenshot of ExtraMarkers")](demos/index.html)
 
 A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, or Material.
 
-[**Take a look at the DEMO**](/demos/index.html)
+[**\DEMO**](demos/index.html)
 
-> [!WARNING]
+> ⚠️ **WARNING**<br>
 > This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility [view the v1 branch](https://github.com/coryasilva/Leaflet.ExtraMarkers/tree/v1)
 
 ## Table of contents
+- [**DEMO**](demos/index.html)
 - [**Getting started**](#getting-started)
 - [**API**](#api)
   - [**Icon**](#class-icon)
@@ -150,6 +149,7 @@ The marker color. Will be set on the `root.style.color property.
 The SVG path for the base marker shape has a `fill` set to `currentColor` to inherit this color.
 
 Note: This setting could be overwritten by `rootStyle.color`.
+Note: If `svgFillImageSrc` is defined, this setting will still be set but effectively ignored.
 
 *Default*: `"#000"`.
 
@@ -193,6 +193,9 @@ The shadow variant.
 The scale of the SVG marker; height will be scaled proportionately. The markers are designed on a base `30px` wide grid. Min: `0.1`
 
 *Default*: `1`
+
+#### `svgFillImageSrc: string | undefined`
+The url of an image to use as a fill for the marker. Image will be clipped by marker base shape. Consider retina devices when sizing images.
 
 #### `contentWrapperClass: string | undefined`
 The CSS class names added to the `contentWrapper` element.
