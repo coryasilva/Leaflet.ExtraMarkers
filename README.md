@@ -1,7 +1,7 @@
 # Leaflet extra markers v2
 
+// TODO: Impl svgFillImgSrc
 // TODO: Update screenshot
-// TODO: React demo
 // TODO: Impl Origin (for point markers)
 // TODO: Route to examples/demos in gh
 <!-- FIXME: **<a href="http://coryasilva.github.io/Leaflet.ExtraMarkers/" target="_blank">Demo</a>** -->

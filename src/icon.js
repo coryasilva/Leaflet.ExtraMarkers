@@ -99,12 +99,30 @@ export class Icon extends IconBase {
 			},
 		}]);
 
+		// TODO: move this to a svg pattern thingy
+		if (opts.svgFillImageSrc) {
+			contentWrapper.append(createElement(["img", {
+				src: opts.svgFillImageSrc,
+				style: {
+					position: "absolute",
+					width: "100%",
+					height: "100%",
+					zIndex: "-1",
+					clipPath: `path("${opts.svg?.[2]?.[0]?.[1]?.d}")`,
+					transform: `scale(${opts.scale})`,
+					transformOrigin: "top left",
+				},
+			}]));
+		}
+
 		if (opts.contentHtml) {
 			contentWrapper.innerHTML = opts.contentHtml;
 		} else if (typeof opts.content === "function") {
 			contentWrapper.append(opts.content(opts));
-		} else {
-			contentWrapper.append(opts.content ?? createElement(["div", {
+		} else if (opts.content !== null & typeof opts.content !== "undefined") {
+			contentWrapper.append(opts.content);
+		} else if (!opts.svgFillImageSrc) {
+			contentWrapper.append(createElement(["div", {
 				style: {
 					display: "block",
 					height: "0.8em",
@@ -151,7 +169,7 @@ export class Icon extends IconBase {
 					marginLeft: `${-opts.iconAnchor.x}px`,
 					marginTop: `${-opts.iconAnchor.y}px`,
 					fontSize: "12px",
-					...(opts.rootStyle ?? {})
+					...(opts.rootStyle ?? {}),
 				},
 				class: [
 					"extra-marker",
