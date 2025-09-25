@@ -4,7 +4,7 @@ export const setAttributes = (element, attributes) => {
     if (key === "class" && Array.isArray(value)) {
       for (const c of value) {
         if (!c) continue;
-        element.classList.add(c);
+        element.classList.add(String(c));
       }
     } else if (key === "style" && typeof value === "object") {
       Object.assign(element.style, value);
