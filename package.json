@@ -41,8 +41,7 @@
   ],
   "scripts": {
     "test": "@biomejs/biome lint && ava && tsc src/index.d.ts",
-    "build:markers": "node ./scripts/build-markers.js",
-    "optimize": "node ./scripts/optimize-svgs.js"
+    "build:markers": "node ./scripts/build-markers.js"
   },
   "peerDependencies": {
     "leaflet": "^2.0.0-alpha.1"
