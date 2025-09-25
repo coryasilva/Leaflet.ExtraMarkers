@@ -4,10 +4,7 @@
     "target": "ES2022",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "checkJs": true,
+    "checkJs": true
   },
-  "include": [
-    "src/**/*.js",
-    "src/**/*.d.ts"
-  ],
+  "include": ["src/**/*.js", "src/**/*.d.ts"]
 }

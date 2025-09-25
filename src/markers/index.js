@@ -92,4 +92,3 @@ export { TackTriangleBorder2 } from "./TackTriangleBorder2.js";
 export { TackTriangleBorder } from "./TackTriangleBorder.js";
 export { TackTrianglePanel } from "./TackTrianglePanel.js";
 export { TackTriangle } from "./TackTriangle.js";
-

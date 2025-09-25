@@ -1,47 +1,47 @@
-import { Icon as IconBase, IconOptions, Class } from "leaflet";
+import { Icon as IconBase, IconOptions } from "leaflet";
 import { Content, SvgNode } from "./types.js";
 
 export interface ExtraOverrides {
-	/**
+  /**
 	The CSS class names added to the `contentWrapper` element.
 	*/
-	contentWrapperClass?: string;
-	/**
+  contentWrapperClass?: string;
+  /**
 	The styles to set on `contentWrapper` element.
 	@default {}
 	*/
-	contentWrapperStyle?: CSSStyleDeclaration
-	/**
+  contentWrapperStyle?: CSSStyleDeclaration;
+  /**
 	The CSS class names added to the `root` element.
 	*/
-	rootClass?: string;
-	/**
+  rootClass?: string;
+  /**
 	The styles to set on `root` element.
 	@default {}
 	*/
-	rootStyle?: CSSStyleDeclaration;
-	/**
+  rootStyle?: CSSStyleDeclaration;
+  /**
 	The CSS class names added to the `shadow` element.
 	*/
-	shadowClass?: string;
-	/**
+  shadowClass?: string;
+  /**
 	The styles to set on `shadow` element.
 	@default {}
 	*/
-	shadowStyle?: CSSStyleDeclaration;
-	/**
+  shadowStyle?: CSSStyleDeclaration;
+  /**
 	The CSS class names added to the `svg` element.
 	*/
-	svgClass?: string;
-	/**
+  svgClass?: string;
+  /**
 	The styles to set on `svg` element.
 	@default {}
 	*/
-	svgStyle?: CSSStyleDeclaration;
+  svgStyle?: CSSStyleDeclaration;
 }
 
 export interface ExtraOptions extends ExtraOverrides, IconOptions {
-	/**
+  /**
 	The marker (`Marker.icon` in leaflet) svg node.
 
 	The markers are divided into 4 **families**:
@@ -67,14 +67,14 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 
 	@default PinTeardropBorder
 	*/
-	svg?: SvgNode;
-	/**
+  svg?: SvgNode;
+  /**
 	The accent color is applied to the marker variant and also
 	the dot on the empty state.
 	@default "#fff"
 	*/
-	accentColor?: string;
-	/**
+  accentColor?: string;
+  /**
 	The marker color. Will be set on the `root.style.color property.
 	The SVG path for the base marker shape has a `fill` set to
 	`currentColor` to inherit this color.
@@ -98,8 +98,8 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 
 	@default "#000"
 	*/
-	color?: string;
-	/**
+  color?: string;
+  /**
 	The content node to append to the `contentWrapper`.
 	This will be ignored if `contentHtml is set.
 	@example
@@ -124,38 +124,38 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 		},
 	}]);
 	*/
-	content?: Content | ((opts: ExtraOptions) => Content);
-	/**
+  content?: Content | ((opts: ExtraOptions) => Content);
+  /**
 	Dangerously sets innerHTML of the contentWrapper.
 	If set this will override the `content` property.
 	WARNING: Possible XSS vector; sanitize user inputs if using this.
 	@example <i class="fa fa-coffee" />
 	*/
-	contentHtml?: string;
-	/**
+  contentHtml?: string;
+  /**
 	The content (wrapper) color. Will be set on the `contentWrapper.style.color property.
 	Note: This setting could be overwritten by `contentWrapperStyle.color`.
 	@default "#fff"
 	*/
-	contentColor?: string;
-	/**
+  contentColor?: string;
+  /**
 	The shadow variant.
 	@default "cast"
 	*/
-	shadow?: "cast" | "drop" | "ellipse" | "none";
-	/**
+  shadow?: "cast" | "drop" | "ellipse" | "none";
+  /**
 	The scale of the SVG marker; height will
 	be scaled proportionately. The markers are designed
 	on a base 30px wide grid. Min: `0.1`
 	@default 1
 	*/
-	scale?: number;
-	/**
+  scale?: number;
+  /**
 	The url of an image to use as a fill for the marker.
 	Image will be clipped by marker base shape.
 	Consider retina devices when sizing images.
 	*/
-	svgFillImageSrc?: string;
+  svgFillImageSrc?: string;
 }
 
 /**
@@ -175,8 +175,8 @@ const marker = new Marker([32.82,-117.43], {
 });
 */
 export declare class Icon extends IconBase<ExtraOptions> {
-	constructor(options: ExtraOptions);
-	createIcon(): HTMLElement;
-	/** TODO: submit PR for undefined return */
-	createShadow(): HTMLElement;
+  constructor(options: ExtraOptions);
+  createIcon(): HTMLElement;
+  /** TODO: submit PR for undefined return */
+  createShadow(): HTMLElement;
 }

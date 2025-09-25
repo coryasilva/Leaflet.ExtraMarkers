@@ -1,8 +1,8 @@
 import {
-	Element,
-	ElementAttributes,
-	ElementChildren,
-	ElementParams,
+  Element,
+  ElementAttributes,
+  ElementChildren,
+  ElementParams,
 } from "./types.js";
 
 /**
@@ -27,7 +27,10 @@ setAttributes(element, {
 	],
 });
 */
-export function setAttributes(element: Element, attributes?: ElementAttributes): void;
+export function setAttributes(
+  element: Element,
+  attributes?: ElementAttributes,
+): void;
 
 /**
 @example
@@ -36,9 +39,9 @@ const child = document.createElement("p");
 appendChildren(element, [p]);
 */
 export function appendChildren(
-	element: Element,
-	children: ElementChildren,
-	creator: (params: ElementParams) => HTMLElement | SVGElement
+  element: Element,
+  children: ElementChildren,
+  creator: (params: ElementParams) => HTMLElement | SVGElement,
 ): void;
 
 /**

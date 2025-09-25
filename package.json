@@ -33,14 +33,14 @@
   },
   "files": [
     "package.json",
-		"README.md",
-		"LICENSE",
+    "README.md",
+    "LICENSE",
     "src/**/*.js",
     "src/**/*.d.ts",
     "!src/**/*.test.js"
   ],
   "scripts": {
-    "test": "xo && ava && tsc index.d.ts",
+    "test": "@biomejs/biome lint && ava && tsc index.d.ts",
     "build:markers": "node ./scripts/build-markers.js",
     "optimize": "node ./scripts/optimize-svgs.js"
   },
@@ -48,11 +48,11 @@
     "leaflet": "^2.0.0-alpha.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.4",
     "ava": "^6.4.1",
     "leaflet": "^2.0.0-alpha.1",
     "prettier": "^3.6.2",
     "svgson": "^5.3.1",
-    "typescript": "^5.3.3",
-    "xo": "^1.2.2"
+    "typescript": "^5.3.3"
   }
 }

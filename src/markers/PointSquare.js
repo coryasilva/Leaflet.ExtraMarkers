@@ -12,5 +12,12 @@ export const PointSquare = [
     fill: "currentColor",
     viewBox: "0 0 30 30",
   },
-  [["path", { d: "M24 2a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h18Z" }]],
+  [
+    [
+      "path",
+      {
+        d: "M24 2a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h18Z",
+      },
+    ],
+  ],
 ];
