@@ -11,7 +11,7 @@ export interface ExtraOverrides {
 	The styles to set on `contentWrapper` element.
 	@default {}
 	*/
-  contentWrapperStyle?: CSSStyleDeclaration;
+  contentWrapperStyle?: Partial<CSSStyleDeclaration>;
   /**
 	The CSS class names added to the `root` element.
 	*/
@@ -20,7 +20,7 @@ export interface ExtraOverrides {
 	The styles to set on `root` element.
 	@default {}
 	*/
-  rootStyle?: CSSStyleDeclaration;
+  rootStyle?: Partial<CSSStyleDeclaration>;
   /**
 	The CSS class names added to the `shadow` element.
 	*/
@@ -29,7 +29,7 @@ export interface ExtraOverrides {
 	The styles to set on `shadow` element.
 	@default {}
 	*/
-  shadowStyle?: CSSStyleDeclaration;
+  shadowStyle?: Partial<CSSStyleDeclaration>;
   /**
 	The CSS class names added to the `svg` element.
 	*/
@@ -38,7 +38,11 @@ export interface ExtraOverrides {
 	The styles to set on `svg` element.
 	@default {}
 	*/
-  svgStyle?: CSSStyleDeclaration;
+  svgStyle?: Partial<CSSStyleDeclaration>;
+  /**
+  This escape hatch is supported to align with Leaflet Marker but not recommended.
+  */
+  iconUrl?: string;
 }
 
 export interface ExtraOptions extends ExtraOverrides, IconOptions {
@@ -176,7 +180,7 @@ const marker = new Marker([32.82,-117.43], {
 });
 */
 export declare class Icon extends IconBase<ExtraOptions> {
-  constructor(options: ExtraOptions);
+  constructor(options?: ExtraOptions);
   createIcon(): HTMLElement;
   /** TODO: submit PR for undefined return */
   createShadow(): HTMLElement;

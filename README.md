@@ -127,7 +127,7 @@ const marker = new Marker([32.82,-117.43], {
 
 ```ts
 class Icon extends IconBase<ExtraOptions> {
-  constructor(options: ExtraOptions);
+  constructor(options?: ExtraOptions);
   createIcon(): HTMLElement;
   createShadow(): HTMLElement;
 }
@@ -203,7 +203,7 @@ The url of an image to use as a fill for the marker. Image will be clipped by ma
 #### `contentWrapperClass: string | undefined`
 The CSS class names added to the `contentWrapper` element.
 
-#### `contentWrapperStyle: CSSStyleDeclaration | undefined`
+#### `contentWrapperStyle: Partial<CSSStyleDeclaration> | undefined`
 The styles to set on `contentWrapper` element.
 
 *Default*: `{}`
@@ -211,7 +211,7 @@ The styles to set on `contentWrapper` element.
 #### `rootClass: string | undefined`
 The CSS class names added to the `root` element.
 
-#### `rootStyle: CSSStyleDeclaration | undefined`
+#### `rootStyle: Partial<CSSStyleDeclaration> | undefined`
 The styles to set on `root` element.
 
 *Default*: `{}`
@@ -219,7 +219,7 @@ The styles to set on `root` element.
 #### `shadowClass: string | undefined`
 The CSS class names added to the `shadow` element.
 
-#### `shadowStyle: CSSStyleDeclaration | undefined`
+#### `shadowStyle: Partial<CSSStyleDeclaration> | undefined`
 The styles to set on `shadow` element.
 
 *Default*: `{}`
@@ -227,7 +227,7 @@ The styles to set on `shadow` element.
 #### `svgClass: string | undefined`
 The CSS class names added to the `svg` element.
 
-#### `svgStyle: CSSStyleDeclaration | undefined`
+#### `svgStyle: Partial<CSSStyleDeclaration> | undefined`
 The styles to set on `svg` element.
 
 *Default*: `{}`

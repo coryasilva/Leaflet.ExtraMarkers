@@ -1,6 +1,6 @@
-import { Icon as IconBase, Browser, Point } from "leaflet";
+import { Browser, Icon as IconBase, Point } from "leaflet";
 import { PinTeardropBorder } from "./markers/PinTeardropBorder.js";
-import { createSvgElement, createElement } from "./util.js";
+import { createElement, createSvgElement } from "./util.js";
 
 const shadowCast =
   "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='39' height='36' fill='currentColor' viewBox='0 0 39 36'%3e %3cg filter='url(%23a)'%3e %3cpath fill='url(%23b)' d='M25 4.34c7.3.76 11.47 6.93 9.54 12.27a9.99 9.99 0 0 1-3.9 4.77L15.92 31.8a1.2 1.2 0 0 1-.93.19c-.34-.07-.6-.27-.68-.5L12 16.97c-.39-2 .12-4.76 1.08-6.77C15.64 5.96 18.16 3.63 25 4.34Z'/%3e %3c/g%3e %3cdefs%3e %3clinearGradient id='b' x1='27' x2='14.75' y1='6' y2='32.33' gradientUnits='userSpaceOnUse'%3e %3cstop stop-opacity='0'/%3e %3cstop offset='1' stop-opacity='.5'/%3e %3c/linearGradient%3e %3cfilter id='a' width='31.14' height='35.78' x='7.87' y='.22' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3e %3cfeFlood flood-opacity='0' result='BackgroundImageFix'/%3e %3cfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3e %3cfeGaussianBlur result='effect1_foregroundBlur_53_1294' stdDeviation='2'/%3e %3c/filter%3e %3c/defs%3e %3c/svg%3e";
