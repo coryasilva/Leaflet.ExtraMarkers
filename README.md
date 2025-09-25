@@ -346,25 +346,25 @@ Version 2 is a complete rewrite to support svg only icons with no image or css f
   - `iconRotate` - removed; instead add the appropriate class or style to the element passed into `content`.
   - `innerHtml` - removed.
   - `markerColor` --> `color`; note that named colors have been removed. The legacy color mapping is below;
-  ```js
-  const colors: {
-    "red": "#a23337",
-    "orange": "#ef9227",
-    "orange-dark": "#d73e29",
-    "yellow": "#f5bb39",
-    "cyan": "#32a9dd",
-    "blue": "#1b75bb",
-    "blue-dark": "#276273",
-    "purple": "#440444",
-    "violet": "#90278d",
-    "pink": "#c057a0",
-    "green-light": "#70b044",
-    "green": "#009549",
-    "green-dark": "#006838",
-    "white": "#ffffff",
-    "black": "#231f20",
-  };
-  ```
+    ```js
+    const colors: {
+      "red": "#a23337",
+      "orange": "#ef9227",
+      "orange-dark": "#d73e29",
+      "yellow": "#f5bb39",
+      "cyan": "#32a9dd",
+      "blue": "#1b75bb",
+      "blue-dark": "#276273",
+      "purple": "#440444",
+      "violet": "#90278d",
+      "pink": "#c057a0",
+      "green-light": "#70b044",
+      "green": "#009549",
+      "green-dark": "#006838",
+      "white": "#ffffff",
+      "black": "#231f20",
+    };
+    ```
   - `number` --> `content`.
   - `prefix` - removed. Instead add it to your HTML string for `contentHtml` or on the element if using `content`
   - `shape` - removed; instead import the desired marker. `import { PinCircleBorder } from "leaflet-extra-markers";`
