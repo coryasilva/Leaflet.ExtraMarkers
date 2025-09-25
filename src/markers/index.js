@@ -1,5 +1,5 @@
-export { ChipCircleBorder2 } from "./ChipCircleBorder2.js";
 export { ChipCircleBorder } from "./ChipCircleBorder.js";
+export { ChipCircleBorder2 } from "./ChipCircleBorder2.js";
 export { ChipCirclePanel } from "./ChipCirclePanel.js";
 export { ChipCircle } from "./ChipCircle.js";
 export { ChipDiamondBorder2 } from "./ChipDiamondBorder2.js";
@@ -14,8 +14,8 @@ export { ChipSquareBorder2 } from "./ChipSquareBorder2.js";
 export { ChipSquareBorder } from "./ChipSquareBorder.js";
 export { ChipSquarePanel } from "./ChipSquarePanel.js";
 export { ChipSquare } from "./ChipSquare.js";
-export { ChipStarBorder2 } from "./ChipStarBorder2.js";
 export { ChipStarBorder } from "./ChipStarBorder.js";
+export { ChipStarBorder2 } from "./ChipStarBorder2.js";
 export { ChipStarPanel } from "./ChipStarPanel.js";
 export { ChipStar } from "./ChipStar.js";
 export { ChipTriangleBorder2 } from "./ChipTriangleBorder2.js";
