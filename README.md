@@ -6,13 +6,11 @@
 
 A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, or Material.
 
-[**\DEMO**](demos/index.html)
-
 > ⚠️ **WARNING**<br>
 > This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility [view the v1 branch](https://github.com/coryasilva/Leaflet.ExtraMarkers/tree/v1)
 
 ## Table of contents
-- [**DEMO**](demos/index.html)
+- [**Demo**](demos/index.html)
 - [**Getting started**](#getting-started)
 - [**API**](#api)
   - [**Icon**](#class-icon)
@@ -29,76 +27,80 @@ A collection of fine SVG map markers that can easily be colored, resized, or ove
 ## Getting started
 ### Install
 - NodeJS
-	```sh
-	npm i leaflet-extra-markers
-	```
+  ```sh
+  npm i leaflet-extra-markers
+  ```
 - Browser
-	```html
-	<script type="importmap">
-	{
-		"imports": {
-			"leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
-			"leaflet-extra-marker": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
-		}
-	}
-	</script>
-	```
+  ```html
+  <script type="importmap">
+  {
+    "imports": {
+      "leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
+      "leaflet-extra-marker": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
+    }
+  }
+  </script>
+  ```
 ### Usage
+
 ```js
 import { Marker } from "leaflet";
 import { Icon, PinCirclePanel } from "leaflet-extra-markers";
 
 const marker = new Marker(map.getCenter(), {
-	icon: new Icon({
-		accentColor: "firebrick",
-		color: "indianred",
-		content: "42",
-		contentColor: "white",
-		scale: 1,
-		svg: PinCirclePanel,
-	}),
+  icon: new Icon({
+    accentColor: "firebrick",
+    color: "indianred",
+    content: "42",
+    contentColor: "white",
+    scale: 1,
+    svg: PinCirclePanel,
+  }),
 });
 ```
+
 ### Full example
+For more examples view the [**Demo**](demos/index.html).
+
 ```html
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css"
-		/>
-	</head>
-	<body>
-		<div id="map" style="width:100%;height:400px;">
-		<script type="importmap">
-		{
-			"imports": {
-				"leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
-				"leaflet-extra-marker": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
-			}
-		}
-		</script>
-		<script type="module">
-			import { Map, Marker } from "leaflet";
-			import { Icon, PinCirclePanel } from "leaflet-extra-markers";
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <div id="map" style="width:100%;height:400px;">
+    <script type="importmap">
+    {
+      "imports": {
+        "leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
+        "leaflet-extra-marker": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
+      }
+    }
+    </script>
+    <script type="module">
+      import { Map, Marker } from "leaflet";
+      import { Icon, PinCirclePanel } from "leaflet-extra-markers";
 
-			const map = new Map("map").setView([0, 0], 3);
+      const map = new Map("map").setView([0, 0], 3);
 
-			const marker = new Marker(map.getCenter(), {
-				icon: new Icon({
-					accentColor: "firebrick",
-					color: "indianred",
-					content: "42",
-					contentColor: "white",
-					scale: 1,
-					svg: PinCirclePanel,
-				}),
-			}).addTo(map);
-		</script>
-	</body>
+      const marker = new Marker(map.getCenter(), {
+        icon: new Icon({
+          accentColor: "firebrick",
+          color: "indianred",
+          content: "42",
+          contentColor: "white",
+          scale: 1,
+          svg: PinCirclePanel,
+        }),
+      }).addTo(map);
+    </script>
+  </body>
 </html>
 ```
 
@@ -112,16 +114,17 @@ import { Marker } from "leaflet";
 import { Icon, PinCirclePanel } from "leaflet-extra-markers";
 
 const marker = new Marker([32.82,-117.43], {
-	icon: new Icon({
-		accentColor: "firebrick",
-		color: "indianred",
-		content: "42",
-		contentColor: "white",
-		size: 25,
-		svg: PinCirclePanel,
-	}),
+  icon: new Icon({
+    accentColor: "firebrick",
+    color: "indianred",
+    content: "42",
+    contentColor: "white",
+    size: 25,
+    svg: PinCirclePanel,
+  }),
 });
 ```
+
 ```ts
 class Icon extends IconBase<ExtraOptions> {
   constructor(options: ExtraOptions);
@@ -160,13 +163,13 @@ This will be ignored if `contentHtml is set.
 *Default*:
 ```js
 createElement(["div", {
-	style: {
-		display: "block",
-		height: "0.8em",
-		width: "0.8em",
-		backgroundColor: accentColor,
-		borderRadius: "100%",
-	},
+  style: {
+    display: "block",
+    height: "0.8em",
+    width: "0.8em",
+    backgroundColor: accentColor,
+    borderRadius: "100%",
+  },
 }]);
 ```
 
@@ -234,20 +237,20 @@ Creates HTML element recursively from a data structure. Efficently uses document
 
 ```js
 const svg = createElement([
-	"i",
-	{
-		"data-foo": "bar"
-		style: {
-			filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))",
-		},
-		class: [
-			"fa",
-			isCafe && "fa-coffee",
-		],
-	},
-	[
-		// Optionally pass in children with same structure.
-	]
+  "i",
+  {
+    "data-foo": "bar"
+    style: {
+      filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))",
+    },
+    class: [
+      "fa",
+      isCafe && "fa-coffee",
+    ],
+  },
+  [
+    // Optionally pass in children with same structure.
+  ]
 ])
 ```
 
@@ -256,18 +259,18 @@ Creates SVG element recursively from a data structure. Efficently uses document 
 
 ```js
 const svg = createSvgElement([
-	"svg",
-	{
-		width: "30px",
-		height: "30px",
-		style: {
-			filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))",
-		},
-		class: [
-			"extra-marker-icon",
-		],
-	},
-	["circle", { cx: "10", cy: "10", r: "5", fill: "currentColor" }],
+  "svg",
+  {
+    width: "30px",
+    height: "30px",
+    style: {
+      filter: "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))",
+    },
+    class: [
+      "extra-marker-icon",
+    ],
+  },
+  ["circle", { cx: "10", cy: "10", r: "5", fill: "currentColor" }],
 ])
 ```
 
@@ -338,30 +341,30 @@ Version 2 is a complete rewrite to support svg only icons with no image or css f
 3. Update `Icon` options/properties per the mapping below:
   - `extraClasses` --> `rootClass`.
   - `icon` --> `content` or `contentHtml`.
-	  - Consider using the `createElement` util here.
+    - Consider using the `createElement` util here.
   - `iconColor` --> `contentColor`.
   - `iconRotate` - removed; instead add the appropriate class or style to the element passed into `content`.
   - `innerHtml` - removed.
   - `markerColor` --> `color`; note that named colors have been removed. The legacy color mapping is below;
-	```js
-	const colors: {
-		"red": "#a23337",
-		"orange": "#ef9227",
-		"orange-dark": "#d73e29",
-		"yellow": "#f5bb39",
-		"cyan": "#32a9dd",
-		"blue": "#1b75bb",
-		"blue-dark": "#276273",
-		"purple": "#440444",
-		"violet": "#90278d",
-		"pink": "#c057a0",
-		"green-light": "#70b044",
-		"green": "#009549",
-		"green-dark": "#006838",
-		"white": "#ffffff",
-		"black": "#231f20",
-	};
-	```
+  ```js
+  const colors: {
+    "red": "#a23337",
+    "orange": "#ef9227",
+    "orange-dark": "#d73e29",
+    "yellow": "#f5bb39",
+    "cyan": "#32a9dd",
+    "blue": "#1b75bb",
+    "blue-dark": "#276273",
+    "purple": "#440444",
+    "violet": "#90278d",
+    "pink": "#c057a0",
+    "green-light": "#70b044",
+    "green": "#009549",
+    "green-dark": "#006838",
+    "white": "#ffffff",
+    "black": "#231f20",
+  };
+  ```
   - `number` --> `content`.
   - `prefix` - removed. Instead add it to your HTML string for `contentHtml` or on the element if using `content`
   - `shape` - removed; instead import the desired marker. `import { PinCircleBorder } from "leaflet-extra-markers";`
