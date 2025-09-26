@@ -347,6 +347,12 @@ Version 2 is a complete rewrite to support svg only icons with no image or css f
   - `iconColor` --> `contentColor`.
   - `iconRotate` - removed; instead add the appropriate class or style to the element passed into `content`.
   - `innerHtml` - removed.
+  - `number` --> `content`.
+  - `prefix` - removed. Instead add it to your HTML string for `contentHtml` or on the element if using `content`
+  - `shape` - removed; instead import the desired marker. `import { PinCircleBorder } from "leaflet-extra-markers";`
+  - `svg` --> not supported as boolean; now this takes an SvgNode type (import desired marker and pass by reference)
+  - `svgBorderColor` - removed; this never worked but its intended effect can now be accomplished by setting `accentColor`.
+  - `svgOpacity` - removed; this never worked but its intended effect can now be accomplished by setting `svgStyle.opacity`.
   - `markerColor` --> `color`; note that named colors have been removed. The legacy color mapping is below;
       ```js
       const colors: {
@@ -367,10 +373,3 @@ Version 2 is a complete rewrite to support svg only icons with no image or css f
         "black": "#231f20",
       };
       ```
-
-  - `number` --> `content`.
-  - `prefix` - removed. Instead add it to your HTML string for `contentHtml` or on the element if using `content`
-  - `shape` - removed; instead import the desired marker. `import { PinCircleBorder } from "leaflet-extra-markers";`
-  - `svg` --> not supported as boolean; now this takes an SvgNode type (import desired marker and pass by reference)
-  - `svgBorderColor` - removed; this never worked but its intended effect can now be accomplished by setting `accentColor`.
-  - `svgOpacity` - removed; this never worked but its intended effect can now be accomplished by setting `svgStyle.opacity`.
