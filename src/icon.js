@@ -1,5 +1,5 @@
 import { Browser, Icon as IconBase, Point } from "leaflet";
-import { PinTeardropBorder } from "./markers/PinTeardropBorder.js";
+import { PinTeardropBorder } from "./markers/pin-teardrop-border.js";
 import { createElement, createSvgElement } from "./util.js";
 
 const shadowCast =
@@ -171,7 +171,7 @@ export class Icon extends IconBase {
         width: `${opts.iconSize.x}px`,
         height: `${opts.iconSize.y}px`,
         style: {
-          filter: opts.shadow === "drop" ? this.dropShadowCss : "",
+          filter: opts.shadow === "drop" ? Icon.dropShadowCss : "",
           ...(opts.svgStyle ?? {}),
         },
         class: ["extra-marker-icon", opts.svgClass],

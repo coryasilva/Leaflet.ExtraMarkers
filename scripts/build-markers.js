@@ -2,7 +2,6 @@
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import path from "node:path";
-import prettier from "prettier";
 import { parseSync } from "svgson";
 
 const IN_DIR = path.resolve(process.cwd(), "./svgs");
@@ -20,15 +19,16 @@ const toPascalCase = (str) =>
 async function parseMarkers(fileNames, dir) {
   const markerPromises = fileNames.map(async (fileName) => {
     const name = toPascalCase(path.basename(fileName, ".svg"));
+    const fileNameKebab = name.split(/(?=[A-Z])/).map(s => s.toLowerCase()).join("-");
     const raw = await fsp.readFile(path.join(dir, fileName), "utf-8");
     const contents = parseSync(raw);
-    return { name, contents, raw };
+    return { name, contents, raw, fileNameKebab };
   });
 
   const markerContents = await Promise.all(markerPromises);
 
-  return markerContents.reduce((markers, { name, contents, raw }) => {
-    markers[name] = { ...contents, raw };
+  return markerContents.reduce((markers, { name, contents, raw, fileNameKebab }) => {
+    markers[name] = { ...contents, raw, fileNameKebab };
     return markers;
   }, {});
 }
@@ -40,8 +40,9 @@ async function generateMarkers(markerMap, dir) {
   const markers = Object.keys(markerMap);
 
   const writeMarkerPromises = markers.map(async (name) => {
-    const codePath = path.join(dir, `${name}.js`);
-    const typeDefPath = path.join(dir, `${name}.d.ts`);
+    const { fileNameKebab } = markerMap[name];
+    const codePath = path.join(dir, `${fileNameKebab}.js`);
+    const typeDefPath = path.join(dir, `${fileNameKebab}.d.ts`);
     const marker = markerMap[name];
 
     const transformNode = ({ name, attributes, children }) => {
@@ -61,17 +62,11 @@ async function generateMarkers(markerMap, dir) {
  */
 export const ${name} = ${JSON.stringify(markerNode)};
     `;
-    const prettierConfig = {
-      singleQuote: false,
-      trailingComma: "all",
-      printWidth: 100,
-      parser: "babel",
-    };
 
-    const formattedCode = await prettier.format(code, prettierConfig);
-    await fsp.writeFile(codePath, formattedCode, "utf-8");
+    await fsp.writeFile(codePath, code, "utf-8");
 
-    const typeDef = `import type { SvgNode } from "../types.js";
+    const typeDef = `
+import type { SvgNode } from "../types.js";
 
 export declare const ${name}: SvgNode;
 `;
@@ -84,16 +79,16 @@ export declare const ${name}: SvgNode;
   return result;
 }
 
-async function generateBarrelFile(markerMap) {
-  const fileName = "index.js";
+async function generateBarrelFile(fileName, markerMap) {
   const filePath = path.join(OUT_DIR, fileName);
-  const markerFiles = Object.keys(markerMap);
+  const markerFiles = Object.keys(markerMap).sort();
 
   // Empty file
   fsp.writeFile(filePath, "", "utf-8");
 
   const markerPromises = markerFiles.map(async (markerName) => {
-    const importStatement = `export { ${markerName} } from "./${markerName}.js";\n`;
+    const { fileNameKebab } = markerMap[markerName];
+    const importStatement = `export { ${markerName} } from "./${fileNameKebab}.js";\n`;
     return fsp.appendFile(filePath, importStatement, "utf-8");
   });
 
@@ -119,7 +114,8 @@ async function build() {
   await generateMarkers(markerMap, OUT_DIR);
 
   // Generate the barrel file
-  await generateBarrelFile(markerMap, OUT_DIR);
+  await generateBarrelFile("index.d.ts", markerMap, OUT_DIR);
+  await generateBarrelFile("index.js", markerMap, OUT_DIR);
 }
 
 await build();
