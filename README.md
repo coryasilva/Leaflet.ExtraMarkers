@@ -1,11 +1,10 @@
-# Leaflet extra markers v2
-
 - TODO: Impl `origin`
 
-A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, or Material.
+A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, Bootstrap, or Material.
 
 >✨ **DEMO**<br>
->[Check out the demo**](demos/index.html)
+>[Check out the demo](https://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html)
+
 
 > ⚠️ **WARNING**<br>
 > This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility [view the v1 branch](https://github.com/coryasilva/Leaflet.ExtraMarkers/tree/v1)
@@ -60,7 +59,7 @@ const marker = new Marker(map.getCenter(), {
 ```
 
 ### Full example
-For more examples view the [**Demo**](demos/index.html).
+For more examples view the [**Demo**](https://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html).
 
 ```html
 <!doctype html>
