@@ -16,7 +16,11 @@ test("createIcon default (PinTeardropBorder)", (t) => {
 
   t.is(iconEl.className, "extra-marker", "root has base class");
   t.is(svg.getAttribute("class"), "extra-marker-icon", "svg has base class");
-  t.is(contentContainer.className, "extra-marker-content", "content container has base class");
+  t.is(
+    contentContainer.className,
+    "extra-marker-content",
+    "content container has base class",
+  );
 });
 
 test("createIcon (sizes)", (t) => {
@@ -109,7 +113,7 @@ test("createShadow custom", (t) => {
   const icon = new Icon({
     shadowUrl: "https://domain.local/shadow.png",
     shadowAnchor: [4, 2],
-    shadowSize: [8, 4]
+    shadowSize: [8, 4],
   });
 
   const shadow = icon.createShadow();
@@ -133,5 +137,9 @@ test("createShadow class + style", (t) => {
   const shadow = icon.createShadow();
 
   t.is(shadow.style["margin-left"], "0px", "override/set style");
-  t.is(shadow.className, "extra-marker-shadow mock-shadow-class", "add custom class");
+  t.is(
+    shadow.className,
+    "extra-marker-shadow mock-shadow-class",
+    "add custom class",
+  );
 });

@@ -19,7 +19,10 @@ const toPascalCase = (str) =>
 async function parseMarkers(fileNames, dir) {
   const markerPromises = fileNames.map(async (fileName) => {
     const name = toPascalCase(path.basename(fileName, ".svg"));
-    const fileNameKebab = name.split(/(?=[A-Z])/).map(s => s.toLowerCase()).join("-");
+    const fileNameKebab = name
+      .split(/(?=[A-Z])/)
+      .map((s) => s.toLowerCase())
+      .join("-");
     const raw = await fsp.readFile(path.join(dir, fileName), "utf-8");
     const contents = parseSync(raw);
     return { name, contents, raw, fileNameKebab };
@@ -27,10 +30,13 @@ async function parseMarkers(fileNames, dir) {
 
   const markerContents = await Promise.all(markerPromises);
 
-  return markerContents.reduce((markers, { name, contents, raw, fileNameKebab }) => {
-    markers[name] = { ...contents, raw, fileNameKebab };
-    return markers;
-  }, {});
+  return markerContents.reduce(
+    (markers, { name, contents, raw, fileNameKebab }) => {
+      markers[name] = { ...contents, raw, fileNameKebab };
+      return markers;
+    },
+    {},
+  );
 }
 
 /**
