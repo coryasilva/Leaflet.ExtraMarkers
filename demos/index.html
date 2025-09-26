@@ -41,13 +41,15 @@
       margin: 2rem 0;
     }
 
-    input, select {
+    input,
+    select {
       background-color: white;
       border-style: solid;
       border-width: 1px;
     }
 
-    h1,h2 {
+    h1,
+    h2 {
       margin-top: 3rem;
     }
 
@@ -64,16 +66,45 @@
       padding-left: 1.25rem;
     }
 
-    .w-full { width: 100%; }
-    .w-72 { width: 18rem; }
-    .max-w-72 { max-width: 18rem; }
-    .h-48 { height: 12rem; }
-    .h-72 { height: 18rem; }
-    .h-96 { height: 24rem; }
-    .mt-4 { margin-top: 1rem; }
-    .flex { display: flex; }
-    .flex-col { flex-direction: column; }
-    .gap-4 { gap: 1rem; }
+    .w-full {
+      width: 100%;
+    }
+
+    .w-72 {
+      width: 18rem;
+    }
+
+    .max-w-72 {
+      max-width: 18rem;
+    }
+
+    .h-48 {
+      height: 12rem;
+    }
+
+    .h-72 {
+      height: 18rem;
+    }
+
+    .h-96 {
+      height: 24rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
 
     .leaflet-div-icon {
       background: none;
@@ -85,11 +116,15 @@
         background-color: #121212;
         color: #e2e2e2;
       }
-      input, select {
+
+      input,
+      select {
         background-color: #222222;
         color: #e2e2e2;
       }
-      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+
+      .leaflet-popup-content-wrapper,
+      .leaflet-popup-tip {
         background: #323232;
         color: #e2e2e2;
       }
@@ -139,7 +174,7 @@
         </label>
         <label class="flex flex-col">
           Content
-          <input type="text" id="builder-content"/>
+          <input type="text" id="builder-content" />
         </label>
         <label class="flex flex-col">
           Color
@@ -155,7 +190,7 @@
         </label>
         <label class="flex flex-col">
           Scale
-          <input type="text" id="builder-scale" value="1" min="0"/>
+          <input type="text" id="builder-scale" value="1" min="0" />
         </label>
         <label class="flex flex-col">
           Shadow
@@ -173,7 +208,7 @@
     <h2 id="performance">Performance</h2>
     <label>
       Marker count:
-      <input type="number" id="performance-count" value="1000" min="0" max="10000" step="100"/>
+      <input type="number" id="performance-count" value="1000" min="0" max="10000" step="100" />
     </label>
     <label>
       Marker type:
@@ -259,9 +294,9 @@
 
     const buildPopupText = (opts, svgName, title) => {
       const content = opts.content instanceof Node ? opts.content.outerHTML : opts.content;
-      const colorChip = color => ["span", { style: { display: "inline-block", width: "0.75rem", height: "0.75rem", backgroundColor: color, margin: "0 0.25rem", border: "1px solid"} }, []]
+      const colorChip = color => ["span", { style: { display: "inline-block", width: "0.75rem", height: "0.75rem", backgroundColor: color, margin: "0 0.25rem", border: "1px solid" } }, []]
       const html = createElement(["div", {}, [
-        title && ["h4", {style: "margin-bottom: 0.25rem;"}, [title]],
+        title && ["h4", { style: "margin-bottom: 0.25rem;" }, [title]],
         opts.color && ["div", {}, ["color: ", colorChip(opts.color), opts.color]],
         opts.contentColor && ["div", {}, ["contentColor: ", colorChip(opts.contentColor), opts.contentColor]],
         opts.accentColor && ["div", {}, ["accentColor: ", colorChip(opts.accentColor), opts.accentColor]],
@@ -314,7 +349,7 @@
         "#c057a0",
       ];
 
-      const pinExamples = Object.entries(pins.Border).concat(Object.entries(pins.Panel)).slice(0,colors.length)
+      const pinExamples = Object.entries(pins.Border).concat(Object.entries(pins.Panel)).slice(0, colors.length)
         .map(([svgName, svg], i) => ({
           svgName,
           svg,
@@ -322,7 +357,7 @@
           accentColor: "rgba(0,0,0,0.25)",
           content: i === 0 ? undefined : createElement(["i", { class: `fa fa-${icons[i]}` }]),
         })
-      );
+        );
       const tackExamples = Object.entries(tacks.Border).concat(Object.entries(tacks.Panel))
         .map(([svgName, svg], i) => ({
           svgName,
@@ -332,7 +367,7 @@
           content: i === 0 ? undefined : createElement(["i", { class: `fa fa-${icons[i]}` }]),
           shadow: "ellipse",
         })
-      );
+        );
       const chipExamples = Object.entries(chips.Panel).concat(Object.entries(chips.Base))
         .map(([svgName, svg], i) => ({
           svgName,
@@ -342,7 +377,7 @@
           content: i === 0 ? undefined : createElement(["i", { class: `fa fa-${icons[i]}` }]),
           shadow: "drop",
         })
-      );
+        );
       const pointExamples = Object.entries(points.Border2).concat(Object.entries(points.Border))
         .map(([svgName, svg], i) => ({
           svgName,
@@ -351,7 +386,7 @@
           svgFillImageSrc: `https://picsum.photos/seed/${svgName}/60/60`,
           shadow: "drop",
         })
-      );
+        );
 
       const examples = { pinExamples, tackExamples, chipExamples, pointExamples };
       let row = 0;
@@ -746,7 +781,7 @@
 
       Object.entries(families).forEach(([key, value]) => {
         const optGroup = createElement(["optgroup", { label: key },
-          Object.entries(value).map(([k ,v]) => ["option", {}, [k]]),
+          Object.entries(value).map(([k, v]) => ["option", {}, [k]]),
         ]);
         svgField.append(optGroup);
       })
