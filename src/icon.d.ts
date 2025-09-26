@@ -144,17 +144,23 @@ export interface ExtraOptions extends ExtraOverrides, IconOptions {
 	*/
   contentColor?: string;
   /**
+  Sets the icon anchor.
+  - `bottom` x center, y bottom
+  - `center` x center, y center
+  */
+  origin?: "bottom" | "center";
+  /**
+  The scale of the SVG marker; height will
+  be scaled proportionately. The markers are designed
+  on a base 30px wide grid. Min: `0.1`
+  @default 1
+  */
+  scale?: number;
+  /**
 	The shadow variant.
 	@default "cast"
 	*/
   shadow?: "cast" | "drop" | "ellipse" | "none";
-  /**
-	The scale of the SVG marker; height will
-	be scaled proportionately. The markers are designed
-	on a base 30px wide grid. Min: `0.1`
-	@default 1
-	*/
-  scale?: number;
   /**
 	The url of an image to use as a fill for the marker.
 	Image will be clipped by marker base shape.

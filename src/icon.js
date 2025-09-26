@@ -16,10 +16,11 @@ export class Icon extends IconBase {
       color: "#000",
       contentColor: "#fff",
       contentStyle: {},
+      origin: "bottom",
       rootStyle: {},
+      scale: 1,
       shadow: "cast",
       shadowStyle: {},
-      scale: 1,
       svgStyle: {},
     });
   }
@@ -29,28 +30,43 @@ export class Icon extends IconBase {
   }
 
   initialize(options) {
+    this.initOptions(options);
+    this.initCrossOrigin();
+    this.initSizeAndAnchor(options);
+  }
+
+  initOptions(options) {
     for (const [key, value] of Object.entries(options)) {
       if (typeof value !== "undefined") {
         this.options[key] = value;
       }
     }
+  }
 
+  initCrossOrigin() {
     const opts = this.options;
 
-    // Normalize cross origin
     if (opts.crossOrigin || opts.crossOrigin === "") {
       opts.crossOrigin =
         opts.crossOrigin === true ? "" : String(opts.crossOrigin);
     } else {
       opts.crossOrigin = undefined;
     }
+  }
 
-    // Set anchors
+  initSizeAndAnchor(options) {
+    const opts = this.options;
+    const origin = opts.origin;
+    const yDivisorMap = {
+      center: 2,
+      bottom: 1,
+    };
+
     opts.iconSize = this.calcIconSize();
     const { x, y } = opts.iconSize;
     opts.iconAnchor = options.iconAnchor
       ? new Point(options.iconAnchor)
-      : new Point([x / 2, y]);
+      : new Point([x / 2, y / yDivisorMap[origin]]);
 
     if (opts.shadow === "ellipse") {
       // 30w 6h
@@ -60,7 +76,7 @@ export class Icon extends IconBase {
       opts.shadowAnchor = options.shadowAnchor
         ? new Point(options.shadowAnchor)
         : new Point([x / 2, (x * 6) / 30 / 2]);
-    } else {
+    } else if (opts.shadow === "cast") {
       // 39w 36h
       opts.shadowSize = options.shadowSize
         ? new Point(options.shadowSize)
@@ -68,8 +84,16 @@ export class Icon extends IconBase {
       opts.shadowAnchor = options.shadowAnchor
         ? new Point(options.shadowAnchor)
         : new Point([x / 2, (x / 30) * 32]);
+    } else { // none
+      opts.shadowSize = options.shadowSize
+        ? new Point(options.shadowSize)
+        : new Point([0, 0]);
+      opts.shadowAnchor = options.shadowAnchor
+        ? new Point(options.shadowAnchor)
+        : new Point([0, 0]);
     }
 
+    // Set anchors to middle of content wrapper
     opts.popupAnchor = options.popupAnchor
       ? new Point(options.popupAnchor)
       : new Point([0, -y + x / 2]);

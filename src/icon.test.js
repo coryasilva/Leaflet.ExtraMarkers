@@ -7,6 +7,7 @@ import {
   PinDiamond,
   PinStar,
   PointSquare,
+  PointTriangle,
   TackPentagon,
 } from "./index.js";
 
@@ -22,6 +23,14 @@ test("createIcon default (PinTeardropBorder)", (t) => {
     "extra-marker-content",
     "content container has base class",
   );
+});
+
+test("createIcon origin", (t) => {
+  const icon = new Icon({ svg: PointTriangle, origin: "center" }).createIcon();;
+  t.is(icon.style.width, "30px", "width");
+  t.is(icon.style.height, "30px", "height");
+  t.is(icon.style["margin-top"], "-15px", "margin top");
+  t.is(icon.style["margin-left"], "-15px", "margin left");
 });
 
 test("createIcon sizes", (t) => {

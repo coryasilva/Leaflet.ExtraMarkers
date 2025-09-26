@@ -1,5 +1,3 @@
-- TODO: Impl `origin`
-
 A collection of fine SVG map markers that can easily be colored, resized, or overlayed with any DOM node including icon libraries, like Lucide, FontAwesome, Bootstrap, or Material.
 
 >✨ **DEMO**<br>
@@ -186,15 +184,20 @@ Note: This setting could be overwritten by `contentWrapperStyle.color`.
 
 *Default*: `"#fff"`
 
-#### `shadow: "cast" | "drop" | "ellipse" | "none" | undefined`
-The shadow variant.
-
-*Default*: `"cast"`
+#### `origin: "bottom" | "center" | undefined`
+Sets the icon anchor.
+- `bottom` x center, y bottom
+- `center` x center, y center
 
 #### `scale: number | undefined`
 The scale of the SVG marker; height will be scaled proportionately. The markers are designed on a base `30px` wide grid. Min: `0.1`
 
 *Default*: `1`
+
+#### `shadow: "cast" | "drop" | "ellipse" | "none" | undefined`
+The shadow variant.
+
+*Default*: `"cast"`
 
 #### `svgFillImageSrc: string | undefined`
 The url of an image to use as a fill for the marker. Image will be clipped by marker base shape. Consider retina devices when sizing images.
