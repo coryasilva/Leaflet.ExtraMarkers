@@ -103,7 +103,7 @@ export class Icon extends IconBase {
     return createElement([
       "div",
       {
-        class: ["extra-marker-content", opts.contentClass],
+        class: ["extra-marker-content", opts.contentWrapperClass],
         style: {
           position: "absolute",
           top: "0",
@@ -118,7 +118,7 @@ export class Icon extends IconBase {
           fontWeight: "700",
           lineHeight: "1",
           color: opts.contentColor,
-          ...(opts.contentStyle ?? {}),
+          ...(opts.contentWrapperStyle ?? {}),
         },
       },
     ]);
