@@ -84,7 +84,8 @@ export class Icon extends IconBase {
       opts.shadowAnchor = options.shadowAnchor
         ? new Point(options.shadowAnchor)
         : new Point([x / 2, (x / 30) * 32]);
-    } else { // none
+    } else {
+      // none
       opts.shadowSize = options.shadowSize
         ? new Point(options.shadowSize)
         : new Point([0, 0]);

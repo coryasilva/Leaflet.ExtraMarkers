@@ -26,7 +26,7 @@ test("createIcon default (PinTeardropBorder)", (t) => {
 });
 
 test("createIcon origin", (t) => {
-  const icon = new Icon({ svg: PointTriangle, origin: "center" }).createIcon();;
+  const icon = new Icon({ svg: PointTriangle, origin: "center" }).createIcon();
   t.is(icon.style.width, "30px", "width");
   t.is(icon.style.height, "30px", "height");
   t.is(icon.style["margin-top"], "-15px", "margin top");
@@ -73,30 +73,77 @@ test("createIcon scale", (t) => {
 
 test("createIcon content", (t) => {
   const iconEmpty = new Icon().createIcon();
-  t.is(iconEmpty.querySelector(".extra-marker-content").firstChild.nodeName, "DIV", "has empty dot")
-  t.is(iconEmpty.querySelector(".extra-marker-content").childElementCount, 1, "has only empty dot")
+  t.is(
+    iconEmpty.querySelector(".extra-marker-content").firstChild.nodeName,
+    "DIV",
+    "has empty dot",
+  );
+  t.is(
+    iconEmpty.querySelector(".extra-marker-content").childElementCount,
+    1,
+    "has only empty dot",
+  );
 
   const iconNumber = new Icon({ content: 1 }).createIcon();
-  t.is(iconNumber.querySelector(".extra-marker-content").textContent, "1", "has number content")
+  t.is(
+    iconNumber.querySelector(".extra-marker-content").textContent,
+    "1",
+    "has number content",
+  );
 
   const iconString = new Icon({ content: "AA" }).createIcon();
-  t.is(iconString.querySelector(".extra-marker-content").textContent, "AA", "has string content")
+  t.is(
+    iconString.querySelector(".extra-marker-content").textContent,
+    "AA",
+    "has string content",
+  );
 
   const iconElement = new Icon({ content: createElement(["i"]) }).createIcon();
-  t.is(iconElement.querySelector(".extra-marker-content").firstChild.nodeName, "I", "has element content")
-  t.is(iconElement.querySelector(".extra-marker-content").childElementCount, 1, "has only element content")
+  t.is(
+    iconElement.querySelector(".extra-marker-content").firstChild.nodeName,
+    "I",
+    "has element content",
+  );
+  t.is(
+    iconElement.querySelector(".extra-marker-content").childElementCount,
+    1,
+    "has only element content",
+  );
 
-  const iconHtml = new Icon({ content: "ignore", contentHtml: "<i></i>"}).createIcon();
-  t.is(iconHtml.querySelector(".extra-marker-content").firstChild.nodeName, "I", "has html content")
-  t.is(iconHtml.querySelector(".extra-marker-content").childElementCount, 1, "has only html content")
+  const iconHtml = new Icon({
+    content: "ignore",
+    contentHtml: "<i></i>",
+  }).createIcon();
+  t.is(
+    iconHtml.querySelector(".extra-marker-content").firstChild.nodeName,
+    "I",
+    "has html content",
+  );
+  t.is(
+    iconHtml.querySelector(".extra-marker-content").childElementCount,
+    1,
+    "has only html content",
+  );
 
   const icon = new Icon({
     content: (opts) => createElement(["pre", {}, [JSON.stringify(opts)]]),
-  })
+  });
   const iconFn = icon.createIcon();
-  t.is(iconFn.querySelector(".extra-marker-content").firstChild.nodeName, "PRE", "has html content")
-  t.is(iconFn.querySelector(".extra-marker-content").childElementCount, 1, "has only html content")
-  t.is(iconFn.querySelector(".extra-marker-content").textContent, JSON.stringify(icon.options), "has fn arg content")
+  t.is(
+    iconFn.querySelector(".extra-marker-content").firstChild.nodeName,
+    "PRE",
+    "has html content",
+  );
+  t.is(
+    iconFn.querySelector(".extra-marker-content").childElementCount,
+    1,
+    "has only html content",
+  );
+  t.is(
+    iconFn.querySelector(".extra-marker-content").textContent,
+    JSON.stringify(icon.options),
+    "has fn arg content",
+  );
 });
 
 test("createIcon colors", (t) => {
@@ -125,8 +172,12 @@ test("createIcon svgImageFill", (t) => {
   const path = svg.querySelector("path");
   const contentWrapper = icon.querySelector(".extra-marker-content");
 
-  t.is(path.getAttribute("fill"), `url(#${pattern.getAttribute("id")})`, "fill references pattern id")
-  t.is(contentWrapper.childElementCount, 0, "no empty dot when svgImageFill")
+  t.is(
+    path.getAttribute("fill"),
+    `url(#${pattern.getAttribute("id")})`,
+    "fill references pattern id",
+  );
+  t.is(contentWrapper.childElementCount, 0, "no empty dot when svgImageFill");
 });
 
 test("createIcon overrides", (t) => {
@@ -146,9 +197,17 @@ test("createIcon overrides", (t) => {
 
   t.is(icon.className, "extra-marker mock-root-class", "root class");
   t.is(icon.style.color, "magenta", "root style.color");
-  t.is(svg.getAttribute("class"), "extra-marker-icon mock-svg-class", "svg class");
+  t.is(
+    svg.getAttribute("class"),
+    "extra-marker-icon mock-svg-class",
+    "svg class",
+  );
   t.is(svg.style.fill, "orchid", "svg style.color");
-  t.is(contentWrapper.className, "extra-marker-content mock-content-wrapper-class", "content wrapper class");
+  t.is(
+    contentWrapper.className,
+    "extra-marker-content mock-content-wrapper-class",
+    "content wrapper class",
+  );
   //@ts-expect-error
   t.is(contentWrapper.style.color, "pink", "content wrapper style.color");
 });
