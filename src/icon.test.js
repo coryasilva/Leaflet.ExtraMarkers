@@ -1,6 +1,69 @@
 import "global-jsdom/register";
 import test from "ava";
-import { Icon } from "./icon.js";
+import {
+  ChipCircle,
+  Icon,
+  PinStar,
+  PointSquare,
+  TackPentagon,
+} from "./index.js";
+
+test("createIcon default (PinTeardropBorder)", (t) => {
+  const icon = new Icon();
+  const iconEl = icon.createIcon();
+  const svg = iconEl.querySelector("svg");
+  const contentContainer = iconEl.querySelector(".extra-marker-content");
+
+  t.is(iconEl.className, "extra-marker", "root has base class");
+  t.is(svg.getAttribute("class"), "extra-marker-icon", "svg has base class");
+  t.is(contentContainer.className, "extra-marker-content", "content container has base class");
+});
+
+test("createIcon (sizes)", (t) => {
+  const iconPin = new Icon({ svg: PinStar });
+  const iconPinEl = iconPin.createIcon();
+  t.is(iconPinEl.style.width, "30px", "width");
+  t.is(iconPinEl.style.height, "41px", "height");
+  t.is(iconPinEl.style["margin-top"], "-41px", "margin top");
+  t.is(iconPinEl.style["margin-left"], "-15px", "margin left");
+
+  const iconTack = new Icon({ svg: TackPentagon });
+  const iconTackEl = iconTack.createIcon();
+  t.is(iconTackEl.style.width, "30px", "width");
+  t.is(iconTackEl.style.height, "35px", "height");
+  t.is(iconTackEl.style["margin-top"], "-35px", "margin top");
+  t.is(iconTackEl.style["margin-left"], "-15px", "margin left");
+
+  const iconChip = new Icon({ svg: ChipCircle });
+  const iconChipEl = iconChip.createIcon();
+  t.is(iconChipEl.style.width, "30px", "width");
+  t.is(iconChipEl.style.height, "33px", "height");
+  t.is(iconChipEl.style["margin-top"], "-33px", "margin top");
+  t.is(iconChipEl.style["margin-left"], "-15px", "margin left");
+
+  const iconPoint = new Icon({ svg: PointSquare });
+  const iconPointEl = iconPoint.createIcon();
+  t.is(iconPointEl.style.width, "30px", "width");
+  t.is(iconPointEl.style.height, "30px", "height");
+  t.is(iconPointEl.style["margin-top"], "-30px", "margin top");
+  t.is(iconPointEl.style["margin-left"], "-15px", "margin left");
+});
+
+// test("createIcon content", (t) => {
+//   const icon = new Icon();
+//   const iconEl = icon.createIcon();
+// contentHtml
+// });
+
+// test("createIcon colors", (t) => {
+//   const icon = new Icon();
+//   const iconEl = icon.createIcon();
+// });
+
+// test("createIcon overrides", (t) => {
+//   const icon = new Icon();
+//   const iconEl = icon.createIcon();
+// });
 
 test("createShadow default (cast)", (t) => {
   const icon = new Icon();
@@ -36,7 +99,10 @@ test("createShadow none", (t) => {
 test("createShadow drop", (t) => {
   const icon = new Icon({ shadow: "drop" });
   const shadow = icon.createShadow();
-  t.assert(typeof shadow === "undefined", "drop shadow should be filter on svg marker instead");
+  const iconEl = icon.createIcon();
+  const svg = iconEl.querySelector("svg");
+  t.assert(typeof shadow === "undefined", "drop shadow on svg marker instead");
+  t.assert(svg.style.filter.startsWith("drop-shadow("), "drop shadow filter");
 });
 
 test("createShadow custom", (t) => {
