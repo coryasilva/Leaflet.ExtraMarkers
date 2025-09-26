@@ -1,0 +1,23 @@
+/**
+ * @name TackTriangle
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzUiPiAgPHBhdGggZD0iTTEzLjguMjVhMi45OSAyLjk5IDAgMCAxIDIuNzYuMTkgMjguNyAyOC43IDAgMCAxIDkuOCA5Ljk2bC4yNC40LjI1LjQ1QTI2LjcgMjYuNyAwIDAgMSAzMCAyMS45YTMuMDYgMy4wNiAwIDAgMS0xLjY3IDIuOTcgMjguNiAyOC42IDAgMCAxLTguODggMi44IDIgMiAwIDAgMC0xLjYgMS4zbC0xLjg5IDUuMy0uMDIuMDctLjA0LjFhLjYzLjYzIDAgMCAxLS4wNi4xbC0uMDMuMDMuMDItLjAyLS4wMS4wMS0uMDMuMDRhMSAxIDAgMCAxLS41OC4zN2wtLjEuMDJoLS4xM2ExIDEgMCAwIDEtLjg1LS41bC0uMDYtLjE0di0uMDFsLTEuOTItNS4zNmEyIDIgMCAwIDAtMS40Ny0xLjI4bC0uMTMtLjAzLS41NS0uMDhhMjguNDkgMjguNDkgMCAwIDEtNy43NC0yLjQzbC0uNTktLjNBMy4wNiAzLjA2IDAgMCAxIC4wMSAyMS45YTI2LjY5IDI2LjY5IDAgMCAxIDMuNC0xMS4xMkEyOC42OSAyOC42OSAwIDAgMSAxMy40NC40NGwuMTgtLjEuMTgtLjA5Wm0yIDM0LjM0Wm0wIDAgLjAxLS4wMVoiLz48L3N2Zz4=)
+ * @type {Array}
+ */
+export const TackTriangle = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "35",
+    fill: "currentColor",
+    viewBox: "0 0 30 35",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M13.8.25a2.99 2.99 0 0 1 2.76.19 28.7 28.7 0 0 1 9.8 9.96l.24.4.25.45A26.7 26.7 0 0 1 30 21.9a3.06 3.06 0 0 1-1.67 2.97 28.6 28.6 0 0 1-8.88 2.8 2 2 0 0 0-1.6 1.3l-1.89 5.3-.02.07-.04.1a.63.63 0 0 1-.06.1l-.03.03.02-.02-.01.01-.03.04a1 1 0 0 1-.58.37l-.1.02h-.13a1 1 0 0 1-.85-.5l-.06-.14v-.01l-1.92-5.36a2 2 0 0 0-1.47-1.28l-.13-.03-.55-.08a28.49 28.49 0 0 1-7.74-2.43l-.59-.3A3.06 3.06 0 0 1 .01 21.9a26.69 26.69 0 0 1 3.4-11.12A28.69 28.69 0 0 1 13.44.44l.18-.1.18-.09Zm2 34.34Zm0 0 .01-.01Z",
+      },
+    ],
+  ],
+];

@@ -1,0 +1,44 @@
+export const setAttributes = (element, attributes) => {
+  if (!attributes) return;
+  for (const [key, value] of Object.entries(attributes)) {
+    if (key === "class" && Array.isArray(value)) {
+      for (const c of value) {
+        if (!c) continue;
+        element.classList.add(String(c));
+      }
+    } else if (key === "style" && typeof value === "object") {
+      Object.assign(element.style, value);
+    } else if (typeof value !== "undefined") {
+      element.setAttribute(key, String(value));
+    }
+  }
+};
+
+export const appendChildren = (el, children, creator) => {
+  const frag = document.createDocumentFragment();
+
+  for (const child of children) {
+    if (!child) continue;
+    if (Array.isArray(child)) {
+      frag.append(creator(child));
+    } else {
+      frag.append(child);
+    }
+  }
+
+  el.append(frag);
+};
+
+export const createSvgElement = ([tag, attributes, children]) => {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  if (attributes) setAttributes(el, attributes);
+  if (children?.length) appendChildren(el, children, createSvgElement);
+  return el;
+};
+
+export const createElement = ([tag, attributes, children]) => {
+  const el = document.createElement(tag);
+  if (attributes) setAttributes(el, attributes);
+  if (children?.length) appendChildren(el, children, createElement);
+  return el;
+};

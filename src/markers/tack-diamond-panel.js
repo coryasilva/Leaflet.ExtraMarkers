@@ -1,0 +1,32 @@
+/**
+ * @name TackDiamondPanel
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzUiPiAgPHBhdGggZD0iTTEyLjIgMS4xN2EzLjk3IDMuOTcgMCAwIDEgNS42IDBMMjguODQgMTIuMmEzLjk3IDMuOTcgMCAwIDEgLjE2IDUuNDRsLS4yLjItMTAuMzYgMTAuMzdhMyAzIDAgMCAwLS43IDEuMTFsLTEuNzcgNC45NS0uMDIuMDYtLjAxLjAzLS4wMi4wNC0uMDIuMDYtLjAxLjAyLS4wMi4wMi0uMDEuMDMtLjA3LjA4di4wMWwtLjAyLjAyYTEgMSAwIDAgMS0uNjcuMzZoLS4xMmExIDEgMCAwIDEtLjkxLS42M3YtLjAybC0xLjgtNS4wM2EzIDMgMCAwIDAtLjYtMWwtLjExLS4xMS0xMC40LTEwLjRhMy45NyAzLjk3IDAgMCAxIDAtNS42MWwyLjQtMi40LjE0LS4xNCA4LjUtOC41WiIvPiAgPHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTIuMiAxLjE3YTMuOTcgMy45NyAwIDAgMSA1LjYgMEwyOC44NCAxMi4yYTMuOTcgMy45NyAwIDAgMSAuMTYgNS40NGwtLjIuMi0xMC4zNiAxMC4zN2EzIDMgMCAwIDAtLjcgMS4xbC0xLjc3IDQuOTYtLjAyLjA2LS4wMS4wMnYuMDFsLS4wMi4wNC0uMDIuMDYtLjAxLjAyLS4wMi4wMi0uMDEuMDMtLjA3LjA4di4wMWwtLjAyLjAyYTEgMSAwIDAgMS0uNjcuMzZoLS4xMmExIDEgMCAwIDEtLjkxLS42M3YtLjAybC0xLjgxLTUuMDNhMyAzIDAgMCAwLS41OS0xbC0uMTEtLjExLTEwLjQtMTAuNGEzLjk3IDMuOTcgMCAwIDEgMC01LjYxbDIuNC0yLjQuMTQtLjE0IDguNS04LjVabTQuMiAxLjQxYTEuOTcgMS45NyAwIDAgMC0yLjggMEwyLjU5IDEzLjYxYTEuOTcgMS45NyAwIDAgMCAwIDIuNzlMMTMuNiAyNy40M2MuNzcuNzcgMi4wMS43NyAyLjc4IDBMMjcuNDIgMTYuNGMuNzctLjc3Ljc3LTIuMDIgMC0yLjc5TDE2LjQgMi41OFoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==)
+ * @type {Array}
+ */
+export const TackDiamondPanel = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "35",
+    fill: "currentColor",
+    viewBox: "0 0 30 35",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M12.2 1.17a3.97 3.97 0 0 1 5.6 0L28.84 12.2a3.97 3.97 0 0 1 .16 5.44l-.2.2-10.36 10.37a3 3 0 0 0-.7 1.11l-1.77 4.95-.02.06-.01.03-.02.04-.02.06-.01.02-.02.02-.01.03-.07.08v.01l-.02.02a1 1 0 0 1-.67.36h-.12a1 1 0 0 1-.91-.63v-.02l-1.8-5.03a3 3 0 0 0-.6-1l-.11-.11-10.4-10.4a3.97 3.97 0 0 1 0-5.61l2.4-2.4.14-.14 8.5-8.5Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M12.2 1.17a3.97 3.97 0 0 1 5.6 0L28.84 12.2a3.97 3.97 0 0 1 .16 5.44l-.2.2-10.36 10.37a3 3 0 0 0-.7 1.1l-1.77 4.96-.02.06-.01.02v.01l-.02.04-.02.06-.01.02-.02.02-.01.03-.07.08v.01l-.02.02a1 1 0 0 1-.67.36h-.12a1 1 0 0 1-.91-.63v-.02l-1.81-5.03a3 3 0 0 0-.59-1l-.11-.11-10.4-10.4a3.97 3.97 0 0 1 0-5.61l2.4-2.4.14-.14 8.5-8.5Zm4.2 1.41a1.97 1.97 0 0 0-2.8 0L2.59 13.61a1.97 1.97 0 0 0 0 2.79L13.6 27.43c.77.77 2.01.77 2.78 0L27.42 16.4c.77-.77.77-2.02 0-2.79L16.4 2.58Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];

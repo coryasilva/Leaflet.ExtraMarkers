@@ -1,0 +1,32 @@
+/**
+ * @name PinDiamondBorder2
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgNDEiPiAgPHBhdGggZD0iTTEyLjIgMS4xNmEzLjk3IDMuOTcgMCAwIDEgNS42IDBMMjguODUgMTIuMmEzLjk5IDMuOTkgMCAwIDEgLjM5IDUuMTZMMTUuOTMgNDAuNGExIDEgMCAwIDEtMS44My4wNUwuNjkgMTcuMjRhMy45NyAzLjk3IDAgMCAxIC40Ny01LjA1TDEyLjIgMS4xNloiLz4gIDxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjIgMS4xNmEzLjk3IDMuOTcgMCAwIDEgNS42IDBMMjguODUgMTIuMmEzLjk5IDMuOTkgMCAwIDEgLjM5IDUuMTZMMTUuOTIgNDAuNGExIDEgMCAwIDEtMS44Mi4wNUwuNjkgMTcuMjRhMy45NyAzLjk3IDAgMCAxIC40Ny01LjA1TDEyLjIgMS4xNlptNC4yIDEuNDJhMS45NyAxLjk3IDAgMCAwLTIuOCAwTDIuNTkgMTMuNmExLjk3IDEuOTcgMCAwIDAtLjI0IDIuNWwuMDUuMDcuMDMuMDYgMTIuMTQgMjFhLjUuNSAwIDAgMCAuODcgMEwyNy41IDE2LjM0bC4wNi0uMS4wNy0uMDljLjUzLS43Mi41LTEuNzItLjA3LTIuNDJsLS4wMi0uMDEtLjEtLjF2LS4wMkwxNi4zOCAyLjU4WiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PC9zdmc+)
+ * @type {Array}
+ */
+export const PinDiamondBorder2 = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "41",
+    fill: "currentColor",
+    viewBox: "0 0 30 41",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M12.2 1.16a3.97 3.97 0 0 1 5.6 0L28.85 12.2a3.99 3.99 0 0 1 .39 5.16L15.93 40.4a1 1 0 0 1-1.83.05L.69 17.24a3.97 3.97 0 0 1 .47-5.05L12.2 1.16Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M12.2 1.16a3.97 3.97 0 0 1 5.6 0L28.85 12.2a3.99 3.99 0 0 1 .39 5.16L15.92 40.4a1 1 0 0 1-1.82.05L.69 17.24a3.97 3.97 0 0 1 .47-5.05L12.2 1.16Zm4.2 1.42a1.97 1.97 0 0 0-2.8 0L2.59 13.6a1.97 1.97 0 0 0-.24 2.5l.05.07.03.06 12.14 21a.5.5 0 0 0 .87 0L27.5 16.34l.06-.1.07-.09c.53-.72.5-1.72-.07-2.42l-.02-.01-.1-.1v-.02L16.38 2.58Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];

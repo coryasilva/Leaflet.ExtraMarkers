@@ -1,0 +1,870 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Demo | leaflet-extra-markers</title>
+
+  <!-- Bootstrap font -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Font Awesome JS + SVG -->
+  <script defer src="https://use.fontawesome.com/releases/v7.0.1/js/all.js"></script>
+
+  <!-- Lucide JS + SVG -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css" />
+
+  <!-- Demo styles -->
+  <link rel="stylesheet" href="https://unpkg.com/modern-normalize@3.0.1/modern-normalize.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: 100%;
+    }
+
+    body {
+      font-size: 16px;
+      color: #212121;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    footer {
+      margin: 2rem 0;
+    }
+
+    input,
+    select {
+      background-color: white;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    h1,
+    h2 {
+      margin-top: 3rem;
+    }
+
+    h3 {
+      margin-top: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 50rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .w-72 {
+      width: 18rem;
+    }
+
+    .max-w-72 {
+      max-width: 18rem;
+    }
+
+    .h-48 {
+      height: 12rem;
+    }
+
+    .h-72 {
+      height: 18rem;
+    }
+
+    .h-96 {
+      height: 24rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .leaflet-div-icon {
+      background: none;
+      border: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #e2e2e2;
+      }
+
+      input,
+      select {
+        background-color: #222222;
+        color: #e2e2e2;
+      }
+
+      .leaflet-popup-content-wrapper,
+      .leaflet-popup-tip {
+        background: #323232;
+        color: #e2e2e2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1 id="leaflet-extra-markers">Leaflet extra markers</h1>
+    <p>
+      Demonstrations of options to help you achieve the perfect marker.
+      Click on any marker to see its configuration.
+    </p>
+    <div id="demo-map" class="w-full h-72"></div>
+    <h2 id="marker-families-and-variants">Marker families and variants</h2>
+    <p>The markers are divided into 4 families each with varying shapes and border treatements (varients).</p>
+    <h3 id="pin-family">Pin family</h3>
+    <div id="pin-map" class="w-full h-72"></div>
+    <h3 id="tack-family">Tack family</h3>
+    <div id="tack-map" class="w-full h-72"></div>
+    <h3 id="chip-family">Chip family</h3>
+    <div id="chip-map" class="w-full h-72"></div>
+    <h3 id="point-family">Point family</h3>
+    <div id="point-map" class="w-full h-48"></div>
+    <h2 id="content">Content</h2>
+    <div id="content-map" class="w-full h-48"></div>
+    <h2 id="color">Color</h2>
+    <p>Use combinations of colors, accentColor, and contentColor properties to get just the right effect.</p>
+    <div id="color-map" class="w-full h-48"></div>
+    <h3 id="color-mixing-and-gradients">Color mixing and gradients</h3>
+    <div id="color-mix-map" class="w-full h-48"></div>
+    <h2 id="origin">Origin</h2>
+    <div id="origin-map" class="w-full h-48"></div>
+    <h2 id="scale">Scale</h2>
+    <div id="scale-map" class="w-full h-48"></div>
+    <h2 id="shadows">Shadows</h2>
+    <div id="shadows-map" class="w-full h-48"></div>
+    <h2 id="builder">Marker builder</h2>
+    <div class="flex gap-4 w-full">
+      <div class="flex flex-col gap-4 max-w-72">
+        <label class="flex flex-col">
+          Marker
+          <select type="text" id="builder-svg">
+            <option value="" selected>Default (PinCircleBorder)</option>
+          </select>
+        </label>
+        <label class="flex flex-col">
+          Content
+          <input type="text" id="builder-content" />
+        </label>
+        <label class="flex flex-col">
+          Color
+          <input type="text" id="builder-color" />
+        </label>
+        <label class="flex flex-col">
+          Accent color
+          <input type="text" id="builder-accent-color" />
+        </label>
+        <label class="flex flex-col">
+          Content color
+          <input type="text" id="builder-content-color" />
+        </label>
+        <label class="flex flex-col">
+          Scale
+          <input type="text" id="builder-scale" value="1" min="0" />
+        </label>
+        <label class="flex flex-col">
+          Shadow
+          <select type="text" id="builder-shadow">
+            <option value="" selected>Default (cast)</option>
+            <option value="cast">Cast</option>
+            <option value="drop">Drop</option>
+            <option value="ellipse">Ellipse</option>
+            <option value="none">None</option>
+          </select>
+        </label>
+      </div>
+      <div id="builder-map" class="w-72 h-72"></div>
+    </div>
+    <h2 id="performance">Performance</h2>
+    <label>
+      Marker count:
+      <input type="number" id="performance-count" value="1000" min="0" max="10000" step="100" />
+    </label>
+    <label>
+      Marker type:
+      <select id="performance-type">
+        <option value="extra" selected>Extra marker</option>
+        <option value="default">Default marker</option>
+      </select>
+    </label>
+    <button type="button" id="performance-button">Render markers</button>
+    <span id="performance-time">--</span>
+    <div id="performance-map" class="w-full h-96 mt-4"></div>
+  </main>
+  <footer class="container">
+    <small>Basemap tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ</small>
+  </footer>
+  <script type="importmap">
+    {
+      "imports": {
+        "leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js",
+        "leaflet-extra-markers": "../src/index.js",
+        "lucide": "https://unpkg.com/lucide@latest"
+      }
+    }
+  </script>
+  <script type="module">
+    import {
+      FeatureGroup,
+      Map as LMap,
+      Marker,
+      TileLayer,
+      DivIcon,
+    } from "leaflet";
+    import * as leafletExtraMarkers from "leaflet-extra-markers"
+
+    const {
+      createElement,
+      createSvgElement,
+      Icon,
+      ...extraMarkers
+    } = leafletExtraMarkers;
+
+    const space = 0.004;
+    const demoLat = 33.000;
+    const demoLng = -117.255;
+
+    const demoMapOptions = {
+      scrollWheelZoom: false,
+      attributionControl: false,
+      zoomControl: false,
+      center: [demoLat, demoLng],
+      zoom: 14,
+    };
+
+    const {
+      Pin: pins,
+      Tack: tacks,
+      Chip: chips,
+      Point: points,
+    } = Object.entries(extraMarkers).reduce(
+      (result, [key, value]) => {
+        const [family, shape, variant = "Base"] = key.split(/(?=[A-Z])/);
+        result[family] = result[family] ?? {};
+        result[family][variant] = result[family][variant] ?? {};
+        result[family][variant][key] = value;
+        return result;
+      }, {}
+    );
+
+    const extraMarkersMap = new Map(Object.entries(extraMarkers));
+    const extraMarkersArray = Array.from(extraMarkersMap.values());
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const parseInt = (v) => Number.parseInt(v, 10);
+    const adjustCenter = ({ lat, lng }) => [lat + space / 3, lng];
+    const buildLightBasemap = () => new TileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+      { maxZoom: 16 }
+    );
+    const buildDarkBasemap = () => new TileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+      { maxZoom: 16 }
+    );
+    const buildBasemap = () => prefersDarkMode ? buildDarkBasemap() : buildLightBasemap();
+
+    const buildPopupText = (opts, svgName, title) => {
+      const content = opts.content instanceof Node ? opts.content.outerHTML : opts.content;
+      const colorChip = color => ["span", { style: { display: "inline-block", width: "0.75rem", height: "0.75rem", backgroundColor: color, margin: "0 0.25rem", border: "1px solid" } }, []]
+      const html = createElement(["div", {}, [
+        title && ["h4", { style: "margin-bottom: 0.25rem;" }, [title]],
+        opts.color && ["div", {}, ["color: ", colorChip(opts.color), opts.color]],
+        opts.contentColor && ["div", {}, ["contentColor: ", colorChip(opts.contentColor), opts.contentColor]],
+        opts.accentColor && ["div", {}, ["accentColor: ", colorChip(opts.accentColor), opts.accentColor]],
+        opts.scale && ["div", {}, ["scale: ", opts.scale]],
+        opts.shadow && ["div", {}, ["shadow: ", opts.shadow]],
+        opts.svgFillImageSrc && ["div", {}, ["svgFillImageSrc: ", opts.svgFillImageSrc]],
+        svgName && ["div", {}, ["svg: ", svgName]],
+        content && ["div", {}, [
+          "content: ",
+          content.length > 20 ? `${content.slice(0, 20)}...` : content,
+        ]],
+        opts.contentHtml && ["div", {}, [
+          "contentHtml: ",
+          opts.contentHtml.length > 20 ? `${opts.contentHtml.slice(0, 20)}...` : content,
+        ]],
+      ]]);
+
+      return html;
+    }
+
+    // Demos
+    function demo() {
+      const markers = new FeatureGroup();
+      const icons = [
+        "fire-flame-curved",
+        "burst",
+        "utensils",
+        "plane-up",
+        "wine-glass",
+        "umbrella-beach",
+        "person-hiking",
+        "bolt",
+        "exclamation",
+        "coffee",
+        "star",
+        "car-side",
+      ]
+      const colors = [
+        "#a23337",
+        "#ef9227",
+        "#32a9dd",
+        "#1b75bb",
+        "#90278d",
+        "#009549",
+        "#006838",
+        "#d73e29",
+        "#f5bb39",
+        "#276273",
+        "#440444",
+        "#c057a0",
+      ];
+
+      const pinExamples = Object.entries(pins.Border).concat(Object.entries(pins.Panel)).slice(0, colors.length)
+        .map(([svgName, svg], i) => ({
+          svgName,
+          svg,
+          color: colors[i],
+          accentColor: "rgba(0,0,0,0.25)",
+          content: i === 0 ? undefined : createElement(["i", { class: `fa fa-${icons[i]}` }]),
+        })
+        );
+      const tackExamples = Object.entries(tacks.Border).concat(Object.entries(tacks.Panel))
+        .map(([svgName, svg], i) => ({
+          svgName,
+          svg,
+          color: colors[i],
+          accentColor: "rgba(0,0,0,0.25)",
+          content: i === 0 ? undefined : createElement(["i", { class: `fa fa-${icons[i]}` }]),
+          shadow: "ellipse",
+        })
+        );
+      const chipExamples = Object.entries(chips.Panel).concat(Object.entries(chips.Base))
+        .map(([svgName, svg], i) => ({
+          svgName,
+          svg,
+          color: colors[i],
+          accentColor: "white",
+          content: i === 0 ? undefined : createElement(["i", { class: `fa fa-${icons[i]}` }]),
+          shadow: "drop",
+        })
+        );
+      const pointExamples = Object.entries(points.Border2).concat(Object.entries(points.Border))
+        .map(([svgName, svg], i) => ({
+          svgName,
+          svg,
+          accentColor: "white",
+          svgFillImageSrc: `https://picsum.photos/seed/${svgName}/60/60`,
+          shadow: "drop",
+        })
+        );
+
+      const examples = { pinExamples, tackExamples, chipExamples, pointExamples };
+      let row = 0;
+
+      for (const [variant, shapes] of Object.entries(examples)) {
+        const rowLat = demoLat - row * space;
+        let col = 0;
+
+        for (const [svgName, options] of Object.entries(shapes)) {
+          const text = buildPopupText(options, svgName);
+          const marker = new Marker(
+            [rowLat, demoLng + (col * space)],
+            { icon: new Icon(options) },
+          );
+          marker.bindPopup(text).addTo(markers);
+          col++;
+        }
+
+        row++;
+      }
+
+      new LMap("demo-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoFamily(familyName, familyMap) {
+      const markers = new FeatureGroup();
+      let row = 0;
+
+      for (const [variant, shapes] of Object.entries(familyMap)) {
+        const rowLat = demoLat - row * space;
+        let col = 0;
+
+        new Marker(
+          [rowLat + (space / 3), demoLng - (space * 1.5)],
+          { icon: new DivIcon({ html: variant }) },
+        ).addTo(markers);
+
+        for (const [svgName, svg] of Object.entries(shapes)) {
+          const options = { svg, accentColor: "royalblue", color: "cornflowerblue" };
+          const text = buildPopupText(options, svgName);
+          const marker = new Marker(
+            [rowLat, demoLng + (col * space)],
+            { icon: new Icon(options) },
+          );
+          marker.bindPopup(text).addTo(markers);
+          col++;
+        }
+
+        row++;
+      }
+
+      new LMap(`${familyName}-map`, {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoContent() {
+      const contents = [{
+        title: "Font Awesome `utensils`",
+        content: createElement(["i", { class: "fa fa-utensils" }]),
+      }, {
+        title: "Font Awesome `coffee`",
+        contentHtml: '<i class="fa fa-coffee" />',
+      }, {
+        title: "HeroIcons `star`",
+        content: createSvgElement(["svg", { viewBox: "0 0 24 24", fill: "currentColor", style: "height:1.25em" }, [
+          ["path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" }],
+        ]]),
+      }, {
+        title: "Lucide `bike`",
+        content: createElement(["i", { "data-lucide": "bike", style: { height: "1.25em" } }]),
+      }, {
+        title: "LineIcons `burger-drink`",
+        contentHtml: `<svg style="height:1.5em;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.6689 14.9387C10.6689 13.6961 11.6763 12.6887 12.9189 12.6887H17.8291C19.0717 12.6887 20.0791 13.6961 20.0791 14.9387V14.9698C20.0529 14.9686 20.0265 14.968 20 14.968H10.75C10.7228 14.968 10.6958 14.9686 10.6689 14.9699V14.9387Z" fill="currentColor"/>
+          <path d="M10.6689 18.4662V19.9988C10.6689 20.413 11.0047 20.7488 11.4189 20.7488H19.3291C19.7433 20.7488 20.0791 20.413 20.0791 19.9988V18.4663C20.0529 18.4674 20.0265 18.468 20 18.468H16.3943L15.9069 18.9554C15.2238 19.6385 14.1163 19.6388 13.4328 18.9561L12.9442 18.468H10.75C10.7228 18.468 10.6958 18.4674 10.6689 18.4662Z" fill="currentColor"/>
+          <path d="M10 16.718C10 16.3038 10.3358 15.968 10.75 15.968H20C20.4142 15.968 20.75 16.3038 20.75 16.718C20.75 17.1322 20.4142 17.468 20 17.468H15.9801L15.1998 18.2483C14.9071 18.5411 14.4324 18.5412 14.1395 18.2486L13.358 17.468H10.75C10.3358 17.468 10 17.1322 10 16.718Z" fill="currentColor"/>
+          <path d="M11.856 4C11.5408 4 11.2593 4.19709 11.1514 4.49326L10.5796 6.0625H15.027C15.2387 6.0625 15.4405 6.15196 15.5827 6.30879C15.7249 6.46563 15.7941 6.67525 15.7734 6.88592L15.3503 11.1875H12.9189C10.8479 11.1875 9.16895 12.8664 9.16895 14.9375V15.1179C8.75594 15.5258 8.5 16.0924 8.5 16.7188C8.5 17.3451 8.75594 17.9117 9.16895 18.3196V19.9976C9.16895 20.2621 9.21459 20.5159 9.29844 20.7517H6.657C5.49966 20.7517 4.53109 19.8737 4.4178 18.7219L3.25361 6.88592C3.23288 6.67525 3.30215 6.46563 3.44432 6.30879C3.58649 6.15196 3.78832 6.0625 4 6.0625H8.9832L9.74198 3.97979C10.0657 3.09128 10.9104 2.5 11.856 2.5H14.2655C14.6798 2.5 15.0155 2.83579 15.0155 3.25C15.0155 3.66421 14.6798 4 14.2655 4H11.856Z" fill="currentColor"/>
+        </svg>`,
+      }, {
+        title: "Bootstrap Icon",
+        contentHtml: '<i class="bi bi-airplane-fill" />',
+      }, {
+        title: "function",
+        code: "(options) => '𝑓𝑥'",
+        content: (_options) => "𝑓𝑥",
+      }, {
+        title: "emoji",
+        content: "🚀",
+      }, {
+        title: "number",
+        content: 42,
+      }, {
+        title: "string",
+        content: "AA",
+      }];
+      const markers = new FeatureGroup();
+      let i = 0;
+
+      for (const { title, content, contentHtml, code } of contents) {
+        const options = { content, contentHtml };
+        const text = buildPopupText({ ...options, content: code ?? content }, undefined, title);
+
+        new Marker(
+          [demoLat, demoLng + (i * space)],
+          { icon: new Icon(options) },
+        ).bindPopup(text).addTo(markers);
+
+        i++;
+      }
+
+      markers.on("add", () => window.lucide.createIcons())
+
+      new LMap("content-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoColor() {
+      const examples = [
+        {
+          color: "deeppink",
+          accentColor: "white",
+          svg: extraMarkers.ChipPentagonPanel,
+          svgName: "ChipPentagonPanel",
+          shadow: "drop",
+        },
+        {
+          color: "green",
+          accentColor: "white",
+          content: createElement(["i", { class: "fa fa-utensils" }]),
+          svg: extraMarkers.ChipCirclePanel,
+          svgName: "ChipCirclePanel",
+          shadow: "drop",
+        },
+        {
+          color: "royalblue",
+          accentColor: "white",
+          content: createElement(["i", { class: "fa fa-umbrella-beach" }]),
+          svg: extraMarkers.ChipSquarePanel,
+          svgName: "ChipSquarePanel",
+          shadow: "drop",
+        },
+        {
+          color: "orangered",
+          accentColor: "white",
+          content: createElement(["i", { class: "fa fa-fire-flame-curved" }]),
+          svg: extraMarkers.ChipDiamondPanel,
+          svgName: "ChipDiamondPanel",
+          shadow: "drop",
+        },
+        {
+          color: "indianred",
+          accentColor: "color-mix(in oklch shorter hue, indianred 80%, black)",
+        },
+        {
+          content: createElement(["i", { class: "fa fa-person-hiking" }]),
+          color: "darkolivegreen",
+          accentColor: "color-mix(in oklch shorter hue, darkolivegreen 80%, black)",
+        },
+        {
+          content: createElement(["i", { class: "fa fa-wine-glass" }]),
+          color: "lavender",
+          accentColor: "rebeccapurple",
+          contentColor: "rebeccapurple",
+          svg: extraMarkers.PinStarBorder,
+          svgName: "PinStarBorder",
+          shadow: "ellipse",
+        },
+        {
+          color: "indigo",
+          accentColor: "rgba(255, 255, 255, 0.5)",
+          content: "",
+          svg: extraMarkers.PinPentagonBorder2,
+          svgName: "PinPentagonBorder2",
+          shadow: "none",
+        },
+      ];
+      const markers = new FeatureGroup();
+      let i = 0;
+
+      for (const { svgName, ...options } of examples) {
+        const text = buildPopupText(options, svgName);
+
+        new Marker(
+          [demoLat, demoLng + (i * space)],
+          { icon: new Icon(options) },
+        ).bindPopup(text).addTo(markers);
+
+        i++;
+      }
+
+      new LMap("color-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoColorMix() {
+      const colors = [
+        ["mediumblue", "white", "oklch shorter hue"],
+        ["red", "black", "oklch shorter hue"],
+        ["mediumblue", "red", "oklch shorter hue"],
+      ];
+      const markers = new FeatureGroup();
+      const breaks = 9;
+      let row = 0;
+
+      for (const [start, end, colorSpace] of colors) {
+        const rowLat = demoLat - row * space;
+
+        for (let i = 0; i < breaks; i++) {
+          const options = {
+            color: `color-mix(in ${colorSpace}, ${end} ${100 / breaks * i}%, ${start})`,
+          };
+          const text = buildPopupText(options);
+
+          new Marker(
+            [rowLat, demoLng + (i * space)],
+            { icon: new Icon(options) },
+          ).bindPopup(text).addTo(markers);
+        }
+        row++;
+      }
+
+      new LMap("color-mix-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoOrigin() {
+      const markers = new FeatureGroup();
+      const examples = [
+        {
+          svgName: "PointCircleBorder",
+          svg: extraMarkers.PointCircleBorder,
+          origin: "center",
+          shadow: "none",
+        },
+        {
+          accentColor: "black",
+          color: "gray",
+          shadow: "none",
+        }
+      ];
+
+      for (const { svgName, ...options } of examples) {
+        const text = buildPopupText(options, svgName);
+
+        new Marker(
+          [demoLat, demoLng],
+          { icon: new Icon(options) },
+        ).bindPopup(text).addTo(markers);
+      }
+
+      new LMap("origin-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoShadow() {
+      const shadows = ["cast", "drop", "ellipse", "none"];
+      const markers = new FeatureGroup();
+      let i = 0
+
+      for (const shadow of shadows) {
+        const options = { shadow, color: "indianred", accentColor: "firebrick" };
+        const text = buildPopupText(options);
+
+        new Marker(
+          [demoLat, demoLng + (i * space)],
+          { icon: new Icon(options) },
+        ).bindPopup(text).addTo(markers);
+
+        new Marker(
+          [demoLat - (space / 4), demoLng + (i * space)],
+          { icon: new DivIcon({ html: shadow }) },
+        ).addTo(markers);
+
+        i++;
+      }
+
+      new LMap("shadows-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoScale() {
+      const scales = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+      const markers = new FeatureGroup();
+      let i = 0;
+
+      for (const scale of scales) {
+        const options = {
+          scale,
+          content: scale,
+          color: "orchid",
+          accentColor: "mediumorchid",
+        };
+        const text = buildPopupText(options);
+
+        new Marker(
+          [demoLat, demoLng + (i * space * Math.sqrt(scale))],
+          { icon: new Icon(options) },
+        ).bindPopup(text).addTo(markers);
+
+        i++;
+      }
+
+      new LMap("scale-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+        center: adjustCenter(markers.getBounds().getCenter()),
+      });
+    }
+
+    function demoBuilder() {
+      const markers = new FeatureGroup();
+      const accentColorField = document.querySelector("#builder-accent-color")
+      const colorField = document.querySelector("#builder-color")
+      const contentColorField = document.querySelector("#builder-content-color")
+      const contentField = document.querySelector("#builder-content")
+      const shadowField = document.querySelector("#builder-shadow")
+      const scaleField = document.querySelector("#builder-scale")
+      const svgField = document.querySelector("#builder-svg")
+
+      const map = new LMap("builder-map", {
+        ...demoMapOptions,
+        layers: [buildBasemap(), markers],
+      });
+
+      const rebuildMarker = () => {
+        markers.clearLayers();
+
+        const options = {
+          svg: extraMarkersMap.get(svgField.value),
+          accentColor: accentColorField.value.trim() || undefined,
+          contentColor: contentColorField.value.trim() || undefined,
+          color: colorField.value.trim() || undefined,
+          content: contentField.value || undefined,
+          scale: Number.parseFloat(scaleField.value.trim()) || undefined,
+          shadow: shadowField.value,
+        };
+        const text = buildPopupText(options, svgField.value);
+        const center = map.getCenter();
+        const bounds = map.getBounds();
+        const offset = (bounds.getNorth() - bounds.getSouth()) / 3
+        new Marker(
+          [center.lat - offset, center.lng],
+          { icon: new Icon(options) },
+        ).bindPopup(text).addTo(markers)
+      }
+
+      colorField.addEventListener("change", rebuildMarker);
+      contentColorField.addEventListener("change", rebuildMarker);
+      contentField.addEventListener("change", rebuildMarker);
+      shadowField.addEventListener("change", rebuildMarker);
+      scaleField.addEventListener("change", rebuildMarker);
+      svgField.addEventListener("change", rebuildMarker);
+
+      // Init
+      const options = {
+        Pins: pins,
+        Tacks: tacks,
+        Chips: chips,
+        Points: points
+      }
+
+      const families = Object.entries(extraMarkers).reduce(
+        (result, [key, value]) => {
+          const [family, shape, variant = "Base"] = key.split(/(?=[A-Z])/);
+          result[family] = result[family] ?? {};
+          result[family][key] = value;
+          return result;
+        }, {}
+      );
+
+      Object.entries(families).forEach(([key, value]) => {
+        const optGroup = createElement(["optgroup", { label: key },
+          Object.entries(value).map(([k, v]) => ["option", {}, [k]]),
+        ]);
+        svgField.append(optGroup);
+      })
+
+      rebuildMarker();
+    }
+
+    function demoPerformance() {
+      const countField = document.querySelector("#performance-count");
+      const button = document.querySelector("#performance-button");
+      const timeReadout = document.querySelector("#performance-time");
+      const typeField = document.querySelector("#performance-type");
+      let timeStart = 0;
+      let timeEnd = 0;
+      const markers = new FeatureGroup();
+
+      const map = new LMap("performance-map", {
+        ...demoMapOptions,
+        zoomControl: true,
+        layers: [buildBasemap()],
+      });
+
+      const addRandomMarkers = (count, type, layer, bounds) => {
+        const sw = bounds.getSouthWest();
+        const ne = bounds.getNorthEast();
+        const lngSpan = ne.lng - sw.lng;
+        const latSpan = ne.lat - sw.lat;
+        const len = extraMarkersArray.length;
+        for (let i = 0; i < count; i++) {
+          new Marker(
+            [
+              sw.lat + latSpan * Math.random(),
+              sw.lng + lngSpan * Math.random(),
+            ],
+            (type === "extra" ? {
+              icon: new Icon({
+                content: i,
+                svg: extraMarkers[
+                  (i % len + len) % len
+                ],
+                color: "cornflowerblue",
+              })
+            } : {}),
+          ).addTo(layer);
+        }
+      }
+
+      button.addEventListener("click", () => {
+        timeStart = 0;
+        timeEnd = 0;
+        markers.remove();
+        markers.clearLayers();
+        timeStart = Date.now();
+        addRandomMarkers(
+          parseInt(countField.value),
+          typeField.value,
+          markers,
+          map.getBounds(),
+        );
+
+        markers.addTo(map);
+        // Callback when paint finishes
+        window.requestAnimationFrame(() => {
+          timeEnd = Date.now();
+          timeReadout.textContent = `${(timeEnd - timeStart).toLocaleString()} ms`;
+        });
+      })
+    }
+
+    demo();
+    demoFamily("pin", pins);
+    demoFamily("tack", tacks);
+    demoFamily("chip", chips);
+    demoFamily("point", points);
+    demoContent();
+    demoColor();
+    demoColorMix();
+    demoOrigin();
+    demoScale();
+    demoShadow();
+    demoBuilder();
+    demoPerformance();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+/**
+ * @name ChipStar
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMyIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzMiPiAgPHBhdGggZD0iTTEzIC44MmEyLjg1IDIuODUgMCAwIDEgNCAwbDEuOTQgMS45Yy41Mi41MSAxLjIzLjggMS45Ni44MWwyLjcyLjAzYTIuODUgMi44NSAwIDAgMSAyLjgyIDIuODJsLjAzIDIuNzJjMCAuNzQuMyAxLjQ0LjgxIDEuOTZsMS45IDEuOTVhMi44NSAyLjg1IDAgMCAxIDAgMy45OWwtMS45IDEuOTRjLS41MS41Mi0uOCAxLjIzLS44MSAxLjk2bC0uMDMgMi43MmEyLjg1IDIuODUgMCAwIDEtMS4yNyAyLjM1bC03LjY0IDYuMTNhMy45OCAzLjk4IDAgMCAxLTUuMDYgMGwtNy42NC02LjEzYTIuODUgMi44NSAwIDAgMS0xLjI3LTIuMzVsLS4wMy0yLjcyYzAtLjczLS4zLTEuNDQtLjgxLTEuOTZMLjgyIDE3YTIuODUgMi44NSAwIDAgMSAwLTRsMS45LTEuOTRjLjUxLS41Mi44LTEuMjIuODEtMS45NmwuMDMtMi43MmEyLjg1IDIuODUgMCAwIDEgMi44Mi0yLjgybDIuNzItLjAzYy43MyAwIDEuNDQtLjMgMS45Ni0uODFsMS45NS0xLjlaIi8+PC9zdmc+)
+ * @type {Array}
+ */
+export const ChipStar = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "33",
+    fill: "currentColor",
+    viewBox: "0 0 30 33",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M13 .82a2.85 2.85 0 0 1 4 0l1.94 1.9c.52.51 1.23.8 1.96.81l2.72.03a2.85 2.85 0 0 1 2.82 2.82l.03 2.72c0 .74.3 1.44.81 1.96l1.9 1.95a2.85 2.85 0 0 1 0 3.99l-1.9 1.94c-.51.52-.8 1.23-.81 1.96l-.03 2.72a2.85 2.85 0 0 1-1.27 2.35l-7.64 6.13a3.98 3.98 0 0 1-5.06 0l-7.64-6.13a2.85 2.85 0 0 1-1.27-2.35l-.03-2.72c0-.73-.3-1.44-.81-1.96L.82 17a2.85 2.85 0 0 1 0-4l1.9-1.94c.51-.52.8-1.22.81-1.96l.03-2.72a2.85 2.85 0 0 1 2.82-2.82l2.72-.03c.73 0 1.44-.3 1.96-.81l1.95-1.9Z",
+      },
+    ],
+  ],
+];

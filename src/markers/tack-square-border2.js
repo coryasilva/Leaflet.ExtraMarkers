@@ -1,0 +1,32 @@
+/**
+ * @name TackSquareBorder2
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNSIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzAgMzUiPiAgPHBhdGggZD0iTTI0IDJjLjk3IDAgMS45MS4zNiAyLjY0IDFsLjE0LjEzQzI3LjU1IDMuODggMjggNC45MyAyOCA2djE4YTQgNCAwIDAgMS00IDRoLTQuMTJhMiAyIDAgMCAwLTEuODUgMS4yNGwtMi4xIDUuMTRhMSAxIDAgMCAxLTEuOC4xM2wtLjA2LS4xMy0yLjEtNS4xM0EyIDIgMCAwIDAgMTAuMTIgMjhINmE0IDQgMCAwIDEtNC00VjZhNCA0IDAgMCAxIDQtNGgxOFoiLz4gIDxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTI0IDJjLjk3IDAgMS45MS4zNiAyLjY0IDFsLjE0LjEzQTQgNCAwIDAgMSAyOCA2djE4YTQgNCAwIDAgMS00IDRoLTQuMTJhMiAyIDAgMCAwLTEuODUgMS4yNGwtMi4xIDUuMTRhMSAxIDAgMCAxLTEuOC4xM2wtLjA2LS4xMy0yLjEtNS4xM0EyIDIgMCAwIDAgMTAuMTIgMjhINmE0IDQgMCAwIDEtNC00VjZhNCA0IDAgMCAxIDQtNGgxOFpNNiA0YTIgMiAwIDAgMC0yIDJ2MThjMCAxLjEuOSAyIDIgMmg0LjEyYTQgNCAwIDAgMSAzLjcgMi40OWwuNzIgMS43NWEuNS41IDAgMCAwIC45MiAwbC43Mi0xLjc2LjEzLS4yN2E0IDQgMCAwIDEgMy41Ny0yLjJIMjRhMiAyIDAgMCAwIDItMlY2YTIgMiAwIDAgMC0uNDctMS4yOWwtLjEzLS4xNWgtLjAxbC0uMDctLjA3LS4wMi0uMDFBMi4wMSAyLjAxIDAgMCAwIDI0IDRINloiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==)
+ * @type {Array}
+ */
+export const TackSquareBorder2 = [
+  "svg",
+  {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "30",
+    height: "35",
+    fill: "currentColor",
+    viewBox: "0 0 30 35",
+  },
+  [
+    [
+      "path",
+      {
+        d: "M24 2c.97 0 1.91.36 2.64 1l.14.13C27.55 3.88 28 4.93 28 6v18a4 4 0 0 1-4 4h-4.12a2 2 0 0 0-1.85 1.24l-2.1 5.14a1 1 0 0 1-1.8.13l-.06-.13-2.1-5.13A2 2 0 0 0 10.12 28H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h18Z",
+      },
+    ],
+    [
+      "path",
+      {
+        fill: "#fff",
+        "fill-rule": "evenodd",
+        d: "M24 2c.97 0 1.91.36 2.64 1l.14.13A4 4 0 0 1 28 6v18a4 4 0 0 1-4 4h-4.12a2 2 0 0 0-1.85 1.24l-2.1 5.14a1 1 0 0 1-1.8.13l-.06-.13-2.1-5.13A2 2 0 0 0 10.12 28H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h18ZM6 4a2 2 0 0 0-2 2v18c0 1.1.9 2 2 2h4.12a4 4 0 0 1 3.7 2.49l.72 1.75a.5.5 0 0 0 .92 0l.72-1.76.13-.27a4 4 0 0 1 3.57-2.2H24a2 2 0 0 0 2-2V6a2 2 0 0 0-.47-1.29l-.13-.15h-.01l-.07-.07-.02-.01A2.01 2.01 0 0 0 24 4H6Z",
+        "clip-rule": "evenodd",
+      },
+    ],
+  ],
+];

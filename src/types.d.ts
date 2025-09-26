@@ -1,0 +1,33 @@
+export type SvgNode = [
+  tag: string,
+  attributes?: Record<string, string | number>,
+  children?: SvgNode[],
+];
+export type Content = string | number | HTMLElement | SVGElement | Node;
+export type Element = HTMLElement | SVGElement;
+export type ElementAttributes = Record<
+  string,
+  | string
+  | number
+  | undefined
+  | null
+  | boolean
+  | Array<string | false | undefined | null | boolean | number>
+  | Record<string, string | undefined>
+>;
+export type ElementChildren = Array<
+  | ElementParams
+  | HTMLElement
+  | SVGElement
+  | Node
+  | string
+  | number
+  | boolean
+  | undefined
+  | null
+>;
+export type ElementParams = [
+  tag: string,
+  attributes?: ElementAttributes,
+  children?: ElementChildren,
+];
