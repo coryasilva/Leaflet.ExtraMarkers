@@ -1,4 +1,4 @@
-import { Browser, Icon as IconBase, Point } from "leaflet";
+import { Browser, Icon as IconBase, Point, Util } from "leaflet";
 import { PinTeardropBorder } from "./markers/pin-teardrop-border.js";
 import { createElement, createSvgElement } from "./util.js";
 
@@ -6,6 +6,11 @@ const shadowCast =
   "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='39' height='36' fill='currentColor' viewBox='0 0 39 36'%3e %3cg filter='url(%23a)'%3e %3cpath fill='url(%23b)' d='M25 4.34c7.3.76 11.47 6.93 9.54 12.27a9.99 9.99 0 0 1-3.9 4.77L15.92 31.8a1.2 1.2 0 0 1-.93.19c-.34-.07-.6-.27-.68-.5L12 16.97c-.39-2 .12-4.76 1.08-6.77C15.64 5.96 18.16 3.63 25 4.34Z'/%3e %3c/g%3e %3cdefs%3e %3clinearGradient id='b' x1='27' x2='14.75' y1='6' y2='32.33' gradientUnits='userSpaceOnUse'%3e %3cstop stop-opacity='0'/%3e %3cstop offset='1' stop-opacity='.5'/%3e %3c/linearGradient%3e %3cfilter id='a' width='31.14' height='35.78' x='7.87' y='.22' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3e %3cfeFlood flood-opacity='0' result='BackgroundImageFix'/%3e %3cfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3e %3cfeGaussianBlur result='effect1_foregroundBlur_53_1294' stdDeviation='2'/%3e %3c/filter%3e %3c/defs%3e %3c/svg%3e";
 const shadowEllipse =
   "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='6' fill='currentColor' viewBox='0 0 30 6'%3e %3cellipse cx='15' cy='3' fill='url(%23a)' rx='10' ry='3'/%3e %3cdefs%3e %3cradialGradient id='a' cx='0' cy='0' r='1' gradientTransform='matrix(0 3 -10 0 15 3)' gradientUnits='userSpaceOnUse'%3e %3cstop offset='.05' stop-opacity='.32'/%3e %3cstop offset='1' stop-opacity='0'/%3e %3c/radialGradient%3e %3c/defs%3e %3c/svg%3e";
+
+IconBase.setDefaultOptions = IconBase.setDefaultOptions || function(options) {
+  Util.setOptions(this.prototype, options);
+  return this;
+};
 
 export class Icon extends IconBase {
   static dropShadowCss = "drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.32))";
@@ -66,24 +71,24 @@ export class Icon extends IconBase {
     const { x, y } = opts.iconSize;
     opts.iconAnchor = options.iconAnchor
       ? new Point(options.iconAnchor)
-      : new Point([x / 2, y / yDivisorMap[origin]]);
+      : new Point(x / 2, y / yDivisorMap[origin]);
 
     if (opts.shadow === "ellipse") {
       // 30w 6h
       opts.shadowSize = options.shadowSize
         ? new Point(options.shadowSize)
-        : new Point([x, (x * 6) / 30]);
+        : new Point(x, (x * 6) / 30);
       opts.shadowAnchor = options.shadowAnchor
         ? new Point(options.shadowAnchor)
-        : new Point([x / 2, (x * 6) / 30 / 2]);
+        : new Point(x / 2, (x * 6) / 30 / 2);
     } else if (opts.shadow === "cast") {
       // 39w 36h
       opts.shadowSize = options.shadowSize
         ? new Point(options.shadowSize)
-        : new Point([(x * 39) / 30, (x * 36) / 30]);
+        : new Point((x * 39) / 30, (x * 36) / 30);
       opts.shadowAnchor = options.shadowAnchor
         ? new Point(options.shadowAnchor)
-        : new Point([x / 2, (x / 30) * 32]);
+        : new Point(x / 2, (x / 30) * 32);
     } else {
       // none
       opts.shadowSize = options.shadowSize
@@ -97,10 +102,10 @@ export class Icon extends IconBase {
     // Set anchors to middle of content wrapper
     opts.popupAnchor = options.popupAnchor
       ? new Point(options.popupAnchor)
-      : new Point([0, -y + x / 2]);
+      : new Point(0, -y + x / 2);
     opts.tooltipAnchor = options.tooltipAnchor
       ? new Point(options.tooltipAnchor)
-      : new Point([0, -y + x / 2]);
+      : new Point(0, -y + x / 2);
   }
 
   calcIconSize() {
@@ -119,7 +124,7 @@ export class Icon extends IconBase {
       return new Point(iconSize);
     }
 
-    return new Point([iconWidth, iconHeight]);
+    return new Point(iconWidth, iconHeight);
   }
 
   createContentWrapper() {
