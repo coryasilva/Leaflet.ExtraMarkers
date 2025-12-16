@@ -3,10 +3,6 @@ A collection of fine SVG map markers that can easily be colored, resized, or ove
 >✨ **DEMO**<br>
 >[Check out the demo](https://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html)
 
-
-> ⚠️ **WARNING**<br>
-> This plugin is compatible with Leaflet v2, for Leaflet v1 compatibility [view the v1 branch](https://github.com/coryasilva/Leaflet.ExtraMarkers/tree/v1)
-
 ## Table of contents
 - [**Getting started**](#getting-started)
 - [**API**](#api)
@@ -38,25 +34,8 @@ A collection of fine SVG map markers that can easily be colored, resized, or ove
   }
   </script>
   ```
-### Usage
 
-```js
-import { Marker } from "leaflet";
-import { Icon, PinCirclePanel } from "leaflet-extra-markers";
-
-const marker = new Marker(map.getCenter(), {
-  icon: new Icon({
-    accentColor: "firebrick",
-    color: "indianred",
-    content: "42",
-    contentColor: "white",
-    scale: 1,
-    svg: PinCirclePanel,
-  }),
-});
-```
-
-### Full example
+### Leaflet V2 usage
 For more examples view the [**Demo**](https://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html).
 
 ```html
@@ -97,6 +76,52 @@ For more examples view the [**Demo**](https://coryasilva.github.io/Leaflet.Extra
         }),
       }).addTo(map);
     </script>
+  </body>
+</html>
+```
+
+### Leaflet V1 usage
+For more examples view the [**Demo**](https://coryasilva.github.io/Leaflet.ExtraMarkers/demos/index.html).
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+  	<link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+  	<div id="map" style="width:100%;height:400px;">
+  	<script type="importmap">
+    {
+  		"imports": {
+  			"leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
+  			"leaflet-extra-markers": "https://unpkg.com/leaflet-extra-markers@latest/index.js"
+  		}
+    }
+    </script>
+  	<script type="module">
+  		import * as L from "leaflet";
+  		window.L = {...L};
+  		import { Icon as ExtraIcon, PinCirclePanel } from "leaflet-extra-markers";
+  			
+  		const map = new L.Map("map").setView([0, 0], 3);
+  
+  		const marker = new L.Marker(map.getCenter(), {
+        icon: new Icon({
+          accentColor: "firebrick",
+          color: "indianred",
+          content: "42",
+          contentColor: "white",
+          scale: 1,
+          svg: PinCirclePanel,
+        }),
+      }).addTo(map);
+  	</script>
   </body>
 </html>
 ```
