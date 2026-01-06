@@ -44,7 +44,7 @@
     "build:markers": "node ./scripts/build-markers.js && npx @biomejs/biome format --write ./src/markers && npx @biomejs/biome lint --write ./src/markers"
   },
   "peerDependencies": {
-    "leaflet": "^2.0.0-alpha.1"
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
